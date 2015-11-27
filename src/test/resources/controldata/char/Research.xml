@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-19 12:59:34</currentTime>
+  <result>
+    <rowset name="research" key="agentID" columns="agentID,skillTypeID,researchStartDate,pointsPerDay,remainderPoints">
+      <row agentID="3009358" skillTypeID="11450" researchStartDate="2012-07-19 00:06:03" pointsPerDay="49.9346162146776" remainderPoints="10576.0727448019" />
+      <row agentID="3012617" skillTypeID="11453" researchStartDate="2012-07-19 00:20:39" pointsPerDay="34.5312810778599" remainderPoints="1458.70988950635" />
+      <row agentID="3012662" skillTypeID="11452" researchStartDate="2012-07-19 00:31:02" pointsPerDay="49.7700894238397" remainderPoints="2025.83743938591" />
+    </rowset>
+  </result>
+  <cachedUntil>2012-12-19 13:14:34</cachedUntil>
+</eveapi>

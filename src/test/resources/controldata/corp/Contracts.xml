@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-19 12:59:40</currentTime>
+  <result>
+    <rowset name="contractList" key="contractID" columns="contractID,issuerID,issuerCorpID,assigneeID,acceptorID,startStationID,endStationID,type,status,title,forCorp,availability,dateIssued,dateExpired,dateAccepted,numDays,dateCompleted,price,reward,collateral,buyout,volume">
+      <row contractID="62440569" issuerID="1801683792" issuerCorpID="98007623" assigneeID="98007623" acceptorID="0" startStationID="60001357" endStationID="60001357" type="Auction" status="Outstanding" title="An apparently worthless item" forCorp="1" availability="Private" dateIssued="2012-12-19 10:20:54" dateExpired="2012-12-26 10:20:54" dateAccepted="" numDays="0" dateCompleted="" price="1000000.00" reward="0.00" collateral="0.00" buyout="3000000.00" volume="1" />
+    </rowset>
+  </result>
+  <cachedUntil>2012-12-19 13:13:40</cachedUntil>
+</eveapi>

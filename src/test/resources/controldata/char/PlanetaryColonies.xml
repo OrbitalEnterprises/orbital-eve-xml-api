@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-12-03 00:00:17</currentTime>
+  <result>
+    <rowset name="colonies" key="planetID" columns="solarSystemID,solarSystemName,planetID,planetName,planetTypeID,planetTypeName,ownerID,ownerName,lastUpdate,upgradeLevel,numberOfPins">
+      <row solarSystemID="30003396" solarSystemName="Maturat" planetID="40215260" planetName="Maturat II" planetTypeID="2015" planetTypeName="Planet (Lava)" ownerID="1801683792" ownerName="reygar burnt" lastUpdate="2014-06-23 00:31:39" upgradeLevel="5" numberOfPins="8" />
+      <row solarSystemID="30003399" solarSystemName="Vorsk" planetID="40215544" planetName="Vorsk I" planetTypeID="2063" planetTypeName="Planet (Plasma)" ownerID="1801683792" ownerName="reygar burnt" lastUpdate="2014-06-23 00:32:29" upgradeLevel="4" numberOfPins="7" />
+      <row solarSystemID="30003399" solarSystemName="Vorsk" planetID="40215545" planetName="Vorsk II" planetTypeID="2063" planetTypeName="Planet (Plasma)" ownerID="1801683792" ownerName="reygar burnt" lastUpdate="2014-06-23 00:32:53" upgradeLevel="4" numberOfPins="7" />
+      <row solarSystemID="30003399" solarSystemName="Vorsk" planetID="40215546" planetName="Vorsk III" planetTypeID="2015" planetTypeName="Planet (Lava)" ownerID="1801683792" ownerName="reygar burnt" lastUpdate="2014-06-23 00:33:13" upgradeLevel="4" numberOfPins="7" />
+      <row solarSystemID="30003399" solarSystemName="Vorsk" planetID="40215551" planetName="Vorsk VI" planetTypeID="13" planetTypeName="Planet (Gas)" ownerID="1801683792" ownerName="reygar burnt" lastUpdate="2014-06-23 00:33:28" upgradeLevel="4" numberOfPins="7" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-12-03 01:00:17</cachedUntil>
+</eveapi>

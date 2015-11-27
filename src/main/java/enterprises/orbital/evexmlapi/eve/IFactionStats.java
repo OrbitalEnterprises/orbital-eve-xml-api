@@ -1,0 +1,23 @@
+package enterprises.orbital.evexmlapi.eve;
+
+public interface IFactionStats {
+	public int getFactionID();
+
+	public String getFactionName();
+
+	public int getKillsLastWeek();
+
+	public int getKillsTotal();
+
+	public int getKillsYesterday();
+
+	public int getPilots();
+
+	public int getSystemsControlled();
+
+	public int getVictoryPointsLastWeek();
+
+	public int getVictoryPointsTotal();
+
+	public int getVictoryPointsYesterday();
+}

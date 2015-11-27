@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-11-15 17:05:41</currentTime>
+  <result>
+    <rowset name="messages" key="messageID" columns="messageID,senderID,senderName,sentDate,title,toCorpOrAllianceID,toCharacterIDs,toListID">
+      <row messageID="298357970" senderID="309326026" senderName="SketS47" sentDate="2010-10-15 06:08:00" title="Re: UPDATE PLS" toCorpOrAllianceID="474866313" toCharacterIDs="1694782511" toListID="" senderTypeID="1380" />
+      <row messageID="298377953" senderID="1694782511" senderName="Pelewai" sentDate="2010-10-16 01:28:00" title="Koa Mai Hoku" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1379" />
+      <row messageID="298421628" senderID="1707107835" senderName="Zavouzo" sentDate="2010-10-17 20:34:00" title="Nul Sec Aspirations, please read" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="298423623" senderID="1241130341" senderName="Stoneard" sentDate="2010-10-17 21:53:00" title="FW: Alliance Management, new ranks! Intrested?" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1377" />
+      <row messageID="298540727" senderID="1241130341" senderName="Stoneard" sentDate="2010-10-22 22:16:00" title="Starbase Reports - Low on fuel" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1377" />
+      <row messageID="298484273" senderID="1707107835" senderName="Zavouzo" sentDate="2010-10-20 13:36:00" title="BPC ♥" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="298610317" senderID="687857968" senderName="Goerkon Grida" sentDate="2010-10-25 21:44:00" title="Transport Info" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1376" />
+      <row messageID="298563621" senderID="1241130341" senderName="Stoneard" sentDate="2010-10-23 22:25:00" title="Corp Plans" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1377" />
+      <row messageID="298348751" senderID="1694782511" senderName="Pelewai" sentDate="2010-10-14 21:07:00" title="UPDATE PLS" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1379" />
+      <row messageID="298618851" senderID="309326026" senderName="SketS47" sentDate="2010-10-26 06:12:00" title="Re: Transport Info" toCorpOrAllianceID="474866313" toCharacterIDs="687857968" toListID="" senderTypeID="1380" />
+      <row messageID="298736402" senderID="309326026" senderName="SketS47" sentDate="2010-10-31 08:03:00" title="Re: Re: Upcoming friday! PVP FLEET!!!!! 19:30" toCorpOrAllianceID="474866313" toCharacterIDs="309326026" toListID="" senderTypeID="1380" />
+      <row messageID="298374654" senderID="1223221527" senderName="Al Sva'Kedor" sentDate="2010-10-15 22:28:00" title="Salvage " toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1386" />
+      <row messageID="298842724" senderID="1241130341" senderName="Stoneard" sentDate="2010-11-05 00:33:00" title="Thursdays JF minerals mined" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1377" />
+      <row messageID="298909086" senderID="1861350132" senderName="Dil'e Mahn" sentDate="2010-11-07 19:52:00" title="Suicide Roam Not Really Succesfull (we still live)" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1378" />
+      <row messageID="298416092" senderID="309326026" senderName="SketS47" sentDate="2010-10-17 16:59:00" title="Alliance Management, new ranks! Intrested?" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="298859217" senderID="1861350132" senderName="Dil'e Mahn" sentDate="2010-11-05 19:24:00" title="Re: Help me die" toCorpOrAllianceID="109275102" toCharacterIDs="472909978" toListID="" senderTypeID="1378" />
+      <row messageID="298940847" senderID="472909978" senderName="Babbelbob" sentDate="2010-11-09 00:21:00" title="Re: test server operations in PVP training" toCorpOrAllianceID="109275102" toCharacterIDs="423079828" toListID="" senderTypeID="1378" />
+      <row messageID="298421794" senderID="1707107835" senderName="Zavouzo" sentDate="2010-10-17 20:41:00" title="PI effort money making palooza" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="298937927" senderID="472909978" senderName="Babbelbob" sentDate="2010-11-08 22:21:00" title="babbelbob sight seeing tours" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1378" />
+      <row messageID="298997555" senderID="309326026" senderName="SketS47" sentDate="2010-11-11 09:55:00" title="Fleet Commanders, for pvp and industrial" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="298422336" senderID="1707107835" senderName="Zavouzo" sentDate="2010-10-17 21:02:00" title="Diplomacy / Recruitment" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="298939909" senderID="423079828" senderName="Asmodes2 Reynolds" sentDate="2010-11-08 23:39:00" title="test server operations in PVP training" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1386" />
+      <row messageID="299014027" senderID="1453489636" senderName="Leggey89" sentDate="2010-11-12 00:04:00" title="Missions" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1375" />
+      <row messageID="298456905" senderID="309326026" senderName="SketS47" sentDate="2010-10-19 07:15:00" title="Re: Diplomacy / Recruitment" toCorpOrAllianceID="474866313" toCharacterIDs="1707107835" toListID="" senderTypeID="1380" />
+      <row messageID="298939958" senderID="1453489636" senderName="Leggey89" sentDate="2010-11-08 23:41:00" title="Re: test server operations in PVP training" toCorpOrAllianceID="109275102" toCharacterIDs="423079828" toListID="" senderTypeID="1375" />
+      <row messageID="299165995" senderID="1453489636" senderName="Leggey89" sentDate="2010-11-18 01:10:00" title="Fleet mission op" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1375" />
+      <row messageID="298543755" senderID="972076147" senderName="Angelmuerte" sentDate="2010-10-23 00:54:00" title="Re: Starbase Reports - Low on fuel" toCorpOrAllianceID="109275102" toCharacterIDs="1241130341" toListID="" senderTypeID="1386" />
+      <row messageID="299086698" senderID="309326026" senderName="SketS47" sentDate="2010-11-14 21:45:00" title="Re: Fleet Commanders, for pvp and industrial" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="299284047" senderID="309326026" senderName="SketS47" sentDate="2010-11-22 21:07:00" title="Monday Night EVE-Ball" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="298582954" senderID="309326026" senderName="SketS47" sentDate="2010-10-24 19:06:00" title="WANTED FC's!" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="299148151" senderID="309326026" senderName="SketS47" sentDate="2010-11-17 09:03:00" title="New alliance fleets planned on the roster!" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="299730511" senderID="1417033394" senderName="Chel MocTran" sentDate="2010-12-10 04:15:00" title="Saturday PvP Roam" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1379" />
+      <row messageID="298583228" senderID="309326026" senderName="SketS47" sentDate="2010-10-24 19:18:00" title="Upcoming friday! PVP FLEET!!!!! 19:30" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="299357910" senderID="1785485066" senderName="Shizraak" sentDate="2010-11-25 20:32:00" title="Wh's" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1376" />
+      <row messageID="299838306" senderID="957060959" senderName="Soddington Smythe" sentDate="2010-12-14 09:53:00" title="Re: so long, thanks for all the fish!" toCorpOrAllianceID="" toCharacterIDs="1801683792" toListID="" senderTypeID="1378" />
+      <row messageID="298666907" senderID="309326026" senderName="SketS47" sentDate="2010-10-28 07:17:00" title="Re: Upcoming friday! PVP FLEET!!!!! 19:30" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="299394018" senderID="1417033394" senderName="Chel MocTran" sentDate="2010-11-27 08:36:00" title="PvP Fleet" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1379" />
+      <row messageID="298859027" senderID="472909978" senderName="Babbelbob" sentDate="2010-11-05 19:16:00" title="Help me die" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1378" />
+      <row messageID="300985766" senderID="90010072" senderName="Hirars" sentDate="2011-01-25 03:07:00" title="FW: Sansha Incursion: Algintal constellation (Sinq Laison)" toCorpOrAllianceID="" toCharacterIDs="1801683792" toListID="" senderTypeID="1375" />
+      <row messageID="298861475" senderID="1785485066" senderName="Shizraak" sentDate="2010-11-05 21:03:00" title="Re: Re: Help me die" toCorpOrAllianceID="109275102" toCharacterIDs="1861350132,472909978" toListID="" senderTypeID="1376" />
+      <row messageID="323288697" senderID="93213436" senderName="CCP Games" sentDate="2013-04-13 21:58:00" title="Council of Stellar Management Elections" toCorpOrAllianceID="" toCharacterIDs="92532513" toListID="" senderTypeID="1373" />
+      <row messageID="298939161" senderID="1861350132" senderName="Dil'e Mahn" sentDate="2010-11-08 23:10:00" title="Re: babbelbob sight seeing tours" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1378" />
+      <row messageID="299014043" senderID="1453489636" senderName="Leggey89" sentDate="2010-11-12 00:05:00" title="Re: Missions" toCorpOrAllianceID="109275102" toCharacterIDs="1453489636" toListID="" senderTypeID="1375" />
+      <row messageID="299246080" senderID="309326026" senderName="SketS47" sentDate="2010-11-21 10:30:00" title="New Alliance mining fleet planned on the weekly roster!" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1380" />
+      <row messageID="299262680" senderID="1785485066" senderName="Shizraak" sentDate="2010-11-21 23:35:00" title="lvl4s" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1376" />
+      <row messageID="299262728" senderID="979151152" senderName="Corren'Thallion deLorian" sentDate="2010-11-21 23:36:00" title="Mining Op" toCorpOrAllianceID="474866313" toCharacterIDs="" toListID="" senderTypeID="1375" />
+      <row messageID="299465888" senderID="472909978" senderName="Babbelbob" sentDate="2010-11-30 01:07:00" title="the First warning" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1378" />
+      <row messageID="299639901" senderID="1785485066" senderName="Shizraak" sentDate="2010-12-06 17:14:00" title="Wh's" toCorpOrAllianceID="109275102" toCharacterIDs="" toListID="" senderTypeID="1376" />
+      <row messageID="299833074" senderID="1801683792" senderName="reygar burnt" sentDate="2010-12-14 03:23:00" title="so long, thanks for all the fish!" toCorpOrAllianceID="" toCharacterIDs="957060959" toListID="" senderTypeID="1376" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-11-15 17:16:40</cachedUntil>
+</eveapi>

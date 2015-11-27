@@ -1,0 +1,10 @@
+package enterprises.orbital.evexmlapi.map;
+
+import java.util.Collection;
+import java.util.Date;
+
+public interface IMapJump {
+  public Date getDataTime();
+
+  public Collection<IJump> getJumps();
+}

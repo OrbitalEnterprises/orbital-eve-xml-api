@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-19 12:59:45</currentTime>
+  <result>
+    <corporationID>98007623</corporationID>
+    <corporationName>Dark Planet Ventures</corporationName>
+    <ticker>DPVT</ticker>
+    <ceoID>2012067258</ceoID>
+    <ceoName>assiduous dark</ceoName>
+    <stationID>60000046</stationID>
+    <stationName>Vorsk IV - Moon 1 - CBD Corporation Storage</stationName>
+    <description>Hi-Sec Mining, Industry, PI, Invention and Investment</description>
+    <url>http://tbd</url>
+    <allianceID>0</allianceID>
+    <taxRate>50</taxRate>
+    <memberCount>6</memberCount>
+    <memberLimit>20</memberLimit>
+    <shares>1000</shares>
+    <rowset name="divisions" key="accountKey" columns="accountKey,description">
+      <row accountKey="1000" description="INCOMING" />
+      <row accountKey="1001" description="TO SELL" />
+      <row accountKey="1002" description="TO REFINE" />
+      <row accountKey="1003" description="PRODUCTION" />
+      <row accountKey="1004" description="AMMO AND DRONES" />
+      <row accountKey="1005" description="PRE-PRODUCTION" />
+      <row accountKey="1006" description="WEAPONS" />
+    </rowset>
+    <rowset name="walletDivisions" key="accountKey" columns="accountKey,description">
+      <row accountKey="1000" description="Wallet Division 1" />
+      <row accountKey="1001" description="2nd Wallet Division" />
+      <row accountKey="1002" description="3rd Wallet Division" />
+      <row accountKey="1003" description="4th Wallet Division" />
+      <row accountKey="1004" description="5th Wallet Division" />
+      <row accountKey="1005" description="6th Wallet Division" />
+      <row accountKey="1006" description="7th Wallet Division" />
+    </rowset>
+    <logo>
+      <graphicID>0</graphicID>
+      <shape1>557</shape1>
+      <shape2>513</shape2>
+      <shape3>415</shape3>
+      <color1>680</color1>
+      <color2>680</color2>
+      <color3>0</color3>
+    </logo>
+  </result>
+  <cachedUntil>2012-12-19 17:18:06</cachedUntil>
+</eveapi>

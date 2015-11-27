@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-12-03 00:03:34</currentTime>
+  <result>
+    <rowset name="routes" key="routeID" columns="routeID,sourcePinID,destinationPinID,contentTypeID,contentTypeName,quantity,waypoint1,waypoint2,waypoint3,waypoint4,waypoint5">
+      <row routeID="356501061" sourcePinID="1000357877919" destinationPinID="1002203900753" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="367836482" sourcePinID="1000357877919" destinationPinID="1002965351544" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="351506600" sourcePinID="1002203900751" destinationPinID="1002203900753" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="1000357877919" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="367836481" sourcePinID="1002203900751" destinationPinID="1002965351544" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="1000357877919" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="351506599" sourcePinID="1002203900753" destinationPinID="1000357877919" contentTypeID="2399" contentTypeName="Precious Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="608425910" sourcePinID="1002944824411" destinationPinID="1002203900751" contentTypeID="2270" contentTypeName="Noble Metals" quantity="14340" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="608425909" sourcePinID="1002944841230" destinationPinID="1002203900751" contentTypeID="2270" contentTypeName="Noble Metals" quantity="13612" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="367836480" sourcePinID="1002965351544" destinationPinID="1000357877919" contentTypeID="2399" contentTypeName="Precious Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-12-03 01:03:34</cachedUntil>
+</eveapi>

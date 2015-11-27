@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-08-03 19:11:02</currentTime>
+  <result>
+    <rowset name="jobs" key="jobID" columns="jobID,installerID,installerName,facilityID,solarSystemID,solarSystemName,stationID,activityID,blueprintID,blueprintTypeID,blueprintTypeName,blueprintLocationID,outputLocationID,runs,cost,teamID,licensedRuns,probability,productTypeID,productTypeName,status,timeInSeconds,startDate,endDate,pauseDate,completedDate,completedCharacterID,successfulRuns">
+      <row jobID="230162626" installerID="1801683792" installerName="reygar burnt" facilityID="60001357" solarSystemID="30003396" solarSystemName="Maturat" stationID="60001357" activityID="1" blueprintID="1001612644153" blueprintTypeID="806" blueprintTypeName="Nova Cruise Missile Blueprint" blueprintLocationID="155045100" outputLocationID="155045100" runs="10" cost="2531.00" teamID="0" licensedRuns="200" probability="0" productTypeID="0" productTypeName="" status="1" timeInSeconds="6840" startDate="2014-07-23 18:09:32" endDate="2014-07-23 20:03:32" pauseDate="0001-01-01 00:00:00" completedDate="0001-01-01 00:00:00" completedCharacterID="0" successfulRuns="1" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-08-04 01:11:02</cachedUntil>
+</eveapi>

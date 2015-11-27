@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-19 12:59:52</currentTime>
+  <result>
+    <rowset name="containerLog" key="logTime" columns="logTime,itemID,itemTypeID,actorID,actorName,flag,locationID,action,passwordType,typeID,quantity,oldConfiguration,newConfiguration" />
+  </result>
+  <cachedUntil>2012-12-19 15:56:53</cachedUntil>
+</eveapi>

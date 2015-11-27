@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-12-03 00:03:34</currentTime>
+  <result>
+    <rowset name="pins" key="pinID" columns="pinID,typeID,typeName,schematicID,lastLaunchTime,cycleTime,quantityPerCycle,installTime,expiryTime,contentTypeID,contentTypeName,contentQuantity,longitude,latitude">
+      <row pinID="1000356707392" typeID="2551" typeName="Plasma Command Center" schematicID="0" lastLaunchTime="0001-01-01 00:00:00" cycleTime="0" quantityPerCycle="0" installTime="0001-01-01 00:00:00" expiryTime="0001-01-01 00:00:00" contentTypeID="0" contentTypeName="" contentQuantity="0" longitude="5.75085345966733" latitude="1.88829035297882" />
+      <row pinID="1000357877919" typeID="2556" typeName="Plasma Launchpad" schematicID="0" lastLaunchTime="0001-01-01 00:00:00" cycleTime="0" quantityPerCycle="0" installTime="0001-01-01 00:00:00" expiryTime="0001-01-01 00:00:00" contentTypeID="0" contentTypeName="" contentQuantity="0" longitude="5.76395109558265" latitude="1.88838667875523" />
+      <row pinID="1002203900751" typeID="2560" typeName="Plasma Storage Facility" schematicID="0" lastLaunchTime="2011-07-03 10:23:22" cycleTime="0" quantityPerCycle="0" installTime="0001-01-01 00:00:00" expiryTime="0001-01-01 00:00:00" contentTypeID="0" contentTypeName="" contentQuantity="0" longitude="5.73531183079" latitude="1.88734648515" />
+      <row pinID="1002203900753" typeID="2471" typeName="Plasma Basic Industry Facility" schematicID="127" lastLaunchTime="2014-05-30 06:11:36" cycleTime="0" quantityPerCycle="0" installTime="0001-01-01 00:00:00" expiryTime="0001-01-01 00:00:00" contentTypeID="2270" contentTypeName="Noble Metals" contentQuantity="2819" longitude="5.78143403374" latitude="1.88619271165" />
+      <row pinID="1002944824411" typeID="3064" typeName="Plasma Extractor Control Unit" schematicID="0" lastLaunchTime="2014-06-23 00:32:29" cycleTime="60" quantityPerCycle="1992" installTime="2014-06-23 00:32:29" expiryTime="2014-06-27 02:32:29" contentTypeID="0" contentTypeName="" contentQuantity="0" longitude="-1.69069209957" latitude="1.63112973467" />
+      <row pinID="1002944841230" typeID="3064" typeName="Plasma Extractor Control Unit" schematicID="0" lastLaunchTime="2014-06-23 00:32:29" cycleTime="60" quantityPerCycle="1891" installTime="2014-06-23 00:32:29" expiryTime="2014-06-27 02:32:29" contentTypeID="0" contentTypeName="" contentQuantity="0" longitude="-0.843745628330352" latitude="1.48280304538331" />
+      <row pinID="1002965351544" typeID="2471" typeName="Plasma Basic Industry Facility" schematicID="127" lastLaunchTime="2014-05-30 04:41:36" cycleTime="0" quantityPerCycle="0" installTime="0001-01-01 00:00:00" expiryTime="0001-01-01 00:00:00" contentTypeID="0" contentTypeName="" contentQuantity="0" longitude="-0.517583029504" latitude="1.86780260115" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-12-03 01:03:34</cachedUntil>
+</eveapi>

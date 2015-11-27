@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-19 12:59:55</currentTime>
+  <result>
+    <rowset name="titles" key="titleID" columns="titleID,titleName" />
+  </result>
+  <cachedUntil>2012-12-19 17:18:06</cachedUntil>
+</eveapi>

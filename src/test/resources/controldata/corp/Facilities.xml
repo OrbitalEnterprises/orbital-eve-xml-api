@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-11-30 20:23:32</currentTime>
+  <result>
+    <rowset name="facilities" key="facilityID" columns="facilityID,typeID,typeName,solarSystemID,solarSystemName,regionID,regionName,starbaseModifier,tax">
+      <row facilityID="1005732128266" typeID="16216" typeName="Research Laboratory" solarSystemID="30003399" solarSystemName="Vorsk" regionID="10000042" regionName="Metropolis" starbaseModifier="0" tax="0" />
+      <row facilityID="1015524355503" typeID="28351" typeName="Design Laboratory" solarSystemID="30003399" solarSystemName="Vorsk" regionID="10000042" regionName="Metropolis" starbaseModifier="0" tax="0" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-11-30 20:38:33</cachedUntil>
+</eveapi>

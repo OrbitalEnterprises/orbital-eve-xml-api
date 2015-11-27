@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-19 12:59:46</currentTime>
+  <result>
+    <rowset name="medals" key="medalID" columns="medalID,title,description,creatorID,created">
+      <row medalID="73604" title="Top Hauler" description="Awared to the top cargo hauler in a given month." creatorID="1801683792" created="2011-08-13 01:57:00" />
+    </rowset>
+  </result>
+  <cachedUntil>2012-12-19 12:59:46</cachedUntil>
+</eveapi>

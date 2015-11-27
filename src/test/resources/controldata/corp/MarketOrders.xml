@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-19 12:59:45</currentTime>
+  <result>
+    <rowset name="orders" key="orderID" columns="orderID,charID,stationID,volEntered,volRemaining,minVolume,orderState,typeID,range,accountKey,duration,escrow,price,bid,issued">
+      <row orderID="2735817043" charID="90251444" stationID="60001096" volEntered="158052" volRemaining="158052" minVolume="1" orderState="0" typeID="1227" range="32767" accountKey="1000" duration="30" escrow="0.00" price="293.00" bid="0" issued="2012-12-13 15:53:00" />
+      <row orderID="2735817321" charID="90251444" stationID="60001096" volEntered="203114" volRemaining="203114" minVolume="1" orderState="0" typeID="1227" range="32767" accountKey="1000" duration="30" escrow="0.00" price="292.00" bid="0" issued="2012-12-13 15:53:18" />
+      <row orderID="2735817466" charID="90251444" stationID="60001096" volEntered="145632" volRemaining="145632" minVolume="1" orderState="0" typeID="1227" range="32767" accountKey="1000" duration="30" escrow="0.00" price="291.00" bid="0" issued="2012-12-13 15:53:28" />
+      <row orderID="2735817582" charID="90251444" stationID="60001096" volEntered="128912" volRemaining="128912" minVolume="1" orderState="0" typeID="1227" range="32767" accountKey="1000" duration="30" escrow="0.00" price="290.00" bid="0" issued="2012-12-13 15:53:36" />
+      <row orderID="2735817735" charID="90251444" stationID="60001096" volEntered="231245" volRemaining="231245" minVolume="1" orderState="0" typeID="1227" range="32767" accountKey="1000" duration="30" escrow="0.00" price="289.00" bid="0" issued="2012-12-13 15:53:46" />
+      <row orderID="2735818192" charID="90251444" stationID="60001096" volEntered="157885" volRemaining="157885" minVolume="1" orderState="0" typeID="1227" range="32767" accountKey="1000" duration="30" escrow="0.00" price="288.00" bid="0" issued="2012-12-13 15:54:17" />
+      <row orderID="2735818307" charID="90251444" stationID="60001096" volEntered="124887" volRemaining="124887" minVolume="1" orderState="0" typeID="1227" range="32767" accountKey="1000" duration="30" escrow="0.00" price="287.00" bid="0" issued="2012-12-13 15:54:25" />
+      <row orderID="2735818407" charID="90251444" stationID="60001096" volEntered="204111" volRemaining="204111" minVolume="1" orderState="0" typeID="1227" range="32767" accountKey="1000" duration="30" escrow="0.00" price="286.00" bid="0" issued="2012-12-13 15:54:34" />
+      <row orderID="2735818539" charID="90251444" stationID="60001096" volEntered="154663" volRemaining="154663" minVolume="1" orderState="0" typeID="1227" range="32767" accountKey="1000" duration="30" escrow="0.00" price="285.00" bid="0" issued="2012-12-13 15:54:41" />
+      <row orderID="2735818689" charID="90251444" stationID="60001096" volEntered="182774" volRemaining="88194" minVolume="1" orderState="0" typeID="1227" range="32767" accountKey="1000" duration="30" escrow="0.00" price="282.00" bid="0" issued="2012-12-18 00:55:37" />
+      <row orderID="2735819228" charID="90251444" stationID="60001096" volEntered="70" volRemaining="0" minVolume="1" orderState="2" typeID="2185" range="32767" accountKey="1000" duration="14" escrow="0.00" price="955000.00" bid="0" issued="2012-12-14 10:39:30" />
+      <row orderID="2735819440" charID="90251444" stationID="60001096" volEntered="130" volRemaining="0" minVolume="1" orderState="2" typeID="2456" range="32767" accountKey="1000" duration="14" escrow="0.00" price="495000.00" bid="0" issued="2012-12-14 10:40:01" />
+      <row orderID="2735819704" charID="90251444" stationID="60001096" volEntered="1000" volRemaining="0" minVolume="1" orderState="2" typeID="9848" range="32767" accountKey="1000" duration="14" escrow="0.00" price="61000.00" bid="0" issued="2012-12-14 10:40:30" />
+      <row orderID="2736709928" charID="90251444" stationID="60005686" volEntered="127884" volRemaining="112034" minVolume="1" orderState="0" typeID="20" range="32767" accountKey="1000" duration="30" escrow="0.00" price="344.00" bid="0" issued="2012-12-19 10:17:06" />
+      <row orderID="2736710102" charID="90251444" stationID="60005686" volEntered="154881" volRemaining="154881" minVolume="1" orderState="0" typeID="20" range="32767" accountKey="1000" duration="30" escrow="0.00" price="362.00" bid="0" issued="2012-12-14 10:10:05" />
+      <row orderID="2736710280" charID="90251444" stationID="60005686" volEntered="217235" volRemaining="210061" minVolume="1" orderState="0" typeID="20" range="32767" accountKey="1000" duration="30" escrow="0.00" price="359.00" bid="0" issued="2012-12-15 18:48:33" />
+    </rowset>
+  </result>
+  <cachedUntil>2012-12-19 13:56:45</cachedUntil>
+</eveapi>

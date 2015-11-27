@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-05-23 13:37:04</currentTime>
+  <result>
+    <rowset name="pocos" key="itemID" columns="itemID,solarSystemID,solarSystemName,reinforceHour,allowAlliance,allowStandings,standingLevel,taxRateAlliance,taxRateCorp,taxRateStandingHigh,taxRateStandingGood,taxRateStandingNeutral,taxRateStandingBad,taxRateStandingHorrible">
+      <row itemID="1010969579351" solarSystemID="0" solarSystemName="" reinforceHour="0" allowAlliance="0" allowStandings="0" standingLevel="-10" taxRateAlliance="0.045" taxRateCorp="0" taxRateStandingHigh="0" taxRateStandingGood="0.04" taxRateStandingNeutral="0.05" taxRateStandingBad="0.05" taxRateStandingHorrible="0.05"/>
+      <row itemID="1010906399767" solarSystemID="0" solarSystemName="" reinforceHour="0" allowAlliance="0" allowStandings="0" standingLevel="-10" taxRateAlliance="0.045" taxRateCorp="0" taxRateStandingHigh="0" taxRateStandingGood="0.04" taxRateStandingNeutral="0.045" taxRateStandingBad="0.05" taxRateStandingHorrible="0.05"/>
+      <row itemID="1010906393255" solarSystemID="0" solarSystemName="" reinforceHour="0" allowAlliance="0" allowStandings="0" standingLevel="-10" taxRateAlliance="0.045" taxRateCorp="0" taxRateStandingHigh="0" taxRateStandingGood="0.04" taxRateStandingNeutral="0.045" taxRateStandingBad="0.08" taxRateStandingHorrible="0.11"/>
+      <row itemID="1010870296990" solarSystemID="0" solarSystemName="" reinforceHour="0" allowAlliance="0" allowStandings="0" standingLevel="-10" taxRateAlliance="0.045" taxRateCorp="0" taxRateStandingHigh="0" taxRateStandingGood="0.04" taxRateStandingNeutral="0.045" taxRateStandingBad="0.08" taxRateStandingHorrible="0.11"/>
+      <row itemID="1012685272233" solarSystemID="0" solarSystemName="" reinforceHour="0" allowAlliance="0" allowStandings="0" standingLevel="-10" taxRateAlliance="0.1" taxRateCorp="0.05" taxRateStandingHigh="0.015" taxRateStandingGood="0.05" taxRateStandingNeutral="0.05" taxRateStandingBad="0.15" taxRateStandingHorrible="0.15"/>
+      <row itemID="1010927558703" solarSystemID="0" solarSystemName="" reinforceHour="0" allowAlliance="0" allowStandings="0" standingLevel="-10" taxRateAlliance="0.05" taxRateCorp="0" taxRateStandingHigh="0" taxRateStandingGood="0.04" taxRateStandingNeutral="0.05" taxRateStandingBad="0.05" taxRateStandingHorrible="0.05"/>
+      <row itemID="1010906440222" solarSystemID="0" solarSystemName="" reinforceHour="0" allowAlliance="0" allowStandings="0" standingLevel="-10" taxRateAlliance="0.04" taxRateCorp="0" taxRateStandingHigh="0" taxRateStandingGood="0.04" taxRateStandingNeutral="0.05" taxRateStandingBad="0.05" taxRateStandingHorrible="0.05"/>
+      <row itemID="1010870267594" solarSystemID="0" solarSystemName="" reinforceHour="0" allowAlliance="0" allowStandings="0" standingLevel="-10" taxRateAlliance="0.045" taxRateCorp="0" taxRateStandingHigh="0" taxRateStandingGood="0.04" taxRateStandingNeutral="0.045" taxRateStandingBad="0.08" taxRateStandingHorrible="0.11"/>
+      <row itemID="1010870217693" solarSystemID="0" solarSystemName="" reinforceHour="0" allowAlliance="0" allowStandings="0" standingLevel="-10" taxRateAlliance="0.045" taxRateCorp="0" taxRateStandingHigh="0" taxRateStandingGood="0.04" taxRateStandingNeutral="0.045" taxRateStandingBad="0.08" taxRateStandingHorrible="0.1"/>
+    </rowset>
+  </result>
+  <cachedUntil>2014-05-23 14:37:04</cachedUntil>
+</eveapi>
+

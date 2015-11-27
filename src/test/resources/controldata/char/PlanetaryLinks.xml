@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-12-03 00:03:34</currentTime>
+  <result>
+    <rowset name="links" key="sourcePinID" columns="sourcePinID,destinationPinID,linkLevel">
+      <row sourcePinID="1000357877919" destinationPinID="1002203900751" linkLevel="0" />
+      <row sourcePinID="1000357877919" destinationPinID="1002203900753" linkLevel="0" />
+      <row sourcePinID="1000357877919" destinationPinID="1002965351544" linkLevel="0" />
+      <row sourcePinID="1002203900751" destinationPinID="1002944824411" linkLevel="1" />
+      <row sourcePinID="1002203900751" destinationPinID="1002944841230" linkLevel="1" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-12-03 01:03:34</cachedUntil>
+</eveapi>

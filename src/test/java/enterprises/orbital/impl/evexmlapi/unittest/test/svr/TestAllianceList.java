@@ -1,0 +1,33 @@
+package enterprises.orbital.impl.evexmlapi.unittest.test.svr;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.Collection;
+
+import org.junit.Test;
+import org.xml.sax.SAXException;
+
+import enterprises.orbital.evexmlapi.eve.IAlliance;
+import enterprises.orbital.evexmlapi.eve.IEveAPI;
+import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
+import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
+
+public class TestAllianceList extends ApiTestSetup {
+
+	@Test
+	public void testGetAllianceList() throws IOException, ParseException,
+			SAXException {
+		// Retrieve response
+		IEveAPI request = requestor.getEveAPIService();
+		Collection<IAlliance> response = request.requestAlliances();
+
+		// Compute XML for comparison
+		String testData = EveAllianceListConverter.convert(request, response);
+
+		// Perform test
+		ApiTestConnector.testComparison(ApiTestConnector.EVE_ALLIANCE_LIST_CTL,
+				ApiTestConnector.EVE_ALLIANCE_LIST_TST,
+				ApiTestConnector.EVE_ALLIANCE_LIST_OUT, testData);
+	}
+
+}

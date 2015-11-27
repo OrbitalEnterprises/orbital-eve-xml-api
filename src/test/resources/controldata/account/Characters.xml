@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-19 12:59:16</currentTime>
+  <result>
+    <rowset name="characters" key="characterID" columns="name,characterID,corporationName,corporationID">
+      <row name="shabby operose" characterID="90166386" corporationName="Dark Planet Ventures" corporationID="98007623" />
+      <row name="dashing crumenal" characterID="90195061" corporationName="Dark Planet Ventures" corporationID="98007623" />
+      <row name="reygar burnt" characterID="1801683792" corporationName="Dark Planet Ventures" corporationID="98007623" />
+    </rowset>
+  </result>
+  <cachedUntil>2012-12-19 13:15:44</cachedUntil>
+</eveapi>

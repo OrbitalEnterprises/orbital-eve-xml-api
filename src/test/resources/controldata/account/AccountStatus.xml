@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-10-29 12:04:28</currentTime>
+  <result>
+    <paidUntil>2015-05-05 04:56:46</paidUntil>
+    <createDate>2010-05-16 03:24:00</createDate>
+    <logonCount>2827</logonCount>
+    <logonMinutes>161197</logonMinutes>
+    <rowset name="multiCharacterTraining" key="trainingEnd" columns="trainingEnd">
+      <row trainingEnd="2014-12-11 14:15:16" />
+      <row trainingEnd="2014-12-11 20:20:20" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-10-29 13:01:28</cachedUntil>
+</eveapi>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-19 12:59:33</currentTime>
+  <result>
+    <rowset name="currentCorporation" key="medalID" columns="medalID,reason,status,issuerID,issued">
+      <row medalID="73604" reason="another award test" status="private" issuerID="2012067258" issued="2011-09-27 01:27:55" />
+    </rowset>
+    <rowset name="otherCorporations" key="medalID" columns="medalID,reason,status,issuerID,issued,corporationID,title,description" />
+  </result>
+  <cachedUntil>2012-12-19 18:59:33</cachedUntil>
+</eveapi>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-06-09 08:14:06</currentTime>
+  <result>
+    <key accessMask="268435455" type="Account" expires="2015-06-09 07:17:53">
+      <rowset name="characters" key="characterID" columns="characterID,characterName,corporationID,corporationName,allianceID,allianceName,factionID,factionName">
+        <row characterID="92882511" characterName="Mann im Mond" corporationID="1000006" corporationName="Deep Core Mining Inc." allianceID="0" allianceName="" factionID="0" factionName="" />
+        <row characterID="92882511" characterName="Mann im Mond" corporationID="1000006" corporationName="Deep Core Mining Inc." allianceID="0" allianceName="" factionID="0" factionName="" />
+      </rowset>
+    </key>
+  </result>
+  <cachedUntil>2014-06-09 08:19:06</cachedUntil>
+</eveapi>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-19 12:59:54</currentTime>
+  <result>
+    <rowset name="characters" key="shareholderID" columns="shareholderID,shareholderName,shareholderCorporationID,shareholderCorporationName,shares" />
+    <rowset name="corporations" key="shareholderID" columns="shareholderID,shareholderName,shares">
+      <row shareholderID="98007623" shareholderName="Dark Planet Ventures" shares="1000" />
+    </rowset>
+  </result>
+  <cachedUntil>2012-12-19 13:56:54</cachedUntil>
+</eveapi>

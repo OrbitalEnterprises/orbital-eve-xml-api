@@ -1,0 +1,63 @@
+<eveapi version="2">
+<currentTime>2015-07-16 11:40:09</currentTime>
+<result>
+<rowset name="folders" key="folderID" columns="folderName">
+<row folderID="0" folderName="">
+<rowset name="bookmarks" key="bookmarkID" columns="creatorID,created,itemID,typeID,locationID,x,y,z,memo,note">
+<row bookmarkID="551161729" creatorID="0" created="2010-05-22 14:17:00" itemID="60003895" typeID="1529" locationID="30001405" x="0" y="0" z="0" memo="Kakakela VI - Moon 15 - Caldari Navy Assembly Plant ( Station )" note=""/>
+<row bookmarkID="551539060" creatorID="0" created="2010-05-24 01:00:00" itemID="60002338" typeID="1529" locationID="30002767" x="0" y="0" z="0" memo="Kubinen VI - Moon 2 - Lai Dai Corporation Factory ( Station )" note=""/>
+<row bookmarkID="552650466" creatorID="0" created="2010-05-30 04:20:00" itemID="60012610" typeID="1529" locationID="30005008" x="0" y="0" z="0" memo="Aeschee X - Moon 20 - Sisters of EVE Academy ( Station )" note=""/>
+<row bookmarkID="552650477" creatorID="0" created="2010-05-30 04:20:00" itemID="40317210" typeID="15" locationID="30005008" x="0" y="0" z="0" memo="Aeschee X - Asteroid Belt 7 ( Asteroid Belt )" note=""/>
+<row bookmarkID="554743770" creatorID="0" created="2010-06-08 01:39:00" itemID="60012526" typeID="2502" locationID="30000001" x="0" y="0" z="0" memo="Tanoo V - Moon 1 - Ammatar Consulate Bureau" note=""/>
+<row bookmarkID="559179654" creatorID="0" created="2010-06-29 03:06:00" itemID="60005686" typeID="2497" locationID="30002053" x="0" y="0" z="0" memo="Hek VIII - Moon 12 - Boundless Creation Factory ( Station )" note=""/>
+<row bookmarkID="577211149" creatorID="0" created="2010-09-19 03:56:00" itemID="60005689" typeID="2497" locationID="30002050" x="0" y="0" z="0" memo="Hagilur V - Moon 8 - Boundless Creation Factory ( Station )" note=""/>
+<row bookmarkID="584759035" creatorID="0" created="2010-10-24 13:34:00" itemID="30002667" typeID="5" locationID="20000390" x="0" y="0" z="0" memo="Chelien ( Solar System )" note="corp mining"/>
+<row bookmarkID="590560131" creatorID="0" created="2010-11-20 03:50:21" itemID="60000094" typeID="1531" locationID="30003429" x="0" y="0" z="0" memo="Geffur VIII - Moon 10 - CBD Corporation Storage ( Station )" note=""/>
+<row bookmarkID="591285013" creatorID="0" created="2010-11-23 00:32:05" itemID="40337323" typeID="17774" locationID="30003430" x="0" y="0" z="0" memo="Oppold IX - Ice Field 1 ( Asteroid Belt )" note=""/>
+<row bookmarkID="597853940" creatorID="0" created="2010-12-20 03:26:54" itemID="0" typeID="5" locationID="30003399" x="265915695104" y="-45539500032" z="-33349515264" memo="Customs Office (Vorsk VI) ( Planetary Customs Offices )" note=""/>
+<row bookmarkID="599584558" creatorID="0" created="2010-12-27 01:41:06" itemID="60000052" typeID="1531" locationID="30003395" x="0" y="0" z="0" memo="Roleinn X - Moon 13 - CBD Corporation Storage ( Station )" note=""/>
+<row bookmarkID="602960935" creatorID="0" created="2011-01-09 03:49:31" itemID="60011452" typeID="3868" locationID="30003398" x="0" y="0" z="0" memo="Anbald I - Pend Insurance Vault ( Station )" note=""/>
+<row bookmarkID="602981232" creatorID="0" created="2011-01-09 05:49:19" itemID="60003469" typeID="3872" locationID="30000142" x="0" y="0" z="0" memo="Jita IV - Caldari Business Tribunal Information Center" note=""/>
+<row bookmarkID="609148159" creatorID="0" created="2011-02-01 21:50:55" itemID="0" typeID="5" locationID="30003399" x="-772094716688.953" y="131210782878.866" z="1797394692899.2" memo="random spot" note=""/>
+<row bookmarkID="610422176" creatorID="0" created="2011-02-06 20:04:22" itemID="60001279" typeID="4024" locationID="30003429" x="0" y="0" z="0" memo="Geffur VIII - Moon 13 - Wiyrkomi Corporation Factory ( Station )" note=""/>
+<row bookmarkID="613783356" creatorID="0" created="2011-02-20 01:09:02" itemID="60001270" typeID="4024" locationID="30003428" x="0" y="0" z="0" memo="Hilfhurmur X - Wiyrkomi Corporation Factory ( Station )" note=""/>
+<row bookmarkID="619291726" creatorID="0" created="2011-03-13 03:12:25" itemID="60001360" typeID="4024" locationID="30003397" x="0" y="0" z="0" memo="Bongveber VII - Moon 5 - Wiyrkomi Corporation Factory ( Station )" note=""/>
+<row bookmarkID="656229575" creatorID="0" created="2011-08-14 23:01:32" itemID="60010552" typeID="56" locationID="30003381" x="0" y="0" z="0" memo="Eust I - Impetus Development Studio ( Station )" note=""/>
+<row bookmarkID="670353177" creatorID="0" created="2011-10-17 01:47:36" itemID="60014083" typeID="2497" locationID="30003402" x="0" y="0" z="0" memo="Totkubad III - Thukker Mix Factory ( Station )" note=""/>
+<row bookmarkID="691811454" creatorID="0" created="2012-01-22 15:17:42" itemID="60005302" typeID="2499" locationID="30003379" x="0" y="0" z="0" memo="level 4 - mining" note=""/>
+<row bookmarkID="683707572" creatorID="0" created="2011-12-16 13:15:45" itemID="60002128" typeID="1529" locationID="30002093" x="0" y="0" z="0" memo="ME research" note=""/>
+<row bookmarkID="676935328" creatorID="0" created="2011-11-14 03:57:32" itemID="0" typeID="5" locationID="30003396" x="-468032373920" y="-1227448939" z="-501950176672" memo="mining 3" note=""/>
+<row bookmarkID="675579040" creatorID="0" created="2011-11-08 03:51:34" itemID="0" typeID="5" locationID="30003396" x="-468032344830" y="-1227447336" z="-501950202223" memo="mining 2" note=""/>
+<row bookmarkID="668976405" creatorID="0" created="2011-10-11 03:04:43" itemID="0" typeID="5" locationID="30003396" x="-468032366923" y="-1227447992" z="-501950195310" memo="mining 1" note=""/>
+<row bookmarkID="609153319" creatorID="0" created="2011-02-01 22:13:21" itemID="0" typeID="5" locationID="30003396" x="31839839827.3543" y="82657905.5774069" z="-43350471149.1666" memo="random spot" note=""/>
+<row bookmarkID="601289904" creatorID="0" created="2011-01-02 22:00:58" itemID="60000055" typeID="1531" locationID="30003394" x="0" y="0" z="0" memo="CBD - Freatlidur IX - Moon 15 - CBD Corporation Storage ( Station )" note=""/>
+<row bookmarkID="595426434" creatorID="0" created="2010-12-10 03:37:41" itemID="0" typeID="5" locationID="30003399" x="47729246208" y="-8172908544" z="-9394320384" memo="Customs Office (Vorsk II) ( Planetary Customs Offices )" note=""/>
+<row bookmarkID="595426349" creatorID="0" created="2010-12-10 03:37:07" itemID="0" typeID="5" locationID="30003399" x="30820130816" y="-5277828096" z="-23684714496" memo="Customs Office (Vorsk I) ( Planetary Customs Offices )" note=""/>
+<row bookmarkID="591770208" creatorID="0" created="2010-11-25 04:01:57" itemID="60000100" typeID="1531" locationID="30003430" x="0" y="0" z="0" memo="Oppold IX - Moon 6 - CBD Corporation Storage ( Station )" note=""/>
+<row bookmarkID="588699402" creatorID="0" created="2010-11-12 02:09:01" itemID="60014776" typeID="2500" locationID="30003408" x="0" y="0" z="0" memo="Evettullur VI - Republic Military School ( Station )" note=""/>
+<row bookmarkID="553793712" creatorID="0" created="2010-06-04 02:51:00" itemID="60010252" typeID="3867" locationID="30003017" x="0" y="0" z="0" memo="Harerget V - Moon 1 - CreoDron Factory ( Station )" note=""/>
+<row bookmarkID="551542895" creatorID="0" created="2010-05-24 01:27:00" itemID="40175690" typeID="15" locationID="30002767" x="0" y="0" z="0" memo="Kubinen IX - Asteroid Belt 2 ( Asteroid Belt )" note=""/>
+<row bookmarkID="551166605" creatorID="0" created="2010-05-22 14:42:00" itemID="40089528" typeID="15" locationID="30001406" x="0" y="0" z="0" memo="Kamokor VIII - Asteroid Belt 1 ( Asteroid Belt )" note=""/>
+<row bookmarkID="551166366" creatorID="0" created="2010-05-22 14:41:00" itemID="60002254" typeID="1529" locationID="30001406" x="0" y="0" z="0" memo="Kamokor V - Moon 4 - Lai Dai Corporation Factory ( Station )" note=""/>
+<row bookmarkID="551160646" creatorID="0" created="2010-05-22 14:12:00" itemID="40089458" typeID="15" locationID="30001405" x="0" y="0" z="0" memo="Kakakela VII - Asteroid Belt 3 ( Asteroid Belt )" note=""/>
+<row bookmarkID="551059035" creatorID="0" created="2010-05-22 02:19:00" itemID="40089373" typeID="15" locationID="30001404" x="0" y="0" z="0" memo="Airkio IX - Asteroid Belt 1 ( Asteroid Belt )" note=""/>
+<row bookmarkID="551058236" creatorID="0" created="2010-05-22 02:14:00" itemID="60002245" typeID="1529" locationID="30001404" x="0" y="0" z="0" memo="Airkio VII - Moon 3 - Lai Dai Corporation Factory ( Station )" note=""/>
+<row bookmarkID="550841573" creatorID="0" created="2010-05-21 01:59:00" itemID="60015001" typeID="1529" locationID="30011407" x="0" y="0" z="0" memo="Akiainavas III - School of Applied Knowledge ( Station )" note=""/>
+<row bookmarkID="550841504" creatorID="0" created="2010-05-21 01:59:00" itemID="30001387" typeID="5" locationID="20000203" x="0" y="0" z="0" memo="Isikano ( Solar System )" note=""/>
+<row bookmarkID="549951357" creatorID="0" created="2010-05-17 00:45:00" itemID="40340644" typeID="15" locationID="30011407" x="0" y="0" z="0" memo="Akiainavas VI - Asteroid Belt 15 ( Asteroid Belt )" note=""/>
+<row bookmarkID="670340807" creatorID="0" created="2011-10-17 00:17:19" itemID="60014770" typeID="2500" locationID="30002051" x="0" y="0" z="0" memo="Anher V - Republic Military School ( Station )" note=""/>
+<row bookmarkID="670339871" creatorID="0" created="2011-10-17 00:09:50" itemID="60014143" typeID="2497" locationID="30002065" x="0" y="0" z="0" memo="Lasleinur IV - Moon 16 - Thukker Mix Factory ( Station )" note=""/>
+<row bookmarkID="669855354" creatorID="0" created="2011-10-15 03:14:46" itemID="60010555" typeID="56" locationID="30003385" x="0" y="0" z="0" memo="Evuldgenzo VI - Moon 2 - Impetus Development Studio ( Station )" note=""/>
+<row bookmarkID="619556561" creatorID="0" created="2011-03-14 00:22:34" itemID="60000043" typeID="1531" locationID="30003393" x="0" y="0" z="0" memo="corp hangar" note=""/>
+<row bookmarkID="617212718" creatorID="0" created="2011-03-05 04:50:21" itemID="60001354" typeID="4024" locationID="30003394" x="0" y="0" z="0" memo="Wiy lvl 3/4 - Freatlidur V - Moon 11 - Wiyrkomi Corporation Factory ( Station )" note=""/>
+<row bookmarkID="597820601" creatorID="0" created="2010-12-19 23:56:46" itemID="0" typeID="5" locationID="30003399" x="-57128288256" y="9782775808" z="-17010904064" memo="Customs Office (Vorsk III) ( Planetary Customs Offices )" note=""/>
+<row bookmarkID="553806227" creatorID="0" created="2010-06-04 04:09:00" itemID="60000541" typeID="4024" locationID="30002764" x="0" y="0" z="0" memo="Hatakani VI - Moon 4 - Hyasyoda Corporation Refinery ( Station )" note=""/>
+<row bookmarkID="552192060" creatorID="0" created="2010-05-28 02:55:00" itemID="60012607" typeID="1531" locationID="30005001" x="0" y="0" z="0" memo="Arnon IX - Moon 3 - Sisters of EVE Bureau ( Station )" note=""/>
+<row bookmarkID="551156076" creatorID="0" created="2010-05-22 13:48:00" itemID="40340616" typeID="15" locationID="30011407" x="0" y="0" z="0" memo="Akiainavas VI - Asteroid Belt 1 ( Asteroid Belt )" note=""/>
+</rowset>
+</row>
+</rowset>
+</result>
+<cachedUntil>2015-07-16 12:40:09</cachedUntil>
+</eveapi>
+

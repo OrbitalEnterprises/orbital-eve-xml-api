@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-20 22:54:16</currentTime>
+  <result>
+    <factionID>500004</factionID>
+    <factionName>Gallente Federation</factionName>
+    <enlisted>2012-06-21 01:32:00</enlisted>
+    <currentRank>0</currentRank>
+    <highestRank>0</highestRank>
+    <killsYesterday>0</killsYesterday>
+    <killsLastWeek>0</killsLastWeek>
+    <killsTotal>0</killsTotal>
+    <victoryPointsYesterday>0</victoryPointsYesterday>
+    <victoryPointsLastWeek>0</victoryPointsLastWeek>
+    <victoryPointsTotal>0</victoryPointsTotal>
+  </result>
+  <cachedUntil>2012-12-20 23:51:16</cachedUntil>
+</eveapi>

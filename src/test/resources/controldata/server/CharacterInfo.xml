@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2012-12-19 22:53:01</currentTime>
+  <result>
+    <characterID>1801683792</characterID>
+    <characterName>reygar burnt</characterName>
+    <race>Caldari</race>
+    <bloodline>Deteis</bloodline>
+    <accountBalance>385574791.30</accountBalance>
+    <skillPoints>43447706</skillPoints>
+    <shipName>reygar burnt's Badger</shipName>
+    <shipTypeID>648</shipTypeID>
+    <shipTypeName>Badger</shipTypeName>
+    <corporationID>98007623</corporationID>
+    <corporation>Dark Planet Ventures</corporation>
+    <corporationDate>2010-12-14 02:31:00</corporationDate>
+    <lastKnownLocation>Maturat</lastKnownLocation>
+    <securityStatus>5.0105335273492</securityStatus>
+    <rowset name="employmentHistory" key="recordID" columns="recordID,corporationID,startDate">
+      <row recordID="15517677" corporationID="98007623" startDate="2010-12-14 02:31:00" />
+      <row recordID="14810220" corporationID="109275102" startDate="2010-09-13 02:58:00" />
+      <row recordID="13755312" corporationID="1000044" startDate="2010-05-16 03:38:00" />
+    </rowset>
+  </result>
+  <cachedUntil>2012-12-19 23:50:01</cachedUntil>
+</eveapi>
