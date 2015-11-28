@@ -40,7 +40,7 @@ example displays current server status:
 IEveXmlApi apiHandle = new EveXmlApiAdapter();
 IServerAPI serverAPIHandle = apiHandle.getServerAPIService();
 IServerStatus status = serverAPIHandle.requestServerStatus();
-if (!serverAPI.isError()) {
+if (!serverAPIHandle.isError()) {
   if (status.isServerOpen()) {
     System.out.println("EVE is online with " + status.getOnlinePlayers() + " players.");
   } else {
