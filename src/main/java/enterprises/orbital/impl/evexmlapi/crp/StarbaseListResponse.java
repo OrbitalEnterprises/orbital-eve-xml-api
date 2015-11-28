@@ -9,8 +9,7 @@ import java.util.Map.Entry;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class StarbaseListResponse extends ApiResponse {
-  private static final long             serialVersionUID = 3095758107859748906L;
-  private final Collection<ApiStarbase> starbases        = new HashSet<ApiStarbase>();
+  private final Collection<ApiStarbase> starbases = new HashSet<ApiStarbase>();
 
   public void addStarbase(ApiStarbase starbase) {
     starbases.add(starbase);

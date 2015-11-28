@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.crp.IShareholder;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class ShareholdersParser extends AbstractApiParser<ShareholdersResponse, Collection<IShareholder>> {
-  public ShareholdersParser() {
-    super(ShareholdersResponse.class, ApiEndpoint.CRP_SHAREHOLDERS_V2);
+  public ShareholdersParser(ApiConnector connector) {
+    super(connector, ShareholdersResponse.class, ApiEndpoint.CRP_SHAREHOLDERS_V2);
   }
 
   @Override

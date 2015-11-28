@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.shared.IContract;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractContractsParser extends AbstractApiParser<ContractsResponse, Collection<IContract>> {
-  protected AbstractContractsParser(ApiEndpoint endpoint) {
-    super(ContractsResponse.class, endpoint);
+  protected AbstractContractsParser(ApiConnector connector, ApiEndpoint endpoint) {
+    super(connector, ContractsResponse.class, endpoint);
   }
 
   @Override

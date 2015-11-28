@@ -12,13 +12,14 @@ import enterprises.orbital.evexmlapi.chr.INotificationText;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class NotificationTextsParser extends AbstractApiParser<NotificationTextsResponse, Collection<INotificationText>> {
   protected long[] notificationID;
 
-  public NotificationTextsParser(long... notificationID) {
-    super(NotificationTextsResponse.class, ApiEndpoint.CHR_NOTIFICATION_TEXTS_V2);
+  public NotificationTextsParser(ApiConnector connector, long... notificationID) {
+    super(connector, NotificationTextsResponse.class, ApiEndpoint.CHR_NOTIFICATION_TEXTS_V2);
     this.notificationID = notificationID;
   }
 

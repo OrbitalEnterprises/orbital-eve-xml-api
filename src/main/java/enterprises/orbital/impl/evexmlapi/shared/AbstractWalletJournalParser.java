@@ -13,6 +13,7 @@ import enterprises.orbital.evexmlapi.shared.IWalletJournalEntry;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractWalletJournalParser extends AbstractApiParser<WalletJournalResponse, Collection<IWalletJournalEntry>> {
@@ -22,8 +23,8 @@ public abstract class AbstractWalletJournalParser extends AbstractApiParser<Wall
   protected int              accountKey;
   protected Long             beforeRefID;
 
-  public AbstractWalletJournalParser(ApiEndpoint endpoint, int accountKey, Long beforeRefID) {
-    super(WalletJournalResponse.class, endpoint);
+  public AbstractWalletJournalParser(ApiConnector connector, ApiEndpoint endpoint, int accountKey, Long beforeRefID) {
+    super(connector, WalletJournalResponse.class, endpoint);
     this.accountKey = accountKey;
     this.beforeRefID = beforeRefID;
   }

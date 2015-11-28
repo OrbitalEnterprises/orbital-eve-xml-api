@@ -9,13 +9,14 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.shared.IMedal;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractMedalsParser<M extends Medal, T extends IMedal> extends AbstractApiParser<MedalsResponse, Collection<T>> {
   private final Class<M> medalClass;
 
-  protected AbstractMedalsParser(ApiEndpoint endpoint, Class<M> medalClass) {
-    super(MedalsResponse.class, endpoint);
+  protected AbstractMedalsParser(ApiConnector connector, ApiEndpoint endpoint, Class<M> medalClass) {
+    super(connector, MedalsResponse.class, endpoint);
     this.medalClass = medalClass;
   }
 

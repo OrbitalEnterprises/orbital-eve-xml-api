@@ -7,11 +7,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.map.IMapJump;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class MapJumpsParser extends AbstractApiParser<MapJumpsResponse, IMapJump> {
-  public MapJumpsParser() {
-    super(MapJumpsResponse.class, ApiEndpoint.MAP_JUMPS_V2);
+  public MapJumpsParser(ApiConnector connector) {
+    super(connector, MapJumpsResponse.class, ApiEndpoint.MAP_JUMPS_V2);
   }
 
   @Override

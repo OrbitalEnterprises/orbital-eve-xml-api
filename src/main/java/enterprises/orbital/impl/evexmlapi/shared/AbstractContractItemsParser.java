@@ -10,13 +10,14 @@ import enterprises.orbital.evexmlapi.shared.IContractItem;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractContractItemsParser extends AbstractApiParser<ContractItemsResponse, Collection<IContractItem>> {
   protected Long contractID;
 
-  protected AbstractContractItemsParser(ApiEndpoint endpoint, Long contractID) {
-    super(ContractItemsResponse.class, endpoint);
+  protected AbstractContractItemsParser(ApiConnector connector, ApiEndpoint endpoint, Long contractID) {
+    super(connector, ContractItemsResponse.class, endpoint);
     this.contractID = contractID;
   }
 

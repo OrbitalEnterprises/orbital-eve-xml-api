@@ -10,13 +10,14 @@ import enterprises.orbital.evexmlapi.chr.IPlanetaryPin;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class PlanetaryPinParser extends AbstractApiParser<PlanetaryPinResponse, Collection<IPlanetaryPin>> {
   protected Long planetID;
 
-  public PlanetaryPinParser(Long planetID) {
-    super(PlanetaryPinResponse.class, ApiEndpoint.CHR_PLANETARY_PINS_V2);
+  public PlanetaryPinParser(ApiConnector connector, Long planetID) {
+    super(connector, PlanetaryPinResponse.class, ApiEndpoint.CHR_PLANETARY_PINS_V2);
     this.planetID = planetID;
   }
 

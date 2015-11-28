@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.eve.IConquerableStation;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class ConquerableStationListParser extends AbstractApiParser<ConquerableStationListResponse, Collection<IConquerableStation>> {
-  public ConquerableStationListParser() {
-    super(ConquerableStationListResponse.class, ApiEndpoint.EVE_CONQUERABLE_STATION_LIST_V2);
+  public ConquerableStationListParser(ApiConnector connector) {
+    super(connector, ConquerableStationListResponse.class, ApiEndpoint.EVE_CONQUERABLE_STATION_LIST_V2);
   }
 
   @Override

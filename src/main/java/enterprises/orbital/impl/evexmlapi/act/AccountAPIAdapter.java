@@ -9,26 +9,28 @@ import enterprises.orbital.evexmlapi.act.IAccountStatus;
 import enterprises.orbital.evexmlapi.act.ICharacter;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 
 public class AccountAPIAdapter extends AbstractAPIRequestAdapter implements IAccountAPI {
 
-  public AccountAPIAdapter(int keyID, String vCode) {
+  public AccountAPIAdapter(ApiConnector connector, int keyID, String vCode) {
+    super(connector);
     setAuth(new ApiAuth(keyID, 0, vCode));
   }
 
   @Override
   public IAccountStatus requestAccountStatus() throws IOException {
-    return new AccountStatusParser().retrieveResponse(this);
+    return new AccountStatusParser(connector).retrieveResponse(this);
   }
 
   @Override
   public Collection<ICharacter> requestCharacters() throws IOException {
-    return new CharactersParser().retrieveResponse(this);
+    return new CharactersParser(connector).retrieveResponse(this);
   }
 
   @Override
   public IAPIKeyInfo requestAPIKeyInfo() throws IOException {
-    return new APIKeyInfoParser().retrieveResponse(this);
+    return new APIKeyInfoParser(connector).retrieveResponse(this);
   }
 
 }

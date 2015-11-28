@@ -7,11 +7,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.map.IMapKill;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class MapKillsParser extends AbstractApiParser<MapKillsResponse, IMapKill> {
-  public MapKillsParser() {
-    super(MapKillsResponse.class, ApiEndpoint.MAP_KILLS_V2);
+  public MapKillsParser(ApiConnector connector) {
+    super(connector, MapKillsResponse.class, ApiEndpoint.MAP_KILLS_V2);
   }
 
   @Override

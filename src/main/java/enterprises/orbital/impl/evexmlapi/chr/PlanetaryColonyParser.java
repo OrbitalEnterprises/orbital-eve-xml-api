@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.chr.IPlanetaryColony;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class PlanetaryColonyParser extends AbstractApiParser<PlanetaryColonyResponse, Collection<IPlanetaryColony>> {
-  public PlanetaryColonyParser() {
-    super(PlanetaryColonyResponse.class, ApiEndpoint.CHR_PLANETARY_COLONIES_V2);
+  public PlanetaryColonyParser(ApiConnector connector) {
+    super(connector, PlanetaryColonyResponse.class, ApiEndpoint.CHR_PLANETARY_COLONIES_V2);
   }
 
   @Override

@@ -9,27 +9,32 @@ import enterprises.orbital.evexmlapi.map.IMapJump;
 import enterprises.orbital.evexmlapi.map.IMapKill;
 import enterprises.orbital.evexmlapi.map.ISovereignty;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 
 public class MapAPIAdapter extends AbstractAPIRequestAdapter implements IMapAPI {
 
+  public MapAPIAdapter(ApiConnector connector) {
+    super(connector);
+  }
+
   @Override
   public Collection<IFacWarSystem> requestFacWarSystems() throws IOException {
-    return new FacWarSystemsParser().retrieveResponse(this);
+    return new FacWarSystemsParser(connector).retrieveResponse(this);
   }
 
   @Override
   public IMapJump requestJumps() throws IOException {
-    return new MapJumpsParser().retrieveResponse(this);
+    return new MapJumpsParser(connector).retrieveResponse(this);
   }
 
   @Override
   public IMapKill requestKills() throws IOException {
-    return new MapKillsParser().retrieveResponse(this);
+    return new MapKillsParser(connector).retrieveResponse(this);
   }
 
   @Override
   public ISovereignty requestSovereignty() throws IOException {
-    return new MapSovereigntyParser().retrieveResponse(this);
+    return new MapSovereigntyParser(connector).retrieveResponse(this);
   }
 
 }

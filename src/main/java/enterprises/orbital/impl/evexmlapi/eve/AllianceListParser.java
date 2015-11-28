@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.eve.IAlliance;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class AllianceListParser extends AbstractApiParser<AllianceListResponse, Collection<IAlliance>> {
-  public AllianceListParser() {
-    super(AllianceListResponse.class, ApiEndpoint.EVE_ALLIANCE_LIST_V2);
+  public AllianceListParser(ApiConnector connector) {
+    super(connector, AllianceListResponse.class, ApiEndpoint.EVE_ALLIANCE_LIST_V2);
   }
 
   @Override

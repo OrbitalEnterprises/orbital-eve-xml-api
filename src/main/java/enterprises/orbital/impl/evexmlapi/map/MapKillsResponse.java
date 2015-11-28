@@ -10,8 +10,7 @@ import enterprises.orbital.evexmlapi.map.ISystemKills;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class MapKillsResponse extends ApiResponse implements IMapKill {
-  private static final long        serialVersionUID = 1L;
-  private final List<ISystemKills> kills            = new ArrayList<ISystemKills>();
+  private final List<ISystemKills> kills = new ArrayList<ISystemKills>();
   private Date                     dataTime;
 
   @Override

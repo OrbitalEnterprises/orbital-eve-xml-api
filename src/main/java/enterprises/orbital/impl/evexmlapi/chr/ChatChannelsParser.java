@@ -10,11 +10,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.chr.IChatChannel;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class ChatChannelsParser extends AbstractApiParser<ChatChannelsResponse, Collection<IChatChannel>> {
-  public ChatChannelsParser() {
-    super(ChatChannelsResponse.class, ApiEndpoint.CHR_CHAT_CHANNELS_V2);
+  public ChatChannelsParser(ApiConnector connector) {
+    super(connector, ChatChannelsResponse.class, ApiEndpoint.CHR_CHAT_CHANNELS_V2);
   }
 
   @Override

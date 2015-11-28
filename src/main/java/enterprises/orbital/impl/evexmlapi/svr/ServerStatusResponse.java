@@ -4,9 +4,8 @@ import enterprises.orbital.evexmlapi.svr.IServerStatus;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class ServerStatusResponse extends ApiResponse implements IServerStatus {
-  private static final long serialVersionUID = 1L;
-  private boolean           serverOpen;
-  private int               onlinePlayers;
+  private boolean serverOpen;
+  private int     onlinePlayers;
 
   @Override
   public boolean isServerOpen() {

@@ -6,8 +6,7 @@ import java.util.Collection;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class AllianceListResponse extends ApiResponse {
-  private static final long             serialVersionUID = 9165746547343385274L;
-  private final Collection<ApiAlliance> alliances        = new ArrayList<ApiAlliance>();
+  private final Collection<ApiAlliance> alliances = new ArrayList<ApiAlliance>();
 
   public void addAlliance(ApiAlliance alliance) {
     alliances.add(alliance);

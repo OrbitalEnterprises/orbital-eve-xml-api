@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.crp.IOutpost;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class OutpostListParser extends AbstractApiParser<OutpostListResponse, Collection<IOutpost>> {
-  public OutpostListParser() {
-    super(OutpostListResponse.class, ApiEndpoint.CRP_OUTPOST_LIST_V2);
+  public OutpostListParser(ApiConnector connector) {
+    super(connector, OutpostListResponse.class, ApiEndpoint.CRP_OUTPOST_LIST_V2);
   }
 
   @Override

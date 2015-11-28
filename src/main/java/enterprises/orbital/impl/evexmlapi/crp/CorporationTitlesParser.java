@@ -11,11 +11,12 @@ import org.xml.sax.Attributes;
 import enterprises.orbital.evexmlapi.crp.ITitle;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class CorporationTitlesParser extends AbstractApiParser<CorporationTitlesResponse, Collection<ITitle>> {
-  public CorporationTitlesParser() {
-    super(CorporationTitlesResponse.class, ApiEndpoint.CRP_TITLES_V2);
+  public CorporationTitlesParser(ApiConnector connector) {
+    super(connector, CorporationTitlesResponse.class, ApiEndpoint.CRP_TITLES_V2);
   }
 
   @Override

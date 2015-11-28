@@ -6,15 +6,14 @@ import enterprises.orbital.evexmlapi.chr.ISkillInTraining;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class SkillInTrainingResponse extends ApiResponse implements ISkillInTraining {
-  private static final long serialVersionUID = 2174003334726975611L;
-  private Date              currentTQTime;
-  private Date              trainingEndTime;
-  private Date              trainingStartTime;
-  private int               trainingTypeID;
-  private int               trainingStartSP;
-  private int               trainingDestinationSP;
-  private int               trainingToLevel;
-  private boolean           skillInTraining;
+  private Date    currentTQTime;
+  private Date    trainingEndTime;
+  private Date    trainingStartTime;
+  private int     trainingTypeID;
+  private int     trainingStartSP;
+  private int     trainingDestinationSP;
+  private int     trainingToLevel;
+  private boolean skillInTraining;
 
   @Override
   public Date getCurrentTrainingQueueTime() {

@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.crp.IMemberMedal;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class MemberMedalsParser extends AbstractApiParser<MemberMedalsResponse, Collection<IMemberMedal>> {
-  public MemberMedalsParser() {
-    super(MemberMedalsResponse.class, ApiEndpoint.CRP_MEMBER_MEDALS_V2);
+  public MemberMedalsParser(ApiConnector connector) {
+    super(connector, MemberMedalsResponse.class, ApiEndpoint.CRP_MEMBER_MEDALS_V2);
   }
 
   @Override

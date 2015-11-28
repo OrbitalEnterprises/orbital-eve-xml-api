@@ -1,9 +1,8 @@
 package enterprises.orbital.evexmlapi;
 
-import java.beans.XMLEncoder;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.Serializable;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import enterprises.orbital.evexmlapi.act.IAccountAPI;
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
@@ -11,8 +10,9 @@ import enterprises.orbital.evexmlapi.crp.ICorporationAPI;
 import enterprises.orbital.evexmlapi.eve.IEveAPI;
 import enterprises.orbital.evexmlapi.map.IMapAPI;
 import enterprises.orbital.evexmlapi.svr.IServerAPI;
-import enterprises.orbital.impl.evexmlapi.EveApi;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.FileCopyConnector;
+import enterprises.orbital.impl.evexmlapi.LoggingConnector;
 import enterprises.orbital.impl.evexmlapi.act.AccountAPIAdapter;
 import enterprises.orbital.impl.evexmlapi.chr.CharacterAPIAdapter;
 import enterprises.orbital.impl.evexmlapi.crp.CorporationAPIAdapter;
@@ -21,52 +21,54 @@ import enterprises.orbital.impl.evexmlapi.map.MapAPIAdapter;
 import enterprises.orbital.impl.evexmlapi.svr.ServerAPIAdapter;
 
 public class EveXmlApiAdapter implements IEveXmlApi {
+  protected ApiConnector connector;
 
-  public void startup() {
-    // Change the connector if debugging desired
-    boolean saveResponses = Boolean.valueOf(System.getProperty("org.dps.core.impl.server.eveapi.saveresponses", "false"));
-    String responseDir = System.getProperty("org.dps.core.impl.server.eveapi.responsedir", System.getProperty("user.home"));
-    if (saveResponses) {
-      EveApi.setConnector(new FileCopyConnector(new File(responseDir + File.separator + "eveapiresponses")));
-    }
+  public EveXmlApiAdapter() throws URISyntaxException {
+    this(EveXmlApiConfig.get());
+  }
+
+  public EveXmlApiAdapter(EveXmlApiConfig config) throws URISyntaxException {
+    // Set the connector for all adapters from this instance
+    URI uri = new URI(config.getServerURI());
+    connector = new ApiConnector(uri, config.getAgent(), config.getConnectTimeout(), config.getReadTimeout());
+    if (config.isLogResponses()) connector = new LoggingConnector(connector);
+    if (config.isSaveResponses()) connector = new FileCopyConnector(connector, new File(config.getResponsesDirectory() + File.separator + "eveapiresponses"));
+  }
+
+  public EveXmlApiAdapter setConnector(ApiConnector connector) {
+    // WARNING: EXPERTS ONLY!
+    this.connector = connector;
+    return this;
   }
 
   @Override
   public IServerAPI getServerAPIService() {
-    return new ServerAPIAdapter();
+    return new ServerAPIAdapter(connector);
   }
 
   @Override
   public IAccountAPI getAccountAPIService(int userID, String apiKey) {
-    return new AccountAPIAdapter(userID, apiKey);
+    return new AccountAPIAdapter(connector, userID, apiKey);
   }
 
   @Override
   public ICharacterAPI getCharacterAPIService(int userID, String apiKey, long characterID) {
-    return new CharacterAPIAdapter(userID, characterID, apiKey);
+    return new CharacterAPIAdapter(connector, userID, characterID, apiKey);
   }
 
   @Override
   public ICorporationAPI getCorporationAPIService(int userID, String apiKey, long characterID) {
-    return new CorporationAPIAdapter(userID, characterID, apiKey);
+    return new CorporationAPIAdapter(connector, userID, characterID, apiKey);
   }
 
   @Override
   public IEveAPI getEveAPIService() {
-    return new EveAPIAdapter();
+    return new EveAPIAdapter(connector);
   }
 
   @Override
   public IMapAPI getMapAPIService() {
-    return new MapAPIAdapter();
-  }
-
-  public static String xmlPrettyPrint(Serializable proxy) {
-    ByteArrayOutputStream capture = new ByteArrayOutputStream();
-    XMLEncoder e = new XMLEncoder(capture);
-    e.writeObject(proxy);
-    e.close();
-    return capture.toString();
+    return new MapAPIAdapter(connector);
   }
 
 }

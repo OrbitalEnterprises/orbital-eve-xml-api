@@ -9,9 +9,8 @@ import enterprises.orbital.evexmlapi.eve.IFactionWar;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class EveFacWarStatsResponse extends ApiResponse implements IFacWarSummary {
-  private static final long         serialVersionUID = 1L;
-  private final List<IFactionStats> factions         = new ArrayList<IFactionStats>();
-  private final List<IFactionWar>   wars             = new ArrayList<IFactionWar>();
+  private final List<IFactionStats> factions = new ArrayList<IFactionStats>();
+  private final List<IFactionWar>   wars     = new ArrayList<IFactionWar>();
   private int                       killsYesterday;
   private int                       killsLastWeek;
   private int                       killsTotal;

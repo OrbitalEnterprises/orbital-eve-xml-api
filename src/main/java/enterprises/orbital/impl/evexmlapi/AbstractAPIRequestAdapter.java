@@ -5,9 +5,13 @@ import java.util.Date;
 import enterprises.orbital.evexmlapi.IResponse;
 
 public abstract class AbstractAPIRequestAdapter implements IResponse {
+  protected final ApiConnector connector;
+  protected ApiResponse        lastEveAPIResponse;
+  protected ApiAuth            cachedAuth;
 
-  protected ApiResponse lastEveAPIResponse;
-  protected ApiAuth     cachedAuth;
+  public AbstractAPIRequestAdapter(ApiConnector connector) {
+    this.connector = connector;
+  }
 
   protected void setAuth(ApiAuth auth) {
     cachedAuth = auth;

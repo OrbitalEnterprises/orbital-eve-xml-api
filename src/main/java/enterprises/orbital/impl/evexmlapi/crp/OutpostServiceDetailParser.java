@@ -10,13 +10,14 @@ import enterprises.orbital.evexmlapi.crp.IOutpostServiceDetail;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class OutpostServiceDetailParser extends AbstractApiParser<OutpostServiceDetailResponse, Collection<IOutpostServiceDetail>> {
   protected Long itemID;
 
-  public OutpostServiceDetailParser(Long itemID) {
-    super(OutpostServiceDetailResponse.class, ApiEndpoint.CRP_OUTPOST_SERVICE_DETAIL_V2);
+  public OutpostServiceDetailParser(ApiConnector connector, Long itemID) {
+    super(connector, OutpostServiceDetailResponse.class, ApiEndpoint.CRP_OUTPOST_SERVICE_DETAIL_V2);
     this.itemID = itemID;
   }
 

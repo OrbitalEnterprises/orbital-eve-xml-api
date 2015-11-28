@@ -15,30 +15,22 @@ import org.apache.commons.digester.Digester;
 import org.apache.http.client.utils.URIBuilder;
 import org.xml.sax.SAXException;
 
-import enterprises.orbital.base.PersistentProperty;
-import enterprises.orbital.base.PersistentPropertyKey;
+public class ApiConnector {
+  private final URI    baseURI;
+  private final String agentField;
+  private final int    connectTimeout;
+  private final int    readTimeout;
 
-public class ApiConnector implements PersistentPropertyKey<String> {
-  public static final String  AGENT_FIELD           = "agent";
-  public static final String  CONNECT_TIMEOUT_FIELD = "connectTimeout";
-  public static final String  READ_TIMEOUT_FIELD    = "readTimeout";
-  private static final String DEFAULT_EVE_API_URI   = "https://api.eveonline.com";
-  private final URI           baseURI;
-
-  public ApiConnector() {
-    this(null);
+  protected ApiConnector() {
+    this(null, null, -1, -1);
   }
 
-  public ApiConnector(URI uri) {
-    if (uri == null) {
-      try {
-        uri = new URI(DEFAULT_EVE_API_URI);
-      } catch (URISyntaxException e) {
-        // this should never happen
-        assert false;
-      }
-    }
-    this.baseURI = uri;
+  public ApiConnector(URI baseURI, String agentField, int connectTimeout, int readTimeout) {
+    super();
+    this.baseURI = baseURI;
+    this.agentField = agentField;
+    this.connectTimeout = connectTimeout;
+    this.readTimeout = readTimeout;
   }
 
   public <E extends ApiResponse> E execute(ApiRequest request, Digester digester, Class<E> clazz) throws IOException {
@@ -64,11 +56,7 @@ public class ApiConnector implements PersistentPropertyKey<String> {
       }
       URL getter = builder.build().toURL();
       URLConnection conn = getter.openConnection();
-      String agent = PersistentProperty.getProperty(this, ApiConnector.AGENT_FIELD, null);
-      int connectTimeout = PersistentProperty.getIntegerPropertyWithFallback(this, ApiConnector.CONNECT_TIMEOUT_FIELD, -1);
-      int readTimeout = PersistentProperty.getIntegerPropertyWithFallback(this, ApiConnector.READ_TIMEOUT_FIELD, -1);
-      if (agent != null) conn.setRequestProperty("User-Agent", agent);
-      // Timeout settings
+      if (agentField != null) conn.setRequestProperty("User-Agent", agentField);
       if (connectTimeout > -1) conn.setConnectTimeout(connectTimeout);
       if (readTimeout > -1) conn.setReadTimeout(readTimeout);
       return conn.getInputStream();
@@ -116,8 +104,4 @@ public class ApiConnector implements PersistentPropertyKey<String> {
     return this;
   }
 
-  @Override
-  public String getPeristentPropertyKey(String field) {
-    return ApiConnector.class.getCanonicalName() + "." + field;
-  }
 }

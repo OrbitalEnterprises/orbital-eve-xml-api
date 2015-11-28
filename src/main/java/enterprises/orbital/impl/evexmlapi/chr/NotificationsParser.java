@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.chr.INotification;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class NotificationsParser extends AbstractApiParser<NotificationsResponse, Collection<INotification>> {
-  public NotificationsParser() {
-    super(NotificationsResponse.class, ApiEndpoint.CHR_NOTIFICATIONS_V2);
+  public NotificationsParser(ApiConnector connector) {
+    super(connector, NotificationsResponse.class, ApiEndpoint.CHR_NOTIFICATIONS_V2);
   }
 
   @Override

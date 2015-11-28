@@ -13,26 +13,24 @@ import enterprises.orbital.evexmlapi.crp.IStarbaseDetail;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class StarbaseDetailResponse extends ApiResponse implements IStarbaseDetail {
-  private static final long serialVersionUID = -8846277913444962361L;
-
   // status settings
-  private int               state;
-  private Date              stateTimestamp;
-  private Date              onlineTimestamp;
+  private int              state;
+  private Date             stateTimestamp;
+  private Date             onlineTimestamp;
 
   // general settings
-  private int               usageFlags;
-  private int               deployFlags;
-  private boolean           allowCorporationMembers;
-  private boolean           allowAllianceMembers;
+  private int              usageFlags;
+  private int              deployFlags;
+  private boolean          allowCorporationMembers;
+  private boolean          allowAllianceMembers;
 
   // combat settings
-  private long              useStandingsFrom;
-  private ApiCombatSetting  onStandingDrop;
-  private ApiCombatSetting  onStatusDrop;
-  private ApiCombatSetting  onAggression;
-  private ApiCombatSetting  onCorporationWar;
-  Map<Integer, Integer>     fuelMap          = new HashMap<Integer, Integer>();
+  private long             useStandingsFrom;
+  private ApiCombatSetting onStandingDrop;
+  private ApiCombatSetting onStatusDrop;
+  private ApiCombatSetting onAggression;
+  private ApiCombatSetting onCorporationWar;
+  Map<Integer, Integer>    fuelMap = new HashMap<Integer, Integer>();
 
   @Override
   public int getUsageFlags() {

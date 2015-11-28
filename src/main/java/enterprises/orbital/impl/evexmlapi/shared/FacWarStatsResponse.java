@@ -6,19 +6,18 @@ import enterprises.orbital.evexmlapi.shared.IFacWarStats;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class FacWarStatsResponse extends ApiResponse implements IFacWarStats {
-  private static final long serialVersionUID = 799330788572201650L;
-  private int               factionID;
-  private String            factionName;
-  private Date              enlisted;
-  private int               currentRank;
-  private int               highestRank;
-  private int               killsYesterday;
-  private int               killsLastWeek;
-  private int               killsTotal;
-  private int               victoryPointsYesterday;
-  private int               victoryPointsLastWeek;
-  private int               victoryPointsTotal;
-  private int               pilots;
+  private int    factionID;
+  private String factionName;
+  private Date   enlisted;
+  private int    currentRank;
+  private int    highestRank;
+  private int    killsYesterday;
+  private int    killsLastWeek;
+  private int    killsTotal;
+  private int    victoryPointsYesterday;
+  private int    victoryPointsLastWeek;
+  private int    victoryPointsTotal;
+  private int    pilots;
 
   @Override
   public int getFactionID() {

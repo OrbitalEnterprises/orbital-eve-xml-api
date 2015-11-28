@@ -6,8 +6,7 @@ import java.util.Set;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class MemberTrackingResponse extends ApiResponse {
-  private static final long serialVersionUID = 783191132549057487L;
-  Set<ApiMember>            members          = new HashSet<ApiMember>();
+  private final Set<ApiMember> members = new HashSet<ApiMember>();
 
   public void addMember(ApiMember member) {
     members.add(member);

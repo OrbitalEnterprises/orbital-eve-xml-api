@@ -7,13 +7,14 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.shared.IStandingSet;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractStandingsParser extends AbstractApiParser<StandingsResponse, IStandingSet> {
   protected String path;
 
-  protected AbstractStandingsParser(ApiEndpoint endpoint, String path) {
-    super(StandingsResponse.class, endpoint);
+  protected AbstractStandingsParser(ApiConnector connector, ApiEndpoint endpoint, String path) {
+    super(connector, StandingsResponse.class, endpoint);
     this.path = path;
   }
 

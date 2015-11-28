@@ -10,13 +10,14 @@ import enterprises.orbital.evexmlapi.chr.IPlanetaryLink;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class PlanetaryLinkParser extends AbstractApiParser<PlanetaryLinkResponse, Collection<IPlanetaryLink>> {
   protected Long planetID;
 
-  public PlanetaryLinkParser(Long planetID) {
-    super(PlanetaryLinkResponse.class, ApiEndpoint.CHR_PLANETARY_LINKS_V2);
+  public PlanetaryLinkParser(ApiConnector connector, Long planetID) {
+    super(connector, PlanetaryLinkResponse.class, ApiEndpoint.CHR_PLANETARY_LINKS_V2);
     this.planetID = planetID;
   }
 

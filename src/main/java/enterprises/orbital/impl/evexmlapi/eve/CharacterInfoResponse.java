@@ -10,7 +10,6 @@ import enterprises.orbital.evexmlapi.eve.IEmploymentHistory;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo {
-  private static final long              serialVersionUID  = 1L;
   private int                            characterID;
   private String                         characterName;
   private String                         race;

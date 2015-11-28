@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.shared.IAsset;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractAssetListParser extends AbstractApiParser<AssetListResponse, Collection<IAsset>> {
-  protected AbstractAssetListParser(ApiEndpoint endpoint) {
-    super(AssetListResponse.class, endpoint);
+  protected AbstractAssetListParser(ApiConnector connector, ApiEndpoint endpoint) {
+    super(connector, AssetListResponse.class, endpoint);
   }
 
   @Override

@@ -9,12 +9,13 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.chr.IResearchAgent;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 // Replace the default implementation with the proper API version (2)
 public class ResearchParser extends AbstractApiParser<ResearchResponse, Collection<IResearchAgent>> {
-  public ResearchParser() {
-    super(ResearchResponse.class, ApiEndpoint.CHR_RESEARCH_V2);
+  public ResearchParser(ApiConnector connector) {
+    super(connector, ResearchResponse.class, ApiEndpoint.CHR_RESEARCH_V2);
   }
 
   @Override

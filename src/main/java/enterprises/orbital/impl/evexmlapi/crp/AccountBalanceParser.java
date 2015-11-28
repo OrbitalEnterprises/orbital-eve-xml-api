@@ -6,13 +6,14 @@ import java.util.HashSet;
 
 import enterprises.orbital.evexmlapi.shared.IAccountBalance;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.shared.AbstractAccountBalanceParser;
 import enterprises.orbital.impl.evexmlapi.shared.AccountBalanceResponse;
 
 public class AccountBalanceParser extends AbstractAccountBalanceParser<Collection<IAccountBalance>> {
-  public AccountBalanceParser() {
-    super(ApiEndpoint.CRP_ACCOUNT_BALANCE_V2);
+  public AccountBalanceParser(ApiConnector connector) {
+    super(connector, ApiEndpoint.CRP_ACCOUNT_BALANCE_V2);
   }
 
   @Override

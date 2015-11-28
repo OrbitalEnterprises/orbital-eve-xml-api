@@ -1,6 +1,7 @@
 package enterprises.orbital.impl.evexmlapi;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import enterprises.orbital.evexmlapi.EveXmlApiAdapter;
 import enterprises.orbital.evexmlapi.IResponse;
@@ -17,7 +18,7 @@ public class ApiTester {
    * 
    * The optional args depend on the api. In many cases the characterID is the first optional arg
    */
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) throws IOException, URISyntaxException {
     int offset = 3;
     int keyID = Integer.valueOf(args[0]);
     String vCode = args[1];
@@ -26,7 +27,6 @@ public class ApiTester {
     IResponse forErrorHandling = null;
 
     EveXmlApiAdapter adapter = new EveXmlApiAdapter();
-    adapter.startup();
 
     if (call.equals("serverStatus")) {
       System.out.println(adapter.getServerAPIService().requestServerStatus());

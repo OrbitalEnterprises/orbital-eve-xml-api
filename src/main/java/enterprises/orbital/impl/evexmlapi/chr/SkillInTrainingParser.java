@@ -7,11 +7,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.chr.ISkillInTraining;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class SkillInTrainingParser extends AbstractApiParser<SkillInTrainingResponse, ISkillInTraining> {
-  public SkillInTrainingParser() {
-    super(SkillInTrainingResponse.class, ApiEndpoint.CHR_SKILL_IN_TRAINING_V2);
+  public SkillInTrainingParser(ApiConnector connector) {
+    super(connector, SkillInTrainingResponse.class, ApiEndpoint.CHR_SKILL_IN_TRAINING_V2);
   }
 
   @Override

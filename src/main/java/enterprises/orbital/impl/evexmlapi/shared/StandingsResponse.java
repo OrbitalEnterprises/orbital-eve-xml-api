@@ -8,10 +8,9 @@ import enterprises.orbital.evexmlapi.shared.IStandingSet;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class StandingsResponse extends ApiResponse implements IStandingSet {
-  private static final long serialVersionUID = -6388684097858921127L;
-  private StandingsList     agentStandings;
-  private StandingsList     npcCorporationStandings;
-  private StandingsList     factionStandings;
+  private StandingsList agentStandings;
+  private StandingsList npcCorporationStandings;
+  private StandingsList factionStandings;
 
   public void addStandingsList(StandingsList standingsList) {
     if (standingsList.getName().equals("agents"))

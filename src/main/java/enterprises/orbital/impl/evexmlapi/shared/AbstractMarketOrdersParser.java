@@ -12,13 +12,14 @@ import enterprises.orbital.evexmlapi.shared.IMarketOrder;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractMarketOrdersParser extends AbstractApiParser<MarketOrdersResponse, Collection<IMarketOrder>> {
   protected Long orderID;
 
-  protected AbstractMarketOrdersParser(ApiEndpoint endpoint, Long orderID) {
-    super(MarketOrdersResponse.class, endpoint);
+  protected AbstractMarketOrdersParser(ApiConnector connector, ApiEndpoint endpoint, Long orderID) {
+    super(connector, MarketOrdersResponse.class, endpoint);
     this.orderID = orderID;
   }
 

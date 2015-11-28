@@ -7,11 +7,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.chr.ICharacterSheet;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class CharacterSheetParser extends AbstractApiParser<CharacterSheetResponse, ICharacterSheet> {
-  public CharacterSheetParser() {
-    super(CharacterSheetResponse.class, ApiEndpoint.CHR_CHARACTER_SHEET_V1);
+  public CharacterSheetParser(ApiConnector connector) {
+    super(connector, CharacterSheetResponse.class, ApiEndpoint.CHR_CHARACTER_SHEET_V1);
   }
 
   @Override

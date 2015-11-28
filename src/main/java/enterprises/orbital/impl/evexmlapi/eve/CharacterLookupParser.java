@@ -10,19 +10,20 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.eve.ICharacterLookup;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class CharacterLookupParser extends AbstractApiParser<CharacterLookupResponse, Collection<ICharacterLookup>> {
   private String[] names;
   private long[]   ids;
 
-  public CharacterLookupParser(String... names) {
-    super(CharacterLookupResponse.class, ApiEndpoint.EVE_CHARACTER_ID_V2);
+  public CharacterLookupParser(ApiConnector connector, String... names) {
+    super(connector, CharacterLookupResponse.class, ApiEndpoint.EVE_CHARACTER_ID_V2);
     this.names = names;
   }
 
-  public CharacterLookupParser(long... ids) {
-    super(CharacterLookupResponse.class, ApiEndpoint.EVE_CHARACTER_NAME_V2);
+  public CharacterLookupParser(ApiConnector connector, long... ids) {
+    super(connector, CharacterLookupResponse.class, ApiEndpoint.EVE_CHARACTER_NAME_V2);
     this.ids = ids;
   }
 

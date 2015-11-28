@@ -6,7 +6,6 @@ import java.util.List;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class UpcomingCalendarEventsResponse extends ApiResponse {
-  private static final long                    serialVersionUID       = -166965924934757283L;
   private final List<ApiUpcomingCalendarEvent> upcomingCalendarEvents = new ArrayList<ApiUpcomingCalendarEvent>();
 
   public void add(ApiUpcomingCalendarEvent event) {

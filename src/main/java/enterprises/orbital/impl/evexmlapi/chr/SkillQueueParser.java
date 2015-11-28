@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.chr.ISkillInQueue;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class SkillQueueParser extends AbstractApiParser<SkillQueueResponse, Collection<ISkillInQueue>> {
-  public SkillQueueParser() {
-    super(SkillQueueResponse.class, ApiEndpoint.CHR_SKILL_QUEUE_V2);
+  public SkillQueueParser(ApiConnector connector) {
+    super(connector, SkillQueueResponse.class, ApiEndpoint.CHR_SKILL_QUEUE_V2);
   }
 
   @Override

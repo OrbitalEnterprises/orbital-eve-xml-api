@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.crp.ICustomsOffice;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class CustomsOfficeParser extends AbstractApiParser<CustomsOfficeResponse, Collection<ICustomsOffice>> {
-  public CustomsOfficeParser() {
-    super(CustomsOfficeResponse.class, ApiEndpoint.CRP_CUSTOMS_OFFICES_V2);
+  public CustomsOfficeParser(ApiConnector connector) {
+    super(connector, CustomsOfficeResponse.class, ApiEndpoint.CRP_CUSTOMS_OFFICES_V2);
   }
 
   @Override

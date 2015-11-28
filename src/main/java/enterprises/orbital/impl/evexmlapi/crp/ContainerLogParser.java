@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.crp.IContainerLog;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class ContainerLogParser extends AbstractApiParser<ContainerLogResponse, Collection<IContainerLog>> {
-  public ContainerLogParser() {
-    super(ContainerLogResponse.class, ApiEndpoint.CRP_CONTAINER_LOG_V2);
+  public ContainerLogParser(ApiConnector connector) {
+    super(connector, ContainerLogResponse.class, ApiEndpoint.CRP_CONTAINER_LOG_V2);
   }
 
   @Override

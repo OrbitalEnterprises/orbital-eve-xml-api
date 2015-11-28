@@ -6,8 +6,7 @@ import java.util.Set;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class MailMessagesResponse extends ApiResponse {
-  private static final long serialVersionUID = -8150569807965385413L;
-  Set<ApiMailMessage>       mails            = new HashSet<ApiMailMessage>();
+  Set<ApiMailMessage> mails = new HashSet<ApiMailMessage>();
 
   public void addApiMail(ApiMailMessage member) {
     mails.add(member);

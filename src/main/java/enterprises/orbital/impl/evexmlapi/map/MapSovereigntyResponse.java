@@ -10,7 +10,6 @@ import enterprises.orbital.evexmlapi.map.ISystemSovereignty;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class MapSovereigntyResponse extends ApiResponse implements ISovereignty {
-  private static final long              serialVersionUID    = 1829486253240286894L;
   private final List<ISystemSovereignty> systemSovereignties = new ArrayList<ISystemSovereignty>();
   private Date                           dataTime;
 

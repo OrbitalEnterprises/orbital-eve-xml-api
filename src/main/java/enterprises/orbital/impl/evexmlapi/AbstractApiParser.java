@@ -15,10 +15,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.impl.evexmlapi.utils.DateUtils;
 
 public abstract class AbstractApiParser<E extends ApiResponse, F> {
-  protected final ApiEndpoint endpoint;
-  protected final Class<E>    clazz;
+  protected final ApiConnector connector;
+  protected final Class<E>     clazz;
+  protected final ApiEndpoint  endpoint;
 
-  public AbstractApiParser(Class<E> clazz, ApiEndpoint endpoint) {
+  public AbstractApiParser(ApiConnector connector, Class<E> clazz, ApiEndpoint endpoint) {
+    this.connector = connector;
     this.clazz = clazz;
     this.endpoint = endpoint;
   }
@@ -73,6 +75,6 @@ public abstract class AbstractApiParser<E extends ApiResponse, F> {
   }
 
   private E getResponse(ApiRequest request) throws IOException {
-    return EveApi.getConnector().execute(request, getDigester(), clazz);
+    return connector.execute(request, getDigester(), clazz);
   }
 }

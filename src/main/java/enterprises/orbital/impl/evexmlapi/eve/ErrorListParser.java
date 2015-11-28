@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.eve.IError;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class ErrorListParser extends AbstractApiParser<ErrorListResponse, Collection<IError>> {
-  public ErrorListParser() {
-    super(ErrorListResponse.class, ApiEndpoint.EVE_ERROR_LIST_V2);
+  public ErrorListParser(ApiConnector connector) {
+    super(connector, ErrorListResponse.class, ApiEndpoint.EVE_ERROR_LIST_V2);
   }
 
   @Override

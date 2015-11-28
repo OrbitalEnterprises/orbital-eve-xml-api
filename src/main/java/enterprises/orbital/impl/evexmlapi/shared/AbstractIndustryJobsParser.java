@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.shared.IIndustryJob;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractIndustryJobsParser extends AbstractApiParser<IndustryJobsResponse, Collection<IIndustryJob>> {
-  protected AbstractIndustryJobsParser(ApiEndpoint endpoint) {
-    super(IndustryJobsResponse.class, endpoint);
+  protected AbstractIndustryJobsParser(ApiConnector connector, ApiEndpoint endpoint) {
+    super(connector, IndustryJobsResponse.class, endpoint);
   }
 
   @Override

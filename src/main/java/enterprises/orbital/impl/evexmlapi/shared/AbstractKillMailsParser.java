@@ -14,13 +14,14 @@ import enterprises.orbital.evexmlapi.shared.IKill;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractKillMailsParser extends AbstractApiParser<KillLogResponse, Collection<IKill>> {
   protected Long beforeKillID;
 
-  protected AbstractKillMailsParser(ApiEndpoint endpoint, Long beforeKillID) {
-    super(KillLogResponse.class, endpoint);
+  protected AbstractKillMailsParser(ApiConnector connector, ApiEndpoint endpoint, Long beforeKillID) {
+    super(connector, KillLogResponse.class, endpoint);
     this.beforeKillID = beforeKillID;
   }
 

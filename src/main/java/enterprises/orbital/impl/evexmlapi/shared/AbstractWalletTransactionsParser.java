@@ -13,14 +13,15 @@ import enterprises.orbital.evexmlapi.shared.IWalletTransaction;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractWalletTransactionsParser extends AbstractApiParser<WalletTransactionsResponse, Collection<IWalletTransaction>> {
   protected int  accountKey;
   protected Long beforeTransID;
 
-  public AbstractWalletTransactionsParser(ApiEndpoint endpoint, int accountKey, Long beforeTransID) {
-    super(WalletTransactionsResponse.class, endpoint);
+  public AbstractWalletTransactionsParser(ApiConnector connector, ApiEndpoint endpoint, int accountKey, Long beforeTransID) {
+    super(connector, WalletTransactionsResponse.class, endpoint);
     this.accountKey = accountKey;
     this.beforeTransID = beforeTransID;
   }

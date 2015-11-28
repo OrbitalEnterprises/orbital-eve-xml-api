@@ -7,11 +7,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.shared.IFacWarStats;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractFacWarStatsParser extends AbstractApiParser<FacWarStatsResponse, IFacWarStats> {
-  protected AbstractFacWarStatsParser(ApiEndpoint endpoint) {
-    super(FacWarStatsResponse.class, endpoint);
+  protected AbstractFacWarStatsParser(ApiConnector connector, ApiEndpoint endpoint) {
+    super(connector, FacWarStatsResponse.class, endpoint);
   }
 
   @Override

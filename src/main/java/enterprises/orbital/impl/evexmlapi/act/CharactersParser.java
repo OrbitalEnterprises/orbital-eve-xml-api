@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.act.ICharacter;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class CharactersParser extends AbstractApiParser<CharactersResponse, Collection<ICharacter>> {
-  public CharactersParser() {
-    super(CharactersResponse.class, ApiEndpoint.ACT_CHARACTERS_V1);
+  public CharactersParser(ApiConnector connector) {
+    super(connector, CharactersResponse.class, ApiEndpoint.ACT_CHARACTERS_V1);
   }
 
   @Override

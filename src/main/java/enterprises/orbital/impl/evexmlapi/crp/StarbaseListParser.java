@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.crp.IStarbase;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class StarbaseListParser extends AbstractApiParser<StarbaseListResponse, Collection<IStarbase>> {
-  public StarbaseListParser() {
-    super(StarbaseListResponse.class, ApiEndpoint.CRP_STARBASE_LIST_V2);
+  public StarbaseListParser(ApiConnector connector) {
+    super(connector, StarbaseListResponse.class, ApiEndpoint.CRP_STARBASE_LIST_V2);
   }
 
   @Override

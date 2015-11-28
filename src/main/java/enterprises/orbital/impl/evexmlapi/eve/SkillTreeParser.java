@@ -11,11 +11,12 @@ import org.xml.sax.Attributes;
 import enterprises.orbital.evexmlapi.eve.ISkillGroup;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class SkillTreeParser extends AbstractApiParser<SkillTreeResponse, Collection<ISkillGroup>> {
-  public SkillTreeParser() {
-    super(SkillTreeResponse.class, ApiEndpoint.EVE_SKILL_TREE_V2);
+  public SkillTreeParser(ApiConnector connector) {
+    super(connector, SkillTreeResponse.class, ApiEndpoint.EVE_SKILL_TREE_V2);
   }
 
   @Override
@@ -26,7 +27,6 @@ public class SkillTreeParser extends AbstractApiParser<SkillTreeResponse, Collec
     digester.addSetNext("eveapi/result/rowset/row", "addSkillGroup");
     digester.addObjectCreate("eveapi/result/rowset/row/rowset/row", ApiSkill.class);
     digester.addSetProperties("eveapi/result/rowset/row/rowset/row");
-    // digester.addBeanPropertySetter("eveapi/result/rowset/row/rowset/row/description");
     digester.addRule("eveapi/result/rowset/row/rowset/row/description", new MyBeanPropertySetterRule("description"));
     digester.addBeanPropertySetter("eveapi/result/rowset/row/rowset/row/rank");
     digester.addBeanPropertySetter("eveapi/result/rowset/row/rowset/row/requiredAttributes/primaryAttribute");

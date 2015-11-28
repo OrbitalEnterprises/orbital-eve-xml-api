@@ -15,29 +15,34 @@ import enterprises.orbital.evexmlapi.eve.IRefType;
 import enterprises.orbital.evexmlapi.eve.ISkillGroup;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 
 public class EveAPIAdapter extends AbstractAPIRequestAdapter implements IEveAPI {
 
+  public EveAPIAdapter(ApiConnector connector) {
+    super(connector);
+  }
+
   @Override
   public Collection<IAlliance> requestAlliances() throws IOException {
-    return new AllianceListParser().retrieveResponse(this);
+    return new AllianceListParser(connector).retrieveResponse(this);
   }
 
   @Override
   public Collection<ICharacterLookup> requestCharacterID(String... names) throws IOException {
-    return new CharacterLookupParser(names).retrieveResponse(this);
+    return new CharacterLookupParser(connector, names).retrieveResponse(this);
   }
 
   @Override
   public ICharacterInfo requestCharacterInfo(long characterID) throws IOException {
-    return new CharacterInfoParser(characterID).retrieveResponse(this);
+    return new CharacterInfoParser(connector, characterID).retrieveResponse(this);
   }
 
   @Override
   public ICharacterInfo requestCharacterInfo(int keyID, String vCode, long characterID) throws IOException {
     setAuth(new ApiAuth(keyID, characterID, vCode));
     try {
-      return new CharacterInfoParser(null).retrieveResponse(this);
+      return new CharacterInfoParser(connector, null).retrieveResponse(this);
     } finally {
       setAuth(null);
     }
@@ -45,37 +50,37 @@ public class EveAPIAdapter extends AbstractAPIRequestAdapter implements IEveAPI 
 
   @Override
   public Collection<ICharacterLookup> requestCharacterName(long... ids) throws IOException {
-    return new CharacterLookupParser(ids).retrieveResponse(this);
+    return new CharacterLookupParser(connector, ids).retrieveResponse(this);
   }
 
   @Override
   public Collection<IConquerableStation> requestConquerableStations() throws IOException {
-    return new ConquerableStationListParser().retrieveResponse(this);
+    return new ConquerableStationListParser(connector).retrieveResponse(this);
   }
 
   @Override
   public Collection<IError> requestErrors() throws IOException {
-    return new ErrorListParser().retrieveResponse(this);
+    return new ErrorListParser(connector).retrieveResponse(this);
   }
 
   @Override
   public IFacWarSummary requestFacWarStats() throws IOException {
-    return new EveFacWarStatsParser().retrieveResponse(this);
+    return new EveFacWarStatsParser(connector).retrieveResponse(this);
   }
 
   @Override
   public IFacWarTopSummary requestFacWarTopStats() throws IOException {
-    return new FacWarTopStatsParser().retrieveResponse(this);
+    return new FacWarTopStatsParser(connector).retrieveResponse(this);
   }
 
   @Override
   public Collection<IRefType> requestRefTypes() throws IOException {
-    return new RefTypesParser().retrieveResponse(this);
+    return new RefTypesParser(connector).retrieveResponse(this);
   }
 
   @Override
   public Collection<ISkillGroup> requestSkillTree() throws IOException {
-    return new SkillTreeParser().retrieveResponse(this);
+    return new SkillTreeParser(connector).retrieveResponse(this);
   }
 
 }

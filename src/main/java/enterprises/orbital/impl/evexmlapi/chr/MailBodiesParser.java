@@ -12,13 +12,14 @@ import enterprises.orbital.evexmlapi.chr.IMailBody;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class MailBodiesParser extends AbstractApiParser<MailBodiesResponse, Collection<IMailBody>> {
   protected long[] ids;
 
-  public MailBodiesParser(long... ids) {
-    super(MailBodiesResponse.class, ApiEndpoint.CHR_MAIL_BODIES_V2);
+  public MailBodiesParser(ApiConnector connector, long... ids) {
+    super(connector, MailBodiesResponse.class, ApiEndpoint.CHR_MAIL_BODIES_V2);
     this.ids = ids;
   }
 

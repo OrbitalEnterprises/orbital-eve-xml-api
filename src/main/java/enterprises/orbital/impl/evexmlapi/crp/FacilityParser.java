@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.crp.IFacility;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class FacilityParser extends AbstractApiParser<FacilityResponse, Collection<IFacility>> {
-  public FacilityParser() {
-    super(FacilityResponse.class, ApiEndpoint.CRP_FACILITIES_V2);
+  public FacilityParser(ApiConnector connector) {
+    super(connector, FacilityResponse.class, ApiEndpoint.CRP_FACILITIES_V2);
   }
 
   @Override

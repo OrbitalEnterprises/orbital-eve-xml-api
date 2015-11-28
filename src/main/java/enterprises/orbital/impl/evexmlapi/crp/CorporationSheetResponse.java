@@ -12,7 +12,6 @@ import enterprises.orbital.evexmlapi.crp.IDivision;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class CorporationSheetResponse extends ApiResponse implements ICorporationSheet {
-  private static final long          serialVersionUID = -4151110859581353955L;
   private long                       corporationID;
   private String                     corporationName;
   private long                       allianceID;
@@ -28,8 +27,8 @@ public class CorporationSheetResponse extends ApiResponse implements ICorporatio
   private int                        memberCount;
   private int                        memberLimit;
   private int                        shares;
-  private final Map<Integer, String> divisions        = new HashMap<Integer, String>();
-  private final Map<Integer, String> walletDivisions  = new HashMap<Integer, String>();
+  private final Map<Integer, String> divisions       = new HashMap<Integer, String>();
+  private final Map<Integer, String> walletDivisions = new HashMap<Integer, String>();
   private ApiCorpLogo                logo;
 
   @Override

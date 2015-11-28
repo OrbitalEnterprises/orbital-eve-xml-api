@@ -7,11 +7,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.shared.IContactSet;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractContactListParser extends AbstractApiParser<ContactListResponse, IContactSet> {
-  protected AbstractContactListParser(ApiEndpoint endpoint) {
-    super(ContactListResponse.class, endpoint);
+  protected AbstractContactListParser(ApiConnector connector, ApiEndpoint endpoint) {
+    super(connector, ContactListResponse.class, endpoint);
   }
 
   @Override

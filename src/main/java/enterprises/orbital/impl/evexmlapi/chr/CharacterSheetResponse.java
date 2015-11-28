@@ -20,7 +20,6 @@ import enterprises.orbital.evexmlapi.chr.ISkill;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class CharacterSheetResponse extends ApiResponse implements ICharacterSheet {
-  private static final long             serialVersionUID  = -6463527544577198624L;
   private static final Logger           log               = Logger.getLogger(CharacterSheetResponse.class.getName());
 
   private long                          characterID;

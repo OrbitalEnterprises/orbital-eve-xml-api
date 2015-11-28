@@ -7,11 +7,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.act.IAccountStatus;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class AccountStatusParser extends AbstractApiParser<AccountStatusResponse, IAccountStatus> {
-  public AccountStatusParser() {
-    super(AccountStatusResponse.class, ApiEndpoint.ACT_ACCOUNT_STATUS_V2);
+  public AccountStatusParser(ApiConnector connector) {
+    super(connector, AccountStatusResponse.class, ApiEndpoint.ACT_ACCOUNT_STATUS_V2);
   }
 
   @Override

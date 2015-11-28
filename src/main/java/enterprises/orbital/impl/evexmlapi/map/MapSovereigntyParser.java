@@ -7,11 +7,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.map.ISovereignty;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class MapSovereigntyParser extends AbstractApiParser<MapSovereigntyResponse, ISovereignty> {
-  public MapSovereigntyParser() {
-    super(MapSovereigntyResponse.class, ApiEndpoint.MAP_SOVEREIGNTY_V1);
+  public MapSovereigntyParser(ApiConnector connector) {
+    super(connector, MapSovereigntyResponse.class, ApiEndpoint.MAP_SOVEREIGNTY_V1);
   }
 
   @Override

@@ -6,8 +6,7 @@ import java.util.List;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class MedalsResponse extends ApiResponse {
-  private static final long serialVersionUID = 1675976988222303211L;
-  private final List<Medal> medals           = new ArrayList<Medal>();
+  private final List<Medal> medals = new ArrayList<Medal>();
 
   public void addMedal(Medal entry) {
     medals.add(entry);

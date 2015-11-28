@@ -10,13 +10,14 @@ import enterprises.orbital.evexmlapi.chr.IPlanetaryRoute;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class PlanetaryRouteParser extends AbstractApiParser<PlanetaryRouteResponse, Collection<IPlanetaryRoute>> {
   protected Long planetID;
 
-  public PlanetaryRouteParser(Long planetID) {
-    super(PlanetaryRouteResponse.class, ApiEndpoint.CHR_PLANETARY_ROUTES_V2);
+  public PlanetaryRouteParser(ApiConnector connector, Long planetID) {
+    super(connector, PlanetaryRouteResponse.class, ApiEndpoint.CHR_PLANETARY_ROUTES_V2);
     this.planetID = planetID;
   }
 

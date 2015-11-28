@@ -8,11 +8,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.eve.IRefType;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class RefTypesParser extends AbstractApiParser<RefTypesResponse, Collection<IRefType>> {
-  public RefTypesParser() {
-    super(RefTypesResponse.class, ApiEndpoint.EVE_REF_TYPES_V1);
+  public RefTypesParser(ApiConnector connector) {
+    super(connector, RefTypesResponse.class, ApiEndpoint.EVE_REF_TYPES_V1);
   }
 
   @Override

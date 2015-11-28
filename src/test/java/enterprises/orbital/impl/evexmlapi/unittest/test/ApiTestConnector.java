@@ -753,6 +753,10 @@ public class ApiTestConnector extends ApiConnector {
     }
   }
 
+  public ApiTestConnector(URI uri, String object, int i, int j) {
+    super(uri, object, i, j);
+  }
+
   @Override
   protected InputStream getInputStream(URI requestUri, Map<String, String> params) throws IOException {
     // Special case MarketOrder request when by orderid

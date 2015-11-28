@@ -7,11 +7,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.act.IAPIKeyInfo;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class APIKeyInfoParser extends AbstractApiParser<APIKeyInfoResponse, IAPIKeyInfo> {
-  public APIKeyInfoParser() {
-    super(APIKeyInfoResponse.class, ApiEndpoint.ACT_API_KEY_INFO_V1);
+  public APIKeyInfoParser(ApiConnector connector) {
+    super(connector, APIKeyInfoResponse.class, ApiEndpoint.ACT_API_KEY_INFO_V1);
   }
 
   @Override

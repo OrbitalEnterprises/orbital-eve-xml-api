@@ -10,13 +10,14 @@ import enterprises.orbital.evexmlapi.eve.ICharacterInfo;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class CharacterInfoParser extends AbstractApiParser<CharacterInfoResponse, ICharacterInfo> {
   protected Long characterID;
 
-  public CharacterInfoParser(Long characterID) {
-    super(CharacterInfoResponse.class, ApiEndpoint.EVE_CHARACTER_INFO_V2);
+  public CharacterInfoParser(ApiConnector connector, Long characterID) {
+    super(connector, CharacterInfoResponse.class, ApiEndpoint.EVE_CHARACTER_INFO_V2);
     this.characterID = characterID;
   }
 

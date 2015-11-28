@@ -1,14 +1,12 @@
 package enterprises.orbital.impl.evexmlapi;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class ApiResponse implements Serializable {
-  private static final long serialVersionUID = 1527229334284277203L;
-  private int               version;
-  private Date              currentTime;
-  private Date              cachedUntil;
-  private ApiError          error;
+public class ApiResponse {
+  private int      version;
+  private Date     currentTime;
+  private Date     cachedUntil;
+  private ApiError error;
 
   public int getVersion() {
     return version;

@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.shared.IBlueprint;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractBlueprintsParser extends AbstractApiParser<BlueprintsResponse, Collection<IBlueprint>> {
-  protected AbstractBlueprintsParser(ApiEndpoint endpoint) {
-    super(BlueprintsResponse.class, endpoint);
+  protected AbstractBlueprintsParser(ApiConnector connector, ApiEndpoint endpoint) {
+    super(connector, BlueprintsResponse.class, endpoint);
   }
 
   @Override

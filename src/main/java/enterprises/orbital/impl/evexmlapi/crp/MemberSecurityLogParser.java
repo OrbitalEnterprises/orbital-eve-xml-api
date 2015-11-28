@@ -11,11 +11,12 @@ import org.xml.sax.Attributes;
 import enterprises.orbital.evexmlapi.crp.IMemberSecurityLog;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class MemberSecurityLogParser extends AbstractApiParser<MemberSecurityLogResponse, Collection<IMemberSecurityLog>> {
-  public MemberSecurityLogParser() {
-    super(MemberSecurityLogResponse.class, ApiEndpoint.CRP_MEMBER_SECURITY_LOG_V2);
+  public MemberSecurityLogParser(ApiConnector connector) {
+    super(connector, MemberSecurityLogResponse.class, ApiEndpoint.CRP_MEMBER_SECURITY_LOG_V2);
   }
 
   @Override

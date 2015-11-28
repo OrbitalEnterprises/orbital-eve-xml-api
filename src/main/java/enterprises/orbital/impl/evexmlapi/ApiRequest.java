@@ -1,12 +1,10 @@
 package enterprises.orbital.impl.evexmlapi;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class ApiRequest implements Comparable<ApiRequest>, Serializable {
-  private static final long         serialVersionUID = 1L;
+public class ApiRequest implements Comparable<ApiRequest> {
   private final ApiEndpoint         endpoint;
   private final ApiAuth             auth;
   private final Map<String, String> params;

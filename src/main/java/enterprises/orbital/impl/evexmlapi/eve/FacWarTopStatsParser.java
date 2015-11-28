@@ -9,11 +9,12 @@ import org.xml.sax.Attributes;
 import enterprises.orbital.evexmlapi.eve.IFacWarTopSummary;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class FacWarTopStatsParser extends AbstractApiParser<FacWarTopStatsResponse, IFacWarTopSummary> {
-  public FacWarTopStatsParser() {
-    super(FacWarTopStatsResponse.class, ApiEndpoint.EVE_FAC_WAR_TOP_STATS_V2);
+  public FacWarTopStatsParser(ApiConnector connector) {
+    super(connector, FacWarTopStatsResponse.class, ApiEndpoint.EVE_FAC_WAR_TOP_STATS_V2);
   }
 
   @Override

@@ -10,13 +10,14 @@ import enterprises.orbital.evexmlapi.crp.ICorporationSheet;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class CorporationSheetParser extends AbstractApiParser<CorporationSheetResponse, ICorporationSheet> {
   protected Long corporationID;
 
-  public CorporationSheetParser(Long corporationID) {
-    super(CorporationSheetResponse.class, ApiEndpoint.CRP_CORPORATION_SHEET_V2);
+  public CorporationSheetParser(ApiConnector connector, Long corporationID) {
+    super(connector, CorporationSheetResponse.class, ApiEndpoint.CRP_CORPORATION_SHEET_V2);
     this.corporationID = corporationID;
   }
 

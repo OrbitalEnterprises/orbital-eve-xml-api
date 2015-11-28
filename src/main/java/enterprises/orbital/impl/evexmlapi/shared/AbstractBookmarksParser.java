@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.shared.IBookmarkFolder;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public abstract class AbstractBookmarksParser extends AbstractApiParser<BookmarksResponse, Collection<IBookmarkFolder>> {
-  protected AbstractBookmarksParser(ApiEndpoint endpoint) {
-    super(BookmarksResponse.class, endpoint);
+  protected AbstractBookmarksParser(ApiConnector connector, ApiEndpoint endpoint) {
+    super(connector, BookmarksResponse.class, endpoint);
   }
 
   @Override

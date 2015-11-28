@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.chr.IMailList;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class MailingListsParser extends AbstractApiParser<MailingListsResponse, Collection<IMailList>> {
-  public MailingListsParser() {
-    super(MailingListsResponse.class, ApiEndpoint.CHR_MAILING_LISTS_V2);
+  public MailingListsParser(ApiConnector connector) {
+    super(connector, MailingListsResponse.class, ApiEndpoint.CHR_MAILING_LISTS_V2);
   }
 
   @Override

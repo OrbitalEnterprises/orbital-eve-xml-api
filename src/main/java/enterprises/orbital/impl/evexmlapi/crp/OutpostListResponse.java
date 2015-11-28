@@ -9,8 +9,7 @@ import java.util.Map.Entry;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class OutpostListResponse extends ApiResponse {
-  private static final long            serialVersionUID = -4872601906882918617L;
-  private final Collection<ApiOutpost> outposts         = new HashSet<ApiOutpost>();
+  private final Collection<ApiOutpost> outposts = new HashSet<ApiOutpost>();
 
   public void addOutpost(ApiOutpost outpost) {
     outposts.add(outpost);

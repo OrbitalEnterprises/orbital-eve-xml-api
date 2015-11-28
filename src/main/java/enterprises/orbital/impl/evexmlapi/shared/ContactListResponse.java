@@ -11,8 +11,7 @@ import enterprises.orbital.evexmlapi.shared.IContactSet;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class ContactListResponse extends ApiResponse implements IContactSet {
-  private static final long          serialVersionUID = 6866748404371003248L;
-  protected Map<String, ContactList> contactLists     = new HashMap<String, ContactList>();
+  protected Map<String, ContactList> contactLists = new HashMap<String, ContactList>();
 
   public void addContactList(ContactList contactList) {
     contactLists.put(contactList.getName(), contactList);

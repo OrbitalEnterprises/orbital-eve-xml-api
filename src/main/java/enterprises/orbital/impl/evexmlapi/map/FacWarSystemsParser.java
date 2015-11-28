@@ -8,11 +8,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.map.IFacWarSystem;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class FacWarSystemsParser extends AbstractApiParser<FacWarSystemsResponse, Collection<IFacWarSystem>> {
-  public FacWarSystemsParser() {
-    super(FacWarSystemsResponse.class, ApiEndpoint.MAP_FAC_WAR_SYSTEMS_V2);
+  public FacWarSystemsParser(ApiConnector connector) {
+    super(connector, FacWarSystemsResponse.class, ApiEndpoint.MAP_FAC_WAR_SYSTEMS_V2);
   }
 
   @Override

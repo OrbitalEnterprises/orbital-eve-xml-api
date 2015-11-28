@@ -9,7 +9,6 @@ import enterprises.orbital.evexmlapi.act.IMultiCharacterTraining;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class AccountStatusResponse extends ApiResponse implements IAccountStatus {
-  private static final long                     serialVersionUID       = -2532303772746053006L;
   private Date                                  paidUntil;
   private Date                                  createDate;
   private int                                   logonCount;

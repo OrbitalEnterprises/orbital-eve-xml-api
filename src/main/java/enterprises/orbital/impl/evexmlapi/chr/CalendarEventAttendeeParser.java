@@ -11,13 +11,14 @@ import enterprises.orbital.evexmlapi.chr.ICalendarEventAttendee;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class CalendarEventAttendeeParser extends AbstractApiParser<CalendarEventAttendeeResponse, Collection<ICalendarEventAttendee>> {
   protected int[] events;
 
-  public CalendarEventAttendeeParser(int... events) {
-    super(CalendarEventAttendeeResponse.class, ApiEndpoint.CHR_CALENDAR_EVENT_ATTENDEE_V2);
+  public CalendarEventAttendeeParser(ApiConnector connector, int... events) {
+    super(connector, CalendarEventAttendeeResponse.class, ApiEndpoint.CHR_CALENDAR_EVENT_ATTENDEE_V2);
     this.events = events;
   }
 

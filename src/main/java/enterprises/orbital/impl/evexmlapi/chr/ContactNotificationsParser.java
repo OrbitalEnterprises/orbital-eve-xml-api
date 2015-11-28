@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.chr.IContactNotification;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class ContactNotificationsParser extends AbstractApiParser<ContactNotificationsResponse, Collection<IContactNotification>> {
-  public ContactNotificationsParser() {
-    super(ContactNotificationsResponse.class, ApiEndpoint.CHR_CONTACT_NOTIFICATIONS_V2);
+  public ContactNotificationsParser(ApiConnector connector) {
+    super(connector, ContactNotificationsResponse.class, ApiEndpoint.CHR_CONTACT_NOTIFICATIONS_V2);
   }
 
   @Override

@@ -8,13 +8,14 @@ import enterprises.orbital.evexmlapi.crp.IStarbaseDetail;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class StarbaseDetailParser extends AbstractApiParser<StarbaseDetailResponse, IStarbaseDetail> {
   Long itemID;
 
-  public StarbaseDetailParser(Long itemID) {
-    super(StarbaseDetailResponse.class, ApiEndpoint.CRP_STARBASE_DETAIL_V2);
+  public StarbaseDetailParser(ApiConnector connector, Long itemID) {
+    super(connector, StarbaseDetailResponse.class, ApiEndpoint.CRP_STARBASE_DETAIL_V2);
     this.itemID = itemID;
   }
 

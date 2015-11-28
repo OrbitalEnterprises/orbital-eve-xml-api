@@ -10,9 +10,8 @@ import enterprises.orbital.evexmlapi.map.IMapJump;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class MapJumpsResponse extends ApiResponse implements IMapJump {
-  private static final long serialVersionUID = 8841666660729884456L;
-  private Date              dataTime;
-  private List<IJump>       jumps            = new ArrayList<IJump>();
+  private Date        dataTime;
+  private List<IJump> jumps = new ArrayList<IJump>();
 
   @Override
   public Date getDataTime() {

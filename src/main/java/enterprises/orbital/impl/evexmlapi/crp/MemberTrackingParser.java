@@ -9,11 +9,12 @@ import org.apache.commons.digester.Digester;
 import enterprises.orbital.evexmlapi.crp.IMemberTracking;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.AbstractApiParser;
+import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class MemberTrackingParser extends AbstractApiParser<MemberTrackingResponse, Collection<IMemberTracking>> {
-  public MemberTrackingParser() {
-    super(MemberTrackingResponse.class, ApiEndpoint.CRP_MEMBER_TRACKING_V2);
+  public MemberTrackingParser(ApiConnector connector) {
+    super(connector, MemberTrackingResponse.class, ApiEndpoint.CRP_MEMBER_TRACKING_V2);
   }
 
   @Override
