@@ -6,6 +6,9 @@ import java.util.Map;
 
 import org.apache.commons.digester.Digester;
 
+/**
+ * Connector which caches the results of previous requests.
+ */
 public class CachingConnector extends ApiConnector {
   private final Map<ApiRequest, ApiResponse> cache = new HashMap<ApiRequest, ApiResponse>();
   private final ApiConnector                 baseConnector;

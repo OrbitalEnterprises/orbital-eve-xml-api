@@ -15,6 +15,9 @@ import org.apache.commons.digester.Digester;
 
 import enterprises.orbital.impl.evexmlapi.utils.InputStreamSplitter;
 
+/**
+ * Connector which saves a copy of each response to a file.
+ */
 public class FileCopyConnector extends ApiConnector {
   private final Logger       logger = Logger.getLogger(FileCopyConnector.class.getName());
   private final ApiConnector baseConnector;

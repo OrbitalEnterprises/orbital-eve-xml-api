@@ -16,7 +16,7 @@ import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class NotificationTextsParser extends AbstractApiParser<NotificationTextsResponse, Collection<INotificationText>> {
-  protected long[] notificationID;
+  private long[] notificationID;
 
   public NotificationTextsParser(ApiConnector connector, long... notificationID) {
     super(connector, NotificationTextsResponse.class, ApiEndpoint.CHR_NOTIFICATION_TEXTS_V2);
@@ -42,7 +42,7 @@ public class NotificationTextsParser extends AbstractApiParser<NotificationTexts
     return digester;
   }
 
-  public NotificationTextsResponse getResponseWithNotificationIDs(ApiAuth auth) throws IOException {
+  private NotificationTextsResponse getResponseWithNotificationIDs(ApiAuth auth) throws IOException {
     if (notificationID.length > 0) {
       String ids = Arrays.toString(notificationID).replace(" ", "").replace("[", "").replace("]", "");
       return getResponse(auth, "IDs", ids);

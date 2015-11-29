@@ -32,7 +32,7 @@ public abstract class AbstractMarketOrdersParser extends AbstractApiParser<Marke
     return digester;
   }
 
-  public MarketOrdersResponse getResponseWithOrderID(ApiAuth auth) throws IOException {
+  protected MarketOrdersResponse getResponseWithOrderID(ApiAuth auth) throws IOException {
     if (orderID != null) {
       Map<String, String> extraParams = new HashMap<String, String>();
       extraParams.put("orderid", Long.toString(orderID));

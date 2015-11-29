@@ -3,6 +3,9 @@ package enterprises.orbital.impl.evexmlapi;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class which encapsulates API credentials.
+ */
 public class ApiAuth implements Comparable<ApiAuth> {
   private final int    keyID;
   private final long   characterID;

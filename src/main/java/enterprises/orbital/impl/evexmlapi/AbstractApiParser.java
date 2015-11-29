@@ -14,11 +14,29 @@ import org.apache.commons.digester.Digester;
 
 import enterprises.orbital.impl.evexmlapi.utils.DateUtils;
 
+/**
+ * Abstract base class for all parsers.
+ *
+ * @param <E>
+ *          class of response type, e.g. ChatChannelsResponse
+ * @param <F>
+ *          class of interface return value, e.g. Collection<IChatChannel>
+ */
 public abstract class AbstractApiParser<E extends ApiResponse, F> {
   protected final ApiConnector connector;
   protected final Class<E>     clazz;
   protected final ApiEndpoint  endpoint;
 
+  /**
+   * Standard constructor.
+   * 
+   * @param connector
+   *          the ApiConnector to be used to retrieve a response.
+   * @param clazz
+   *          the type of the response
+   * @param endpoint
+   *          the endpoint to be called for a response.
+   */
   public AbstractApiParser(ApiConnector connector, Class<E> clazz, ApiEndpoint endpoint) {
     this.connector = connector;
     this.clazz = clazz;
@@ -37,6 +55,12 @@ public abstract class AbstractApiParser<E extends ApiResponse, F> {
    */
   public abstract F retrieveResponse(AbstractAPIRequestAdapter adapter) throws IOException;
 
+  /**
+   * Create the default digester for all parsers. This digester extracts the standard and error response headers (e.g. error codes, current time, cache time,
+   * etc).
+   * 
+   * @return the default digester for all parsers.
+   */
   protected Digester getDigester() {
     Digester digester = new Digester();
     ConvertUtils.register(DateUtils.getGMTConverter(), Date.class);
@@ -53,6 +77,8 @@ public abstract class AbstractApiParser<E extends ApiResponse, F> {
     digester.addBeanPropertySetter("eveapi/cachedUntil");
     return digester;
   }
+
+  // Variants of the method to call to get a response for the current endpoint.
 
   protected E getResponse() throws IOException {
     return getResponse(new ApiRequest(endpoint));

@@ -30,7 +30,7 @@ public abstract class AbstractContractItemsParser extends AbstractApiParser<Cont
     return digester;
   }
 
-  public ContractItemsResponse getResponseWithContractID(ApiAuth auth) throws IOException {
+  protected ContractItemsResponse getResponseWithContractID(ApiAuth auth) throws IOException {
     if (contractID != null)
       return getResponse(auth, "contractID", String.valueOf(contractID));
     else

@@ -11,7 +11,7 @@ import enterprises.orbital.evexmlapi.shared.IContactSet;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class ContactListResponse extends ApiResponse implements IContactSet {
-  protected Map<String, ContactList> contactLists = new HashMap<String, ContactList>();
+  private Map<String, ContactList> contactLists = new HashMap<String, ContactList>();
 
   public void addContactList(ContactList contactList) {
     contactLists.put(contactList.getName(), contactList);

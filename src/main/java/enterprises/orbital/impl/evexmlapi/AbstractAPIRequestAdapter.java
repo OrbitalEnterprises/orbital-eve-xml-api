@@ -4,6 +4,10 @@ import java.util.Date;
 
 import enterprises.orbital.evexmlapi.IResponse;
 
+/**
+ * Abstract base class for all API sections. This class manages the connector to use for connections, as well as authentication information. Upon retrieving a
+ * response, this class also encapsulates response properties such as EVE API verson, current time, etc.
+ */
 public abstract class AbstractAPIRequestAdapter implements IResponse {
   protected final ApiConnector connector;
   protected ApiResponse        lastEveAPIResponse;

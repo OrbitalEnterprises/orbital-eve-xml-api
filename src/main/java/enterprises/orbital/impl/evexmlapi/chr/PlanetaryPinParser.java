@@ -14,7 +14,7 @@ import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class PlanetaryPinParser extends AbstractApiParser<PlanetaryPinResponse, Collection<IPlanetaryPin>> {
-  protected Long planetID;
+  private Long planetID;
 
   public PlanetaryPinParser(ApiConnector connector, Long planetID) {
     super(connector, PlanetaryPinResponse.class, ApiEndpoint.CHR_PLANETARY_PINS_V2);
@@ -30,7 +30,7 @@ public class PlanetaryPinParser extends AbstractApiParser<PlanetaryPinResponse, 
     return digester;
   }
 
-  public PlanetaryPinResponse getResponseWithPlanetID(ApiAuth auth) throws IOException {
+  private PlanetaryPinResponse getResponseWithPlanetID(ApiAuth auth) throws IOException {
     if (planetID != null)
       return getResponse(auth, "planetID", String.valueOf(planetID));
     else

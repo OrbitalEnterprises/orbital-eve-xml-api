@@ -12,6 +12,9 @@ import org.apache.commons.digester.Digester;
 
 import enterprises.orbital.impl.evexmlapi.utils.InputStreamSplitter;
 
+/**
+ * Connector which logs the text of each response.
+ */
 public class LoggingConnector extends ApiConnector {
   private static final Logger logger = Logger.getLogger(LoggingConnector.class.getName());
 

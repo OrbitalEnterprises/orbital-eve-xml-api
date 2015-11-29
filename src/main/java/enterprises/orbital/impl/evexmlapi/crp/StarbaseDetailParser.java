@@ -12,7 +12,7 @@ import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class StarbaseDetailParser extends AbstractApiParser<StarbaseDetailResponse, IStarbaseDetail> {
-  Long itemID;
+  private Long itemID;
 
   public StarbaseDetailParser(ApiConnector connector, Long itemID) {
     super(connector, StarbaseDetailResponse.class, ApiEndpoint.CRP_STARBASE_DETAIL_V2);
@@ -54,7 +54,7 @@ public class StarbaseDetailParser extends AbstractApiParser<StarbaseDetailRespon
     return digester;
   }
 
-  public StarbaseDetailResponse getResponseWithItemID(ApiAuth auth) throws IOException {
+  private StarbaseDetailResponse getResponseWithItemID(ApiAuth auth) throws IOException {
     if (itemID != null)
       return getResponse(auth, "itemID", Long.toString(itemID));
     else

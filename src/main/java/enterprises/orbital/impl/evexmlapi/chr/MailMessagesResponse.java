@@ -6,7 +6,7 @@ import java.util.Set;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class MailMessagesResponse extends ApiResponse {
-  Set<ApiMailMessage> mails = new HashSet<ApiMailMessage>();
+  private Set<ApiMailMessage> mails = new HashSet<ApiMailMessage>();
 
   public void addApiMail(ApiMailMessage member) {
     mails.add(member);

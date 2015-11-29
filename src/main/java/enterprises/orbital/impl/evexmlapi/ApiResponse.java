@@ -2,6 +2,9 @@ package enterprises.orbital.impl.evexmlapi;
 
 import java.util.Date;
 
+/**
+ * Class encapsulating a standard API response.
+ */
 public class ApiResponse {
   private int      version;
   private Date     currentTime;

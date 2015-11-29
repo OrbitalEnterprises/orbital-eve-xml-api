@@ -54,7 +54,7 @@ public class CharacterInfoParser extends AbstractApiParser<CharacterInfoResponse
     return digester;
   }
 
-  public CharacterInfoResponse getResponseWithCharacterID(ApiAuth auth) throws IOException {
+  private CharacterInfoResponse getResponseWithCharacterID(ApiAuth auth) throws IOException {
     if (characterID != null)
       return getResponse("characterID", Long.toString(characterID));
     else

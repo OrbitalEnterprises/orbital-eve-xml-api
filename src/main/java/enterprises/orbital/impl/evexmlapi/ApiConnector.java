@@ -15,6 +15,9 @@ import org.apache.commons.digester.Digester;
 import org.apache.http.client.utils.URIBuilder;
 import org.xml.sax.SAXException;
 
+/**
+ * Class to initiate an API connection and retrieve a response.
+ */
 public class ApiConnector {
   private final URI    baseURI;
   private final String agentField;

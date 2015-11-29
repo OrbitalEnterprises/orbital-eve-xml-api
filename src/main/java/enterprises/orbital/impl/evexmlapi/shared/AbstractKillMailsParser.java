@@ -48,7 +48,7 @@ public abstract class AbstractKillMailsParser extends AbstractApiParser<KillLogR
     return digester;
   }
 
-  public KillLogResponse getResponseWithBeforeKillID(ApiAuth auth) throws IOException {
+  protected KillLogResponse getResponseWithBeforeKillID(ApiAuth auth) throws IOException {
     if (beforeKillID != null) {
       Map<String, String> extraParams = new HashMap<String, String>();
       extraParams.put("beforeKillID", Long.toString(beforeKillID));

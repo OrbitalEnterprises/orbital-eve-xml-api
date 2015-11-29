@@ -14,7 +14,7 @@ import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class PlanetaryLinkParser extends AbstractApiParser<PlanetaryLinkResponse, Collection<IPlanetaryLink>> {
-  protected Long planetID;
+  private Long planetID;
 
   public PlanetaryLinkParser(ApiConnector connector, Long planetID) {
     super(connector, PlanetaryLinkResponse.class, ApiEndpoint.CHR_PLANETARY_LINKS_V2);
@@ -30,7 +30,7 @@ public class PlanetaryLinkParser extends AbstractApiParser<PlanetaryLinkResponse
     return digester;
   }
 
-  public PlanetaryLinkResponse getResponseWithPlanetID(ApiAuth auth) throws IOException {
+  private PlanetaryLinkResponse getResponseWithPlanetID(ApiAuth auth) throws IOException {
     if (planetID != null)
       return getResponse(auth, "planetID", String.valueOf(planetID));
     else

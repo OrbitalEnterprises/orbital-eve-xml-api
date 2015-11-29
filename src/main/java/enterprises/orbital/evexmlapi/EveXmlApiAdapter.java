@@ -21,7 +21,7 @@ import enterprises.orbital.impl.evexmlapi.map.MapAPIAdapter;
 import enterprises.orbital.impl.evexmlapi.svr.ServerAPIAdapter;
 
 public class EveXmlApiAdapter implements IEveXmlApi {
-  protected ApiConnector connector;
+  private ApiConnector connector;
 
   public EveXmlApiAdapter() throws URISyntaxException {
     this(EveXmlApiConfig.get());

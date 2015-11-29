@@ -14,7 +14,7 @@ import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class CorporationSheetParser extends AbstractApiParser<CorporationSheetResponse, ICorporationSheet> {
-  protected Long corporationID;
+  private Long corporationID;
 
   public CorporationSheetParser(ApiConnector connector, Long corporationID) {
     super(connector, CorporationSheetResponse.class, ApiEndpoint.CRP_CORPORATION_SHEET_V2);
@@ -67,7 +67,7 @@ public class CorporationSheetParser extends AbstractApiParser<CorporationSheetRe
     return digester;
   }
 
-  public CorporationSheetResponse getResponseWithCorpID(ApiAuth auth) throws IOException {
+  private CorporationSheetResponse getResponseWithCorpID(ApiAuth auth) throws IOException {
     if (corporationID != null)
       // If corporation ID is specified, then this will ignore auth info and retrieve public info only.
       // So no reason to base auth here.

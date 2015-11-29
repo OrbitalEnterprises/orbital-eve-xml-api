@@ -14,7 +14,7 @@ import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class PlanetaryRouteParser extends AbstractApiParser<PlanetaryRouteResponse, Collection<IPlanetaryRoute>> {
-  protected Long planetID;
+  private Long planetID;
 
   public PlanetaryRouteParser(ApiConnector connector, Long planetID) {
     super(connector, PlanetaryRouteResponse.class, ApiEndpoint.CHR_PLANETARY_ROUTES_V2);
@@ -30,7 +30,7 @@ public class PlanetaryRouteParser extends AbstractApiParser<PlanetaryRouteRespon
     return digester;
   }
 
-  public PlanetaryRouteResponse getResponseWithPlanetID(ApiAuth auth) throws IOException {
+  private PlanetaryRouteResponse getResponseWithPlanetID(ApiAuth auth) throws IOException {
     if (planetID != null)
       return getResponse(auth, "planetID", String.valueOf(planetID));
     else

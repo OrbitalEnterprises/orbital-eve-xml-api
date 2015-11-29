@@ -16,7 +16,7 @@ import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class MailBodiesParser extends AbstractApiParser<MailBodiesResponse, Collection<IMailBody>> {
-  protected long[] ids;
+  private long[] ids;
 
   public MailBodiesParser(ApiConnector connector, long... ids) {
     super(connector, MailBodiesResponse.class, ApiEndpoint.CHR_MAIL_BODIES_V2);
@@ -33,7 +33,7 @@ public class MailBodiesParser extends AbstractApiParser<MailBodiesResponse, Coll
     return digester;
   }
 
-  public MailBodiesResponse getResponseWithIDs(ApiAuth auth) throws IOException {
+  private MailBodiesResponse getResponseWithIDs(ApiAuth auth) throws IOException {
     if (ids.length > 0) {
       return getResponse(auth, "ids", Arrays.toString(ids).replace(" ", "").replace("[", "").replace("]", ""));
     } else
