@@ -9,26 +9,23 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.chr.IMailBody;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
 public class TestMailBodies extends ApiTestSetup {
 
-	@Test
-	public void testGetCharMailBodies() throws IOException, ParseException,
-			SAXException {
-		// Retrieve response
-		ICharacterAPI request = requestor.getCharacterAPIService(0,
-				"na", 0L);
-		Collection<IMailBody> response = request.requestMailBodies(0);
+  @Test
+  public void testGetCharMailBodies() throws IOException, ParseException, SAXException {
+    // Retrieve response
+    ICharacterAPI request = requestor.getCharacterAPIService(0, "na", 0L);
+    Collection<IMailBody> response = request.requestMailBodies(0);
 
-		// Compute XML for comparison
-		String testData = CharMailBodiesConverter.convert(request, response);
+    // Compute XML for comparison
+    String testData = CharMailBodiesConverter.convert(request, response);
 
-		// Perform test
-		ApiTestConnector.testComparison(ApiTestConnector.CHAR_MAIL_BODIES_CTL,
-				ApiTestConnector.CHAR_MAIL_BODIES_TST,
-				ApiTestConnector.CHAR_MAIL_BODIES_OUT, testData);
-	}
+    // Perform test
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_MAIL_BODIES_V2, testConnector.getLastRequestParams(), testData);
+  }
 
 }

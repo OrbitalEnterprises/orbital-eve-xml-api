@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.crp.ICorporationAPI;
 import enterprises.orbital.evexmlapi.shared.IBookmarkFolder;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -24,7 +25,7 @@ public class TestBookmarks extends ApiTestSetup {
     String testData = CorpBookmarksConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CORP_BOOKMARKS_CTL, ApiTestConnector.CORP_BOOKMARKS_TST, ApiTestConnector.CORP_BOOKMARKS_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CRP_BOOKMARKS_V2, testConnector.getLastRequestParams(), testData);
   }
 
 }

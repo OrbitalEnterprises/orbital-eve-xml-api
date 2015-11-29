@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.crp.ICorporationAPI;
 import enterprises.orbital.evexmlapi.crp.ICustomsOffice;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -24,8 +25,7 @@ public class TestCustomsOffices extends ApiTestSetup {
     String testData = CorpCustomsOfficesConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CORP_CUSTOMS_OFFICES_CTL, ApiTestConnector.CORP_CUSTOMS_OFFICES_TST, ApiTestConnector.CORP_CUSTOMS_OFFICES_OUT,
-                                 testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CRP_CUSTOMS_OFFICES_V2, testConnector.getLastRequestParams(), testData);
   }
 
 }

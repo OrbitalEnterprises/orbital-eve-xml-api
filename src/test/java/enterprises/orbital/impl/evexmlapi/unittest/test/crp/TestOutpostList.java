@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.crp.ICorporationAPI;
 import enterprises.orbital.evexmlapi.crp.IOutpost;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -24,7 +25,7 @@ public class TestOutpostList extends ApiTestSetup {
     String testData = CorpOutpostListConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CORP_OUTPOST_LIST_CTL, ApiTestConnector.CORP_OUTPOST_LIST_TST, ApiTestConnector.CORP_OUTPOST_LIST_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CRP_OUTPOST_LIST_V2, testConnector.getLastRequestParams(), testData);
   }
 
 }

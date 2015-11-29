@@ -1,4 +1,4 @@
-package enterprises.orbital.impl.evexmlapi.unittest.test.svr;
+package enterprises.orbital.impl.evexmlapi.unittest.test.eve;
 
 import enterprises.orbital.evexmlapi.eve.ICharacterInfo;
 import enterprises.orbital.evexmlapi.eve.IEmploymentHistory;

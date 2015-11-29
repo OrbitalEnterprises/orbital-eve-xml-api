@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.shared.IContractItem;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -24,7 +25,7 @@ public class TestContractItems extends ApiTestSetup {
     String testData = CharContractItemsConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CHAR_CONTRACT_ITEMS_CTL, ApiTestConnector.CHAR_CONTRACT_ITEMS_TST, ApiTestConnector.CHAR_CONTRACT_ITEMS_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_CONTRACTS_ITEMS_V1, testConnector.getLastRequestParams(), testData);
   }
 
 }

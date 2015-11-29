@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.shared.IContractBid;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -24,7 +25,7 @@ public class TestContractBids extends ApiTestSetup {
     String testData = CharContractBidsConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CHAR_CONTRACT_BIDS_CTL, ApiTestConnector.CHAR_CONTRACT_BIDS_TST, ApiTestConnector.CHAR_CONTRACT_BIDS_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_CONTRACTS_BIDS_V1, testConnector.getLastRequestParams(), testData);
   }
 
 }

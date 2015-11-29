@@ -10,6 +10,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.crp.ICorporationAPI;
 import enterprises.orbital.evexmlapi.shared.IMarketOrder;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -25,7 +26,7 @@ public class TestMarketOrders extends ApiTestSetup {
     String testData = CorpMarketOrdersConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CORP_MARKET_ORDERS_CTL, ApiTestConnector.CORP_MARKET_ORDERS_TST, ApiTestConnector.CORP_MARKET_ORDERS_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CRP_MARKET_ORDERS_V2, testConnector.getLastRequestParams(), testData);
   }
 
   @Test
@@ -41,7 +42,6 @@ public class TestMarketOrders extends ApiTestSetup {
     String testData = CorpMarketOrdersConverter.convert(request, responseCollection);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CORP_MARKET_ORDERS_BYID_CTL, ApiTestConnector.CORP_MARKET_ORDERS_BYID_TST,
-                                 ApiTestConnector.CORP_MARKET_ORDERS_BYID_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CRP_MARKET_ORDERS_V2, testConnector.getLastRequestParams(), testData);
   }
 }

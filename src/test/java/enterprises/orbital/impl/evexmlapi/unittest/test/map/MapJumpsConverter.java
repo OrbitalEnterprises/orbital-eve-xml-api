@@ -1,4 +1,4 @@
-package enterprises.orbital.impl.evexmlapi.unittest.test.svr;
+package enterprises.orbital.impl.evexmlapi.unittest.test.map;
 
 import enterprises.orbital.evexmlapi.map.IJump;
 import enterprises.orbital.evexmlapi.map.IMapAPI;

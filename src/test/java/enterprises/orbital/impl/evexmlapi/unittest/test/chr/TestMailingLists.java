@@ -9,26 +9,23 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.chr.IMailList;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
 public class TestMailingLists extends ApiTestSetup {
 
-	@Test
-	public void testGetMailingLists() throws IOException, ParseException,
-			SAXException {
-		// Retrieve response
-		ICharacterAPI request = requestor.getCharacterAPIService(0,
-				"na", 0L);
-		Collection<IMailList> response = request.requestMailingLists();
+  @Test
+  public void testGetMailingLists() throws IOException, ParseException, SAXException {
+    // Retrieve response
+    ICharacterAPI request = requestor.getCharacterAPIService(0, "na", 0L);
+    Collection<IMailList> response = request.requestMailingLists();
 
-		// Compute XML for comparison
-		String testData = CharMailingListsConverter.convert(request, response);
+    // Compute XML for comparison
+    String testData = CharMailingListsConverter.convert(request, response);
 
-		// Perform test
-		ApiTestConnector.testComparison(ApiTestConnector.CHAR_MAILING_LISTS_CTL,
-				ApiTestConnector.CHAR_MAILING_LISTS_TST,
-				ApiTestConnector.CHAR_MAILING_LISTS_OUT, testData);
-	}
+    // Perform test
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_MAILING_LISTS_V2, testConnector.getLastRequestParams(), testData);
+  }
 
 }

@@ -10,12 +10,14 @@ import enterprises.orbital.evexmlapi.IEveXmlApi;
 
 public abstract class ApiTestSetup {
 
+  protected static ApiTestConnector testConnector;
   protected static IEveXmlApi       requestor;
   protected static SimpleDateFormat dateFormatter;
 
   static {
     try {
-      requestor = new EveXmlApiAdapter().setConnector(new ApiTestConnector(new URI("https://api.eveonline.com"), null, -1, -1));
+      testConnector = new ApiTestConnector(new URI("https://api.eveonline.com"), null, -1, -1);
+      requestor = new EveXmlApiAdapter().setConnector(testConnector);
     } catch (URISyntaxException e) {
       // Rethrow to cause tests to fail.
       throw new RuntimeException(e);

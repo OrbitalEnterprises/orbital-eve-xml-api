@@ -9,26 +9,23 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.crp.ICorporationAPI;
 import enterprises.orbital.evexmlapi.crp.IShareholder;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
 public class TestShareholders extends ApiTestSetup {
 
-	@Test
-	public void testGetShareholders() throws IOException, ParseException,
-			SAXException {
-		// Retrieve response
-		ICorporationAPI request = requestor.getCorporationAPIService(0,
-				"na", 0L);
-		Collection<IShareholder> response = request.requestShareholders();
+  @Test
+  public void testGetShareholders() throws IOException, ParseException, SAXException {
+    // Retrieve response
+    ICorporationAPI request = requestor.getCorporationAPIService(0, "na", 0L);
+    Collection<IShareholder> response = request.requestShareholders();
 
-		// Compute XML for comparison
-		String testData = CorpShareholdersConverter.convert(request, response);
+    // Compute XML for comparison
+    String testData = CorpShareholdersConverter.convert(request, response);
 
-		// Perform test
-		ApiTestConnector.testComparison(ApiTestConnector.CORP_SHAREHOLDERS_CTL,
-				ApiTestConnector.CORP_SHAREHOLDERS_TST,
-				ApiTestConnector.CORP_SHAREHOLDERS_OUT, testData);
-	}
+    // Perform test
+    ApiTestConnector.testComparison(ApiEndpoint.CRP_SHAREHOLDERS_V2, testConnector.getLastRequestParams(), testData);
+  }
 
 }

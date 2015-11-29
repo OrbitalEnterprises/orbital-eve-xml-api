@@ -9,25 +9,23 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.act.IAccountAPI;
 import enterprises.orbital.evexmlapi.act.ICharacter;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
 public class TestCharacters extends ApiTestSetup {
 
-	@Test
-	public void testGetCharacters() throws IOException, ParseException,
-			SAXException {
-		// Retrieve response
-		IAccountAPI request = requestor.getAccountAPIService(0, "na");
-		Collection<ICharacter> response = request.requestCharacters();
+  @Test
+  public void testGetCharacters() throws IOException, ParseException, SAXException {
+    // Retrieve response
+    IAccountAPI request = requestor.getAccountAPIService(0, "na");
+    Collection<ICharacter> response = request.requestCharacters();
 
-		// Compute XML for comparison
-		String testData = AcctCharactersConverter.convert(request, response);
+    // Compute XML for comparison
+    String testData = AcctCharactersConverter.convert(request, response);
 
-		// Perform test
-		ApiTestConnector.testComparison(ApiTestConnector.ACCT_CHARACTERS_CTL,
-				ApiTestConnector.ACCT_CHARACTERS_TST,
-				ApiTestConnector.ACCT_CHARACTERS_OUT, testData);
-	}
+    // Perform test
+    ApiTestConnector.testComparison(ApiEndpoint.ACT_CHARACTERS_V1, testConnector.getLastRequestParams(), testData);
+  }
 
 }

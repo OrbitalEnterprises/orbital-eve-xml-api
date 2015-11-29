@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.shared.IAsset;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -24,7 +25,7 @@ public class TestAssetList extends ApiTestSetup {
     String testData = CharAssetListConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CHAR_ASSET_LIST_CTL, ApiTestConnector.CHAR_ASSET_LIST_TST, ApiTestConnector.CHAR_ASSET_LIST_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_ASSET_LIST_V2, testConnector.getLastRequestParams(), testData);
   }
 
 }

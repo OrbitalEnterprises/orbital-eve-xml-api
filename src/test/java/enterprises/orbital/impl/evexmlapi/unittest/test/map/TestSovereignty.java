@@ -1,4 +1,4 @@
-package enterprises.orbital.impl.evexmlapi.unittest.test.svr;
+package enterprises.orbital.impl.evexmlapi.unittest.test.map;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -8,6 +8,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.map.IMapAPI;
 import enterprises.orbital.evexmlapi.map.ISovereignty;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -23,7 +24,7 @@ public class TestSovereignty extends ApiTestSetup {
     String testData = MapSovereigntyConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.MAP_SOVEREIGNTY_CTL, ApiTestConnector.MAP_SOVEREIGNTY_TST, ApiTestConnector.MAP_SOVEREIGNTY_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.MAP_SOVEREIGNTY_V1, testConnector.getLastRequestParams(), testData);
   }
 
 }

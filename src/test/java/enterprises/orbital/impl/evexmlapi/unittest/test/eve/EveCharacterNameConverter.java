@@ -1,4 +1,4 @@
-package enterprises.orbital.impl.evexmlapi.unittest.test.svr;
+package enterprises.orbital.impl.evexmlapi.unittest.test.eve;
 
 import java.util.Collection;
 
@@ -6,7 +6,7 @@ import enterprises.orbital.evexmlapi.eve.ICharacterLookup;
 import enterprises.orbital.evexmlapi.eve.IEveAPI;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ResponseConverter;
 
-public class EveCharacterIDConverter extends ResponseConverter {
+public class EveCharacterNameConverter extends ResponseConverter {
 
 	public static String convert(IEveAPI request,
 			Collection<ICharacterLookup> response) {

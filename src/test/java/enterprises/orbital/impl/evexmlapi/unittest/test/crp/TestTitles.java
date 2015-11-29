@@ -9,26 +9,23 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.crp.ICorporationAPI;
 import enterprises.orbital.evexmlapi.crp.ITitle;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
 public class TestTitles extends ApiTestSetup {
 
-	@Test
-	public void testGetTitles() throws IOException, ParseException,
-			SAXException {
-		// Retrieve response
-		ICorporationAPI request = requestor.getCorporationAPIService(0,
-				"na", 0L);
-		Collection<ITitle> response = request.requestTitles();
+  @Test
+  public void testGetTitles() throws IOException, ParseException, SAXException {
+    // Retrieve response
+    ICorporationAPI request = requestor.getCorporationAPIService(0, "na", 0L);
+    Collection<ITitle> response = request.requestTitles();
 
-		// Compute XML for comparison
-		String testData = CorpTitlesConverter.convert(request, response);
+    // Compute XML for comparison
+    String testData = CorpTitlesConverter.convert(request, response);
 
-		// Perform test
-		ApiTestConnector.testComparison(ApiTestConnector.CORP_TITLES_CTL,
-				ApiTestConnector.CORP_TITLES_TST, ApiTestConnector.CORP_TITLES_OUT,
-				testData);
-	}
+    // Perform test
+    ApiTestConnector.testComparison(ApiEndpoint.CRP_TITLES_V2, testConnector.getLastRequestParams(), testData);
+  }
 
 }

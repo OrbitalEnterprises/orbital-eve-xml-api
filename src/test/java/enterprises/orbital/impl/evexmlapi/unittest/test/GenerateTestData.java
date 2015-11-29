@@ -10,10 +10,14 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 /**
  * This class generates test data for the server API unit tests. We don't ship test data with the unit tests because it contains sensitive corp information. So
@@ -145,16 +149,40 @@ public class GenerateTestData {
     output.close();
   }
 
-  protected static void retrieveAndStoreData(String baseURL, String location, String... args) throws IOException {
-    baseURL = serverURL + baseURL;
-    System.out.print("Retrieving " + baseURL + " to " + location + "...");
-
-    // Skip if there already exists a file.
-    File existingCheck = new File(location);
-    if (existingCheck.exists() && existingCheck.isFile()) {
-      System.out.println("skipped (exists)");
-      return;
+  protected static String makeOutputFileName(ApiEndpoint endpoint, String... args) {
+    String altInputPath = System.getProperty("orbital.test.data.in", "");
+    String query = "";
+    if (args.length == 1) {
+      query += args[0];
+    } else if (args.length > 1) {
+      query += Arrays.toString(args).replace("[", "").replace(',', '&').replace(" ", "").replace("]", "");
     }
+    Map<String, String> params = new HashMap<String, String>();
+    if (args.length > 0) {
+      for (String nextPair : query.split("&")) {
+        String[] pair = nextPair.split("=");
+        // Hide credentials in output file name
+        switch (pair[0]) {
+        case "characterID":
+        case "keyID":
+          pair[1] = "0";
+          break;
+        case "vCode":
+          pair[1] = "na";
+          break;
+        default:
+          break;
+        }
+        params.put(pair[0], pair[1]);
+      }
+    }
+    return altInputPath + ApiTestConnector.endpointToControlData(endpoint, params);
+  }
+
+  protected static void retrieveAndStoreData(ApiEndpoint endpoint, String... args) throws IOException {
+    String baseURL = serverURL + ApiTestConnector.endpointToURI(endpoint);
+    String controlOutput = makeOutputFileName(endpoint, args);
+    System.out.print("Retrieving " + baseURL + " to " + controlOutput + "...");
 
     String target = baseURL;
     if (args.length == 1) {
@@ -162,6 +190,14 @@ public class GenerateTestData {
     } else if (args.length > 1) {
       target += Arrays.toString(args).replace('[', '?').replace(',', '&').replace(" ", "").replace("]", "");
     }
+
+    // Skip if there already exists a file.
+    File existingCheck = new File(controlOutput);
+    if (existingCheck.exists() && existingCheck.isFile()) {
+      System.out.println("skipped (exists)");
+      return;
+    }
+
     URL getter = new URL(target);
     BufferedReader dataIn = new BufferedReader(new InputStreamReader(getter.openStream()));
     String next = dataIn.readLine();
@@ -171,23 +207,23 @@ public class GenerateTestData {
       next = dataIn.readLine();
     }
     dataIn.close();
-    storeTestData(location, result.toString());
+    storeTestData(controlOutput, result.toString());
     System.out.println("done");
   }
 
   public static void getAccountTestData() throws IOException {
     String credentials = "keyID=" + charKeyID + "&vCode=" + charVCode;
 
-    retrieveAndStoreData(ApiTestConnector.ACCT_CHARACTERS_URI, ApiTestConnector.ACCT_CHARACTERS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.ACCT_ACCOUNT_STATUS_URI, ApiTestConnector.ACCT_ACCOUNT_STATUS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.ACCT_API_KEY_INFO_URI, ApiTestConnector.ACCT_API_KEY_INFO_CTL, credentials);
+    retrieveAndStoreData(ApiEndpoint.ACT_CHARACTERS_V1, credentials);
+    retrieveAndStoreData(ApiEndpoint.ACT_ACCOUNT_STATUS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.ACT_API_KEY_INFO_V1, credentials);
   }
 
   public static void getCharCalendarEventAttendees(String credentials) throws IOException {
     // Get CalendarEventAttendees. This only works if we have a recently
     // requested UpcomingCalendarEvents. Look at that file and pull out
     // all the event IDs to assemble a request.
-    BufferedReader scanner = new BufferedReader(new FileReader(ApiTestConnector.CHAR_UPCOMING_CALENDAR_EVENTS_CTL));
+    BufferedReader scanner = new BufferedReader(new FileReader(makeOutputFileName(ApiEndpoint.CHR_UPCOMING_CALENDAR_EVENTS_V2, credentials)));
     String nextLine = scanner.readLine();
     List<Long> ids = new ArrayList<Long>();
     Pattern matcher = Pattern.compile("eventID\\=\"([0-9]+)\"");
@@ -206,7 +242,7 @@ public class GenerateTestData {
       if (adder.hasNext()) ceaCredentials += ",";
     }
 
-    retrieveAndStoreData(ApiTestConnector.CHAR_CALENDAR_EVENT_ATTENDEES_URI, ApiTestConnector.CHAR_CALENDAR_EVENT_ATTENDEES_CTL, ceaCredentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_CALENDAR_EVENT_ATTENDEE_V2, ceaCredentials);
     scanner.close();
   }
 
@@ -217,7 +253,7 @@ public class GenerateTestData {
       if (adder.hasNext()) nameList += ",";
     }
 
-    retrieveAndStoreData(ApiTestConnector.EVE_CHARACTER_ID_URI, ApiTestConnector.EVE_CHARACTER_ID_CTL, nameList);
+    retrieveAndStoreData(ApiEndpoint.EVE_CHARACTER_ID_V2, nameList);
   }
 
   public static void getEveIDLookup() throws IOException {
@@ -227,12 +263,12 @@ public class GenerateTestData {
       if (adder.hasNext()) idList += ",";
     }
 
-    retrieveAndStoreData(ApiTestConnector.EVE_CHARACTER_NAME_URI, ApiTestConnector.EVE_CHARACTER_NAME_CTL, idList);
+    retrieveAndStoreData(ApiEndpoint.EVE_CHARACTER_NAME_V2, idList);
   }
 
   public static void getCharMailBodies(String credentials) throws IOException {
     // Get MailBodies. This only works if we have recently requested MailMessages. Look at that file and pull out all message IDs to assemble a request.
-    BufferedReader scanner = new BufferedReader(new FileReader(ApiTestConnector.CHAR_MAIL_MESSAGES_CTL));
+    BufferedReader scanner = new BufferedReader(new FileReader(makeOutputFileName(ApiEndpoint.CHR_MAIL_MESSAGES_V2, credentials)));
     String nextLine = scanner.readLine();
     List<Long> ids = new ArrayList<Long>();
     Pattern matcher = Pattern.compile("messageID\\=\"([0-9]+)\"");
@@ -250,14 +286,14 @@ public class GenerateTestData {
       ceaCredentials += String.valueOf(adder.next());
       if (adder.hasNext()) ceaCredentials += ",";
     }
-    retrieveAndStoreData(ApiTestConnector.CHAR_MAIL_BODIES_URI, ApiTestConnector.CHAR_MAIL_BODIES_CTL, ceaCredentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_MAIL_BODIES_V2, ceaCredentials);
     scanner.close();
   }
 
   public static void getCharNotificationTexts(String credentials) throws IOException {
     // Get NotificationTexts. This only works if we have recently requested Notifications. Look at that file and pull out all notification IDs to assemble a
     // request.
-    BufferedReader scanner = new BufferedReader(new FileReader(ApiTestConnector.CHAR_NOTIFICATIONS_CTL));
+    BufferedReader scanner = new BufferedReader(new FileReader(makeOutputFileName(ApiEndpoint.CHR_NOTIFICATIONS_V2, credentials)));
     String nextLine = scanner.readLine();
     List<Long> ids = new ArrayList<Long>();
     Pattern matcher = Pattern.compile("notificationID\\=\"([0-9]+)\"");
@@ -275,13 +311,13 @@ public class GenerateTestData {
       ceaCredentials += String.valueOf(adder.next());
       if (adder.hasNext()) ceaCredentials += ",";
     }
-    retrieveAndStoreData(ApiTestConnector.CHAR_NOTIFICATION_TEXTS_URI, ApiTestConnector.CHAR_NOTIFICATION_TEXTS_CTL, ceaCredentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_NOTIFICATION_TEXTS_V2, ceaCredentials);
     scanner.close();
   }
 
   public static void getCorpStarbaseDetail(String credentials) throws IOException {
     // Get StarbaseDetails. Requires a call to StarbaseList first in order to provide at least one itemID.
-    BufferedReader scanner = new BufferedReader(new FileReader(ApiTestConnector.CORP_STARBASE_LIST_CTL));
+    BufferedReader scanner = new BufferedReader(new FileReader(makeOutputFileName(ApiEndpoint.CRP_STARBASE_LIST_V2, credentials)));
     String nextLine = scanner.readLine();
     List<Long> ids = new ArrayList<Long>();
     Pattern matcher = Pattern.compile("itemID\\=\"([0-9]+)\"");
@@ -296,14 +332,14 @@ public class GenerateTestData {
 
     String ceaCredentials = credentials;
     if (ids.size() > 0) ceaCredentials += "&itemid=" + ids.get(0);
-    retrieveAndStoreData(ApiTestConnector.CORP_STARBASE_DETAIL_URI, ApiTestConnector.CORP_STARBASE_DETAIL_CTL, ceaCredentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_STARBASE_DETAIL_V2, ceaCredentials);
     scanner.close();
   }
 
   public static void getCharContractItems(String credentials) throws IOException {
     // Get ContractItems. This only works if we have recently requested Contracts. Look at that file and pull out at least one contract ID to assemble a
     // request.
-    BufferedReader scanner = new BufferedReader(new FileReader(ApiTestConnector.CHAR_CONTRACTS_CTL));
+    BufferedReader scanner = new BufferedReader(new FileReader(makeOutputFileName(ApiEndpoint.CHR_CONTRACTS_V1, credentials)));
     String nextLine = scanner.readLine();
     List<Long> ids = new ArrayList<Long>();
     Pattern matcher = Pattern.compile("contractID\\=\"([0-9]+)\"");
@@ -318,14 +354,14 @@ public class GenerateTestData {
 
     String ceaCredentials = credentials;
     if (ids.size() > 0) ceaCredentials += "&contractid=" + ids.get(0);
-    retrieveAndStoreData(ApiTestConnector.CHAR_CONTRACT_ITEMS_URI, ApiTestConnector.CHAR_CONTRACT_ITEMS_CTL, ceaCredentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_CONTRACTS_ITEMS_V1, ceaCredentials);
     scanner.close();
   }
 
   public static void getCorpContractItems(String credentials) throws IOException {
     // Get ContractItems. This only works if we have recently requested Contracts. Look at that file and pull out at least one contract ID to assemble a
     // request.
-    BufferedReader scanner = new BufferedReader(new FileReader(ApiTestConnector.CORP_CONTRACTS_CTL));
+    BufferedReader scanner = new BufferedReader(new FileReader(makeOutputFileName(ApiEndpoint.CRP_CONTRACTS_V1, credentials)));
     String nextLine = scanner.readLine();
     List<Long> ids = new ArrayList<Long>();
     Pattern matcher = Pattern.compile("contractID\\=\"([0-9]+)\"");
@@ -340,7 +376,7 @@ public class GenerateTestData {
 
     String ceaCredentials = credentials;
     if (ids.size() > 0) ceaCredentials += "&contractid=" + ids.get(0);
-    retrieveAndStoreData(ApiTestConnector.CORP_CONTRACT_ITEMS_URI, ApiTestConnector.CORP_CONTRACT_ITEMS_CTL, ceaCredentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_CONTRACTS_ITEMS_V1, ceaCredentials);
     scanner.close();
   }
 
@@ -348,91 +384,90 @@ public class GenerateTestData {
     String credentials = "keyID=" + charKeyID + "&vCode=" + charVCode + "&characterID=" + charID;
     String fcredentials = fCharKeyID != null ? "keyID=" + fCharKeyID + "&vCode=" + fCharVCode + "&characterID=" + fCharID : null;
 
-    retrieveAndStoreData(ApiTestConnector.CHAR_ACCOUNT_BALANCE_URI, ApiTestConnector.CHAR_ACCOUNT_BALANCE_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_ASSET_LIST_URI, ApiTestConnector.CHAR_ASSET_LIST_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_CONTRACTS_URI, ApiTestConnector.CHAR_CONTRACTS_CTL, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_ACCOUNT_BALANCE_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_ASSET_LIST_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_CONTRACTS_V1, credentials);
     getCharContractItems(credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_CONTRACT_BIDS_URI, ApiTestConnector.CHAR_CONTRACT_BIDS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_INDUSTRY_JOBS_URI, ApiTestConnector.CHAR_INDUSTRY_JOBS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_INDUSTRY_JOBS_HISTORY_URI, ApiTestConnector.CHAR_INDUSTRY_JOBS_HISTORY_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_KILLLOG_URI, ApiTestConnector.CHAR_KILLLOG_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_STANDINGS_URI, ApiTestConnector.CHAR_STANDINGS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_CHARACTER_SHEET_URI, ApiTestConnector.CHAR_CHARACTER_SHEET_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_UPCOMING_CALENDAR_EVENTS_URI, ApiTestConnector.CHAR_UPCOMING_CALENDAR_EVENTS_CTL, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_CONTRACTS_BIDS_V1, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_INDUSTRY_JOBS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_INDUSTRY_JOBS_HISTORY_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_KILL_MAILS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_STANDINGS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_CHARACTER_SHEET_V1, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_UPCOMING_CALENDAR_EVENTS_V2, credentials);
     getCharCalendarEventAttendees(credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_CONTACT_LIST_URI, ApiTestConnector.CHAR_CONTACT_LIST_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_CONTACT_NOTIFICATIONS_URI, ApiTestConnector.CHAR_CONTACT_NOTIFICATIONS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_FAC_WAR_STATS_URI, ApiTestConnector.CHAR_FAC_WAR_STATS_CTL, fcredentials != null ? fcredentials : credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_MAILING_LISTS_URI, ApiTestConnector.CHAR_MAILING_LISTS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_MAIL_MESSAGES_URI, ApiTestConnector.CHAR_MAIL_MESSAGES_CTL, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_CONTACT_LIST_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_CONTACT_NOTIFICATIONS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_FAC_WAR_STATS_V2, fcredentials != null ? fcredentials : credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_MAILING_LISTS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_MAIL_MESSAGES_V2, credentials);
     getCharMailBodies(credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_MARKET_ORDERS_URI, ApiTestConnector.CHAR_MARKET_ORDERS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_MEDALS_URI, ApiTestConnector.CHAR_MEDALS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_PLANETARY_COLONIES_URI, ApiTestConnector.CHAR_PLANETARY_COLONIES_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_PLANETARY_LINKS_URI, ApiTestConnector.CHAR_PLANETARY_LINKS_CTL, credentials + "&planetID=40215544");
-    retrieveAndStoreData(ApiTestConnector.CHAR_PLANETARY_ROUTES_URI, ApiTestConnector.CHAR_PLANETARY_ROUTES_CTL, credentials + "&planetID=40215544");
-    retrieveAndStoreData(ApiTestConnector.CHAR_PLANETARY_PINS_URI, ApiTestConnector.CHAR_PLANETARY_PINS_CTL, credentials + "&planetID=40215544");
-    retrieveAndStoreData(ApiTestConnector.CHAR_NOTIFICATIONS_URI, ApiTestConnector.CHAR_NOTIFICATIONS_CTL, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_MARKET_ORDERS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_MEDALS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_PLANETARY_COLONIES_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_PLANETARY_LINKS_V2, credentials + "&planetID=40215544");
+    retrieveAndStoreData(ApiEndpoint.CHR_PLANETARY_ROUTES_V2, credentials + "&planetID=40215544");
+    retrieveAndStoreData(ApiEndpoint.CHR_PLANETARY_PINS_V2, credentials + "&planetID=40215544");
+    retrieveAndStoreData(ApiEndpoint.CHR_NOTIFICATIONS_V2, credentials);
     getCharNotificationTexts(credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_RESEARCH_URI, ApiTestConnector.CHAR_RESEARCH_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_SKILL_IN_TRAINING_URI, ApiTestConnector.CHAR_SKILL_IN_TRAINING_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_SKILL_QUEUE_URI, ApiTestConnector.CHAR_SKILL_QUEUE_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_WALLET_JOURNAL_URI, ApiTestConnector.CHAR_WALLET_JOURNAL_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CHAR_WALLET_TRANSACTIONS_URI, ApiTestConnector.CHAR_WALLET_TRANSACTIONS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.EVE_CHARACTER_INFO_URI, ApiTestConnector.EVE_CHARACTER_INFO_CTL, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_RESEARCH_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_SKILL_IN_TRAINING_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_SKILL_QUEUE_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_WALLET_JOURNAL_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CHR_WALLET_TRANSACTIONS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.EVE_CHARACTER_INFO_V2, credentials);
   }
 
   public static void getCorpTestData() throws IOException {
     String credentials = "keyID=" + corpKeyID + "&vCode=" + corpVCode + "&characterID=" + corpID;
 
-    retrieveAndStoreData(ApiTestConnector.CORP_ACCOUNT_BALANCE_URI, ApiTestConnector.CORP_ACCOUNT_BALANCE_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_ASSET_LIST_URI, ApiTestConnector.CORP_ASSET_LIST_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_CONTRACTS_URI, ApiTestConnector.CORP_CONTRACTS_CTL, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_ACCOUNT_BALANCE_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_ASSET_LIST_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_CONTRACTS_V1, credentials);
     getCorpContractItems(credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_CONTRACT_BIDS_URI, ApiTestConnector.CORP_CONTRACT_BIDS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_INDUSTRY_JOBS_URI, ApiTestConnector.CORP_INDUSTRY_JOBS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_INDUSTRY_JOBS_HISTORY_URI, ApiTestConnector.CORP_INDUSTRY_JOBS_HISTORY_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_KILLLOG_URI, ApiTestConnector.CORP_KILLLOG_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_STANDINGS_URI, ApiTestConnector.CORP_STANDINGS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_CORPORATION_SHEET_URI, ApiTestConnector.CORP_CORPORATION_SHEET_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_CONTACT_LIST_URI, ApiTestConnector.CORP_CONTACT_LIST_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_FAC_WAR_STATS_URI, ApiTestConnector.CORP_FAC_WAR_STATS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_MARKET_ORDERS_URI, ApiTestConnector.CORP_MARKET_ORDERS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_MEDALS_URI, ApiTestConnector.CORP_MEDALS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_WALLET_JOURNAL_URI, ApiTestConnector.CORP_WALLET_JOURNAL_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_WALLET_TRANSACTIONS_URI, ApiTestConnector.CORP_WALLET_TRANSACTIONS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_CONTAINER_LOG_URI, ApiTestConnector.CORP_CONTAINER_LOG_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_MEMBER_MEDALS_URI, ApiTestConnector.CORP_MEMBER_MEDALS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_MEMBER_SECURITY_URI, ApiTestConnector.CORP_MEMBER_SECURITY_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_MEMBER_SECURITY_LOG_URI, ApiTestConnector.CORP_MEMBER_SECURITY_LOG_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_MEMBER_TRACKING_URI, ApiTestConnector.CORP_MEMBER_TRACKING_CTL, credentials + "&extended=1");
-    retrieveAndStoreData(ApiTestConnector.CORP_SHAREHOLDERS_URI, ApiTestConnector.CORP_SHAREHOLDERS_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_STARBASE_LIST_URI, ApiTestConnector.CORP_STARBASE_LIST_CTL, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_CONTRACTS_BIDS_V1, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_INDUSTRY_JOBS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_INDUSTRY_JOBS_HISTORY_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_KILL_MAILS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_STANDINGS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_CORPORATION_SHEET_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_CONTACT_LIST_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_FAC_WAR_STATS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_MARKET_ORDERS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_MEDALS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_WALLET_JOURNAL_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_WALLET_TRANSACTIONS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_CONTAINER_LOG_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_MEMBER_MEDALS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_MEMBER_SECURITY_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_MEMBER_SECURITY_LOG_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_MEMBER_TRACKING_V2, credentials + "&extended=1");
+    retrieveAndStoreData(ApiEndpoint.CRP_SHAREHOLDERS_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_STARBASE_LIST_V2, credentials);
     getCorpStarbaseDetail(credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_TITLES_URI, ApiTestConnector.CORP_TITLES_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_FACILITIES_URI, ApiTestConnector.CORP_FACILITIES_CTL, credentials);
-    retrieveAndStoreData(ApiTestConnector.CORP_CUSTOMS_OFFICES_URI, ApiTestConnector.CORP_CUSTOMS_OFFICES_CTL, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_TITLES_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_FACILITIES_V2, credentials);
+    retrieveAndStoreData(ApiEndpoint.CRP_CUSTOMS_OFFICES_V2, credentials);
   }
 
   public static void getEveTestData() throws IOException {
-    retrieveAndStoreData(ApiTestConnector.SERVER_STATUS_URI, ApiTestConnector.SERVER_STATUS_CTL);
-    retrieveAndStoreData(ApiTestConnector.EVE_ALLIANCE_LIST_URI, ApiTestConnector.EVE_ALLIANCE_LIST_CTL);
-    retrieveAndStoreData(ApiTestConnector.EVE_CERTIFICATE_TREE_URI, ApiTestConnector.EVE_CERTIFICATE_TREE_CTL);
-    retrieveAndStoreData(ApiTestConnector.EVE_CONQ_STATION_LIST_URI, ApiTestConnector.EVE_CONQ_STATION_LIST_CTL);
-    retrieveAndStoreData(ApiTestConnector.EVE_ERROR_LIST_URI, ApiTestConnector.EVE_ERROR_LIST_CTL);
-    retrieveAndStoreData(ApiTestConnector.EVE_FAC_WAR_STATS_URI, ApiTestConnector.EVE_FAC_WAR_STATS_CTL);
-    retrieveAndStoreData(ApiTestConnector.EVE_FAC_WAR_TOP_STATS_URI, ApiTestConnector.EVE_FAC_WAR_TOP_STATS_CTL);
-    retrieveAndStoreData(ApiTestConnector.EVE_REF_TYPES_URI, ApiTestConnector.EVE_REF_TYPES_CTL);
-    retrieveAndStoreData(ApiTestConnector.EVE_SKILL_TREE_URI, ApiTestConnector.EVE_SKILL_TREE_CTL);
+    retrieveAndStoreData(ApiEndpoint.SVR_SERVER_STATUS_V2);
+    retrieveAndStoreData(ApiEndpoint.EVE_ALLIANCE_LIST_V2);
+    retrieveAndStoreData(ApiEndpoint.EVE_CONQUERABLE_STATION_LIST_V2);
+    retrieveAndStoreData(ApiEndpoint.EVE_ERROR_LIST_V2);
+    retrieveAndStoreData(ApiEndpoint.EVE_FAC_WAR_STATS_V2);
+    retrieveAndStoreData(ApiEndpoint.EVE_FAC_WAR_TOP_STATS_V2);
+    retrieveAndStoreData(ApiEndpoint.EVE_REF_TYPES_V1);
+    retrieveAndStoreData(ApiEndpoint.EVE_SKILL_TREE_V2);
     if (nameLookupList != null) getEveNameLookup();
     if (idLookupList != null) getEveIDLookup();
   }
 
   public static void getMapTestData() throws IOException {
-    retrieveAndStoreData(ApiTestConnector.MAP_FAC_WAR_SYSTEMS_URI, ApiTestConnector.MAP_FAC_WAR_SYSTEMS_CTL);
-    retrieveAndStoreData(ApiTestConnector.MAP_JUMPS_URI, ApiTestConnector.MAP_JUMPS_CTL);
-    retrieveAndStoreData(ApiTestConnector.MAP_KILLS_URI, ApiTestConnector.MAP_KILLS_CTL);
-    retrieveAndStoreData(ApiTestConnector.MAP_SOVEREIGNTY_URI, ApiTestConnector.MAP_SOVEREIGNTY_CTL);
+    retrieveAndStoreData(ApiEndpoint.MAP_FAC_WAR_SYSTEMS_V2);
+    retrieveAndStoreData(ApiEndpoint.MAP_JUMPS_V2);
+    retrieveAndStoreData(ApiEndpoint.MAP_KILLS_V2);
+    retrieveAndStoreData(ApiEndpoint.MAP_SOVEREIGNTY_V1);
   }
 
 }

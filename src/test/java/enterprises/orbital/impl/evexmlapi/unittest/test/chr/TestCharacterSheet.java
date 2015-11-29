@@ -8,6 +8,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.chr.ICharacterSheet;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -23,8 +24,7 @@ public class TestCharacterSheet extends ApiTestSetup {
     String testData = CharCharacterSheetConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CHAR_CHARACTER_SHEET_CTL, ApiTestConnector.CHAR_CHARACTER_SHEET_TST, ApiTestConnector.CHAR_CHARACTER_SHEET_OUT,
-                                 testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_CHARACTER_SHEET_V1, testConnector.getLastRequestParams(), testData);
   }
 
 }

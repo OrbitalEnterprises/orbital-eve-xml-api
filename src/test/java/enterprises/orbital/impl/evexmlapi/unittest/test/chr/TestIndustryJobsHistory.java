@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.shared.IIndustryJob;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -24,8 +25,7 @@ public class TestIndustryJobsHistory extends ApiTestSetup {
     String testData = CharIndustryJobsConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CHAR_INDUSTRY_JOBS_HISTORY_CTL, ApiTestConnector.CHAR_INDUSTRY_JOBS_HISTORY_TST,
-                                 ApiTestConnector.CHAR_INDUSTRY_JOBS_HISTORY_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_INDUSTRY_JOBS_HISTORY_V2, testConnector.getLastRequestParams(), testData);
   }
 
 }

@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.crp.ICorporationAPI;
 import enterprises.orbital.evexmlapi.crp.IFacility;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -24,7 +25,7 @@ public class TestFacilities extends ApiTestSetup {
     String testData = CorpFacilitiesConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CORP_FACILITIES_CTL, ApiTestConnector.CORP_FACILITIES_TST, ApiTestConnector.CORP_FACILITIES_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CRP_FACILITIES_V2, testConnector.getLastRequestParams(), testData);
   }
 
 }

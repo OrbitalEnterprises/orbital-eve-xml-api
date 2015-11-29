@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.chr.IPlanetaryPin;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -24,7 +25,7 @@ public class TestPlanetaryPins extends ApiTestSetup {
     String testData = CharPlanetaryPinsConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CHAR_PLANETARY_PINS_CTL, ApiTestConnector.CHAR_PLANETARY_PINS_TST, ApiTestConnector.CHAR_PLANETARY_PINS_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_PLANETARY_PINS_V2, testConnector.getLastRequestParams(), testData);
   }
 
 }

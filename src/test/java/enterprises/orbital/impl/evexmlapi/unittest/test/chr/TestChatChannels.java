@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.chr.IChatChannel;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -24,8 +25,7 @@ public class TestChatChannels extends ApiTestSetup {
     String testData = CharChatChannelsConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CHAR_CHATCHANNELS_CTL, ApiTestConnector.CHAR_CHATCHANNELS_TST, ApiTestConnector.CHAR_CHATCHANNELS_OUT,
-                                    testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_CHAT_CHANNELS_V2, testConnector.getLastRequestParams(), testData);
   }
 
 }

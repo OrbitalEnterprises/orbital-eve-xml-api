@@ -8,6 +8,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.shared.IStandingSet;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -23,7 +24,7 @@ public class TestStandings extends ApiTestSetup {
     String testData = CharStandingsConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CHAR_STANDINGS_CTL, ApiTestConnector.CHAR_STANDINGS_TST, ApiTestConnector.CHAR_STANDINGS_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_STANDINGS_V2, testConnector.getLastRequestParams(), testData);
   }
 
 }

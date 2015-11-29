@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.shared.IBlueprint;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -24,7 +25,7 @@ public class TestBlueprintList extends ApiTestSetup {
     String testData = CharBlueprintsConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.CHAR_BLUEPRINTS_CTL, ApiTestConnector.CHAR_BLUEPRINTS_TST, ApiTestConnector.CHAR_BLUEPRINTS_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_BLUEPRINTS_V2, testConnector.getLastRequestParams(), testData);
   }
 
 }

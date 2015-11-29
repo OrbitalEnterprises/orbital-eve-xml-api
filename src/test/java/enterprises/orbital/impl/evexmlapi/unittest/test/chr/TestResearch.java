@@ -9,26 +9,23 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.chr.IResearchAgent;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
 public class TestResearch extends ApiTestSetup {
 
-	@Test
-	public void testGetResearch() throws IOException, ParseException,
-			SAXException {
-		// Retrieve response
-		ICharacterAPI request = requestor.getCharacterAPIService(0,
-				"na", 0L);
-		Collection<IResearchAgent> response = request.requestResearchAgents();
+  @Test
+  public void testGetResearch() throws IOException, ParseException, SAXException {
+    // Retrieve response
+    ICharacterAPI request = requestor.getCharacterAPIService(0, "na", 0L);
+    Collection<IResearchAgent> response = request.requestResearchAgents();
 
-		// Compute XML for comparison
-		String testData = CharResearchConverter.convert(request, response);
+    // Compute XML for comparison
+    String testData = CharResearchConverter.convert(request, response);
 
-		// Perform test
-		ApiTestConnector.testComparison(ApiTestConnector.CHAR_RESEARCH_CTL,
-				ApiTestConnector.CHAR_RESEARCH_TST,
-				ApiTestConnector.CHAR_RESEARCH_OUT, testData);
-	}
+    // Perform test
+    ApiTestConnector.testComparison(ApiEndpoint.CHR_RESEARCH_V2, testConnector.getLastRequestParams(), testData);
+  }
 
 }

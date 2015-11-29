@@ -8,6 +8,7 @@ import org.xml.sax.SAXException;
 
 import enterprises.orbital.evexmlapi.act.IAPIKeyInfo;
 import enterprises.orbital.evexmlapi.act.IAccountAPI;
+import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestConnector;
 import enterprises.orbital.impl.evexmlapi.unittest.test.ApiTestSetup;
 
@@ -23,7 +24,7 @@ public class TestAPIKeyInfo extends ApiTestSetup {
     String testData = AcctAPIKeyInfoConverter.convert(request, response);
 
     // Perform test
-    ApiTestConnector.testComparison(ApiTestConnector.ACCT_API_KEY_INFO_CTL, ApiTestConnector.ACCT_API_KEY_INFO_TST, ApiTestConnector.ACCT_API_KEY_INFO_OUT, testData);
+    ApiTestConnector.testComparison(ApiEndpoint.ACT_API_KEY_INFO_V1, testConnector.getLastRequestParams(), testData);
   }
 
 }
