@@ -5,6 +5,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import enterprises.orbital.evexmlapi.act.IAccountAPI;
+import enterprises.orbital.evexmlapi.api.IApiAPI;
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.crp.ICorporationAPI;
 import enterprises.orbital.evexmlapi.eve.IEveAPI;
@@ -14,6 +15,7 @@ import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.FileCopyConnector;
 import enterprises.orbital.impl.evexmlapi.LoggingConnector;
 import enterprises.orbital.impl.evexmlapi.act.AccountAPIAdapter;
+import enterprises.orbital.impl.evexmlapi.api.ApiAPIAdapter;
 import enterprises.orbital.impl.evexmlapi.chr.CharacterAPIAdapter;
 import enterprises.orbital.impl.evexmlapi.crp.CorporationAPIAdapter;
 import enterprises.orbital.impl.evexmlapi.eve.EveAPIAdapter;
@@ -69,6 +71,11 @@ public class EveXmlApiAdapter implements IEveXmlApi {
   @Override
   public IMapAPI getMapAPIService() {
     return new MapAPIAdapter(connector);
+  }
+
+  @Override
+  public IApiAPI getApiAPIService() {
+    return new ApiAPIAdapter(connector);
   }
 
 }

@@ -1,6 +1,7 @@
 package enterprises.orbital.evexmlapi;
 
 import enterprises.orbital.evexmlapi.act.IAccountAPI;
+import enterprises.orbital.evexmlapi.api.IApiAPI;
 import enterprises.orbital.evexmlapi.chr.ICharacterAPI;
 import enterprises.orbital.evexmlapi.crp.ICorporationAPI;
 import enterprises.orbital.evexmlapi.eve.IEveAPI;
@@ -19,6 +20,13 @@ public interface IEveXmlApi {
    * @return a handle for making API requests.
    */
   public IServerAPI getServerAPIService();
+
+  /**
+   * Request handle for making API section requests.
+   * 
+   * @return a handling for making API requests.
+   */
+  public IApiAPI getApiAPIService();
 
   /**
    * Request a handle for making account API requests.

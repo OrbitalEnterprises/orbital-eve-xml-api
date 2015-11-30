@@ -10,7 +10,7 @@ public enum ApiEndpoint {
                          ACT_CHARACTERS_V1("/account/Characters", 1),
 
                          // API
-                         // TBD: API_CALL_LIST_V2("API/CallList", 2),
+                         API_CALL_LIST_V2("/API/CallList", 2),
 
                          // Character
                          CHR_ACCOUNT_BALANCE_V2("/char/AccountBalance", 2),
