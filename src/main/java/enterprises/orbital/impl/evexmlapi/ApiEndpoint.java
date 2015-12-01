@@ -85,7 +85,7 @@ public enum ApiEndpoint {
 
                          // EVE
                          EVE_ALLIANCE_LIST_V2("/eve/AllianceList", 2),
-                         // TBD: EVE_CHARACTER_AFFILIATION_V2("/eve/CharacterAffiliation", 2),
+                         EVE_CHARACTER_AFFILIATION_V2("/eve/CharacterAffiliation", 2),
                          EVE_CHARACTER_ID_V2("/eve/CharacterID", 2),
                          EVE_CHARACTER_INFO_V2("/eve/CharacterInfo", 2),
                          EVE_CHARACTER_NAME_V2("/eve/CharacterName", 2),
@@ -95,7 +95,7 @@ public enum ApiEndpoint {
                          EVE_FAC_WAR_TOP_STATS_V2("/eve/FacWarTopStats", 2),
                          EVE_REF_TYPES_V1("/eve/RefTypes", 1),
                          EVE_SKILL_TREE_V2("/eve/SkillTree", 2),
-                         // TBD:EVE_TYPE_NAME_V2("/eve/TypeName", 2),
+                         EVE_TYPE_NAME_V2("/eve/TypeName", 2),
 
                          // Map
                          MAP_FAC_WAR_SYSTEMS_V2("/map/FacWarSystems", 2),

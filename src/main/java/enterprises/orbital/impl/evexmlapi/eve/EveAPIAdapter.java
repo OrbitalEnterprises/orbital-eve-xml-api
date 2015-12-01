@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Collection;
 
 import enterprises.orbital.evexmlapi.eve.IAlliance;
+import enterprises.orbital.evexmlapi.eve.ICharacterAffiliation;
 import enterprises.orbital.evexmlapi.eve.ICharacterInfo;
 import enterprises.orbital.evexmlapi.eve.ICharacterLookup;
 import enterprises.orbital.evexmlapi.eve.IConquerableStation;
@@ -13,6 +14,7 @@ import enterprises.orbital.evexmlapi.eve.IFacWarSummary;
 import enterprises.orbital.evexmlapi.eve.IFacWarTopSummary;
 import enterprises.orbital.evexmlapi.eve.IRefType;
 import enterprises.orbital.evexmlapi.eve.ISkillGroup;
+import enterprises.orbital.evexmlapi.eve.ITypeName;
 import enterprises.orbital.impl.evexmlapi.AbstractAPIRequestAdapter;
 import enterprises.orbital.impl.evexmlapi.ApiAuth;
 import enterprises.orbital.impl.evexmlapi.ApiConnector;
@@ -81,6 +83,16 @@ public class EveAPIAdapter extends AbstractAPIRequestAdapter implements IEveAPI 
   @Override
   public Collection<ISkillGroup> requestSkillTree() throws IOException {
     return new SkillTreeParser(connector).retrieveResponse(this);
+  }
+
+  @Override
+  public Collection<ICharacterAffiliation> requestCharacterAffiliation(long... ids) throws IOException {
+    return new CharacterAffiliationParser(connector, ids).retrieveResponse(this);
+  }
+
+  @Override
+  public Collection<ITypeName> requestTypeName(int... typeid) throws IOException {
+    return new TypeNameParser(connector, typeid).retrieveResponse(this);
   }
 
 }

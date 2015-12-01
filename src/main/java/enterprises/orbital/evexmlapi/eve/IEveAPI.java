@@ -8,6 +8,8 @@ import enterprises.orbital.evexmlapi.IResponse;
 public interface IEveAPI extends IResponse {
   public Collection<IAlliance> requestAlliances() throws IOException;
 
+  public Collection<ICharacterAffiliation> requestCharacterAffiliation(long... ids) throws IOException;
+
   public Collection<ICharacterLookup> requestCharacterID(String... names) throws IOException;
 
   /**
@@ -41,4 +43,5 @@ public interface IEveAPI extends IResponse {
 
   public Collection<ISkillGroup> requestSkillTree() throws IOException;
 
+  public Collection<ITypeName> requestTypeName(int... typeid) throws IOException;
 }

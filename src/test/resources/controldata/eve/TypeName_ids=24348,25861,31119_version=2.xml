@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2015-12-01 13:12:42</currentTime>
+  <result>
+    <rowset name="types" key="typeID" columns="typeID,typeName">
+      <row typeID="24348" typeName="Small Tractor Beam I" />
+      <row typeID="25861" typeName="Salvager I" />
+      <row typeID="31119" typeName="Medium Cargohold Optimization I" />
+    </rowset>
+  </result>
+  <cachedUntil>2015-12-01 14:12:42</cachedUntil>
+</eveapi>
