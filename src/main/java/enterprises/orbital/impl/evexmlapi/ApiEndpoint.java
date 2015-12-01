@@ -29,6 +29,7 @@ public enum ApiEndpoint {
                          CHR_INDUSTRY_JOBS_HISTORY_V2("/char/IndustryJobsHistory", 2),
                          CHR_INDUSTRY_JOBS_V2("/char/IndustryJobs", 2),
                          CHR_KILL_MAILS_V2("/char/KillMails", 2),
+                         CHR_LOCATIONS_V2("/char/Locations", 2),
                          CHR_MAIL_BODIES_V2("/char/MailBodies", 2),
                          CHR_MAIL_MESSAGES_V2("/char/MailMessages", 2),
                          CHR_MAILING_LISTS_V2("/char/MailingLists", 2),
@@ -47,7 +48,6 @@ public enum ApiEndpoint {
                          CHR_UPCOMING_CALENDAR_EVENTS_V2("/char/UpcomingCalendarEvents", 2),
                          CHR_WALLET_JOURNAL_V2("/char/WalletJournal", 2),
                          CHR_WALLET_TRANSACTIONS_V2("/char/WalletTransactions", 2),
-                         // TBD: LOCATIONS : "Locations",
 
                          // Corporation
                          CRP_ACCOUNT_BALANCE_V2("/corp/AccountBalance", 2),
@@ -66,6 +66,7 @@ public enum ApiEndpoint {
                          CRP_INDUSTRY_JOBS_HISTORY_V2("/corp/IndustryJobsHistory", 2),
                          CRP_INDUSTRY_JOBS_V2("/corp/IndustryJobs", 2),
                          CRP_KILL_MAILS_V2("/corp/KillMails", 2),
+                         CRP_LOCATIONS_V2("/corp/Locations", 2),
                          CRP_MARKET_ORDERS_V2("/corp/MarketOrders", 2),
                          CRP_MEDALS_V2("/corp/Medals", 2),
                          CRP_MEMBER_MEDALS_V2("/corp/MemberMedals", 2),
@@ -81,7 +82,6 @@ public enum ApiEndpoint {
                          CRP_TITLES_V2("/corp/Titles", 2),
                          CRP_WALLET_JOURNAL_V2("/corp/WalletJournal", 2),
                          CRP_WALLET_TRANSACTIONS_V2("/corp/WalletTransactions", 2),
-                         // TBD: LOCATIONS : "Locations",
 
                          // EVE
                          EVE_ALLIANCE_LIST_V2("/eve/AllianceList", 2),

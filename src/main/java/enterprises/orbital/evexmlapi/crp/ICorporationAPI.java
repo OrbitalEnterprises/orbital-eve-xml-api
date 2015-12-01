@@ -15,6 +15,7 @@ import enterprises.orbital.evexmlapi.shared.IContractItem;
 import enterprises.orbital.evexmlapi.shared.IFacWarStats;
 import enterprises.orbital.evexmlapi.shared.IIndustryJob;
 import enterprises.orbital.evexmlapi.shared.IKill;
+import enterprises.orbital.evexmlapi.shared.ILocation;
 import enterprises.orbital.evexmlapi.shared.IMarketOrder;
 import enterprises.orbital.evexmlapi.shared.IStandingSet;
 import enterprises.orbital.evexmlapi.shared.IWalletJournalEntry;
@@ -56,6 +57,8 @@ public interface ICorporationAPI extends IResponse {
   public Collection<IKill> requestKillMails() throws IOException;
 
   public Collection<IKill> requestKillMails(long beforeKillID) throws IOException;
+
+  public Collection<ILocation> requestLocations(long... itemID) throws IOException;
 
   public IMarketOrder requestMarketOrder(long orderID) throws IOException;
 

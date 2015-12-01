@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2015-11-30 13:37:01</currentTime>
+  <result>
+    <rowset name="locations" key="itemID" columns="itemID,itemName,x,y,z">
+      <row itemID="1356172359" itemName="reygar burnt's Cormorant" x="-243007103937.437" y="176404434126.937" z="-123316837785.212" />
+      <row itemID="1000356496812" itemName="reygar burnt's Badger" x="117922393278.158" y="308594072.963286" z="1528265584.53016" />
+      <row itemID="1002967841947" itemName="reygar burnt's Covetor" x="0" y="0" z="0" />
+    </rowset>
+  </result>
+  <cachedUntil>2015-11-30 14:37:02</cachedUntil>
+</eveapi>
+

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2015-12-01 04:05:58</currentTime>
+  <result>
+    <rowset name="locations" key="itemID" columns="itemID,itemName,x,y,z">
+      <row itemID="1017817086096" itemName="Unlikely Plaude's Capsule" x="0" y="0" z="0" />
+      <row itemID="1017817006628" itemName="Likely Stareine's Capsule" x="0" y="0" z="0" />
+    </rowset>
+  </result>
+  <cachedUntil>2015-12-01 05:05:58</cachedUntil>
+</eveapi>
+

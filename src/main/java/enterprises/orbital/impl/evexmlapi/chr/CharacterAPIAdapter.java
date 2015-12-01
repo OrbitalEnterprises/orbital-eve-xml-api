@@ -33,6 +33,7 @@ import enterprises.orbital.evexmlapi.shared.IContractItem;
 import enterprises.orbital.evexmlapi.shared.IFacWarStats;
 import enterprises.orbital.evexmlapi.shared.IIndustryJob;
 import enterprises.orbital.evexmlapi.shared.IKill;
+import enterprises.orbital.evexmlapi.shared.ILocation;
 import enterprises.orbital.evexmlapi.shared.IMarketOrder;
 import enterprises.orbital.evexmlapi.shared.IStandingSet;
 import enterprises.orbital.evexmlapi.shared.IWalletJournalEntry;
@@ -238,5 +239,10 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
   @Override
   public Collection<IWalletTransaction> requestWalletTransactions(long beforeTransID) throws IOException {
     return new WalletTransactionsParser(connector, beforeTransID).retrieveResponse(this);
+  }
+
+  @Override
+  public Collection<ILocation> requestLocations(long... itemID) throws IOException {
+    return new LocationsParser(connector, itemID).retrieveResponse(this);
   }
 }
