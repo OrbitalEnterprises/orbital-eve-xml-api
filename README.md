@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/OrbitalEnterprises/eve-xml-api.svg?branch=master)](https://travis-ci.org/OrbitalEnterprises/eve-xml-api)
+
 # EVE XML API library
 
 This module provides a library for interacting with the EVE XML API servers.
