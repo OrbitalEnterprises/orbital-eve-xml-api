@@ -7,7 +7,7 @@ public class EveXmlApiConfig {
   private String  responsesDirectory = null;
   private String  serverURI          = "https://api.eveonline.com";
   private boolean logResponses       = false;
-  private String  agent              = null;
+  private String  agent              = "";
   private int     connectTimeout     = -1;
   private int     readTimeout        = -1;
 
