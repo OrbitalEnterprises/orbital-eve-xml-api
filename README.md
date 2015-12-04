@@ -19,7 +19,7 @@ yet in Maven Central, so you'll need to clone and build via "mvn install".
 
 EVE XML API has the following dependencies which you'll need to build and run properly:
 
-* [Orbital base v0.0.1](https://github.com/OrbitalEnterprises/base)
+* [Orbital base v1.0.0](https://github.com/OrbitalEnterprises/base)
 * [Apache commons-digester 2.1](https://commons.apache.org/proper/commons-digester/)
 * [Apache httpclient 4.5.1](http://hc.apache.org/httpcomponents-client-4.5.x/index.html)
 
