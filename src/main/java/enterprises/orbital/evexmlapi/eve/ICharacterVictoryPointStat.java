@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.eve;
 
-public interface ICharacterVictoryPointStat extends IVictoryPointStat {
-	public int getCharacterID();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public String getCharacterName();
+@JsonSerialize(as = ICharacterVictoryPointStat.class)
+public interface ICharacterVictoryPointStat extends IVictoryPointStat {
+  public int getCharacterID();
+
+  public String getCharacterName();
 }

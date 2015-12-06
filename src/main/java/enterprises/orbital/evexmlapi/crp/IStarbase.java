@@ -2,6 +2,9 @@ package enterprises.orbital.evexmlapi.crp;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = IStarbase.class)
 public interface IStarbase {
   public long getItemID();
 

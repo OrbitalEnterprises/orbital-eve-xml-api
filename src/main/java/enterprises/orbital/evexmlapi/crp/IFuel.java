@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.crp;
 
-public interface IFuel {
-	public int getQuantity();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public int getTypeID();
+@JsonSerialize(as = IFuel.class)
+public interface IFuel {
+  public int getQuantity();
+
+  public int getTypeID();
 }

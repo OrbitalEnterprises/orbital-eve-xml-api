@@ -1,5 +1,8 @@
 package enterprises.orbital.evexmlapi.chr;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = IPlanetaryRoute.class)
 public interface IPlanetaryRoute {
   public long getRouteID();
 

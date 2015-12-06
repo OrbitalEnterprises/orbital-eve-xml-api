@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.eve;
 
-public interface IFactionVictoryPointStat extends IVictoryPointStat {
-	public int getFactionID();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public String getFactionName();
+@JsonSerialize(as = IFactionVictoryPointStat.class)
+public interface IFactionVictoryPointStat extends IVictoryPointStat {
+  public int getFactionID();
+
+  public String getFactionName();
 }

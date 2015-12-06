@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.crp;
 
-public interface ISecurityTitle {
-	public long getTitleID();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public String getTitleName();
+@JsonSerialize(as = ISecurityTitle.class)
+public interface ISecurityTitle {
+  public long getTitleID();
+
+  public String getTitleName();
 }

@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.crp;
 
-public interface IDivision {
-	public int getAccountKey();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public String getDescription();
+@JsonSerialize(as = IDivision.class)
+public interface IDivision {
+  public int getAccountKey();
+
+  public String getDescription();
 }

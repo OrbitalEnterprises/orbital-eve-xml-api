@@ -2,6 +2,9 @@ package enterprises.orbital.evexmlapi.shared;
 
 import java.util.List;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = IContactSet.class)
 public interface IContactSet {
 
   /**

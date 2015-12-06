@@ -2,6 +2,9 @@ package enterprises.orbital.evexmlapi.chr;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = ISkillInTraining.class)
 public interface ISkillInTraining {
   public boolean isSkillInTraining();
 

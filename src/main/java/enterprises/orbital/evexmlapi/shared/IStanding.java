@@ -1,5 +1,8 @@
 package enterprises.orbital.evexmlapi.shared;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = IStanding.class)
 public interface IStanding {
   public int getFromID();
 

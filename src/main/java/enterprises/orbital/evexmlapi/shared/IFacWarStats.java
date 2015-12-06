@@ -2,6 +2,9 @@ package enterprises.orbital.evexmlapi.shared;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = IFacWarStats.class)
 public interface IFacWarStats {
   public int getCurrentRank();
 

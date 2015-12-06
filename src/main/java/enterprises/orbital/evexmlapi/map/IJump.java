@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.map;
 
-public interface IJump {
-	public int getShipJumps();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public int getSolarSystemID();
+@JsonSerialize(as = IJump.class)
+public interface IJump {
+  public int getShipJumps();
+
+  public int getSolarSystemID();
 }

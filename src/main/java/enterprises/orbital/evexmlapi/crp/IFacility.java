@@ -1,6 +1,8 @@
 package enterprises.orbital.evexmlapi.crp;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonSerialize(as = IFacility.class)
 public interface IFacility {
   public long getFacilityID();
 

@@ -1,5 +1,8 @@
 package enterprises.orbital.evexmlapi.crp;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = ICustomsOffice.class)
 public interface ICustomsOffice {
   public long getItemID();
 

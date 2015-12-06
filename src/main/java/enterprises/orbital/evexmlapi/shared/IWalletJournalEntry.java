@@ -3,6 +3,9 @@ package enterprises.orbital.evexmlapi.shared;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = IWalletJournalEntry.class)
 public interface IWalletJournalEntry {
   public BigDecimal getAmount();
 

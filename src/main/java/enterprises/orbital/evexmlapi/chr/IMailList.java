@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.chr;
 
-public interface IMailList {
-	public String getDisplayName();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public long getListID();
+@JsonSerialize(as = IMailList.class)
+public interface IMailList {
+  public String getDisplayName();
+
+  public long getListID();
 }

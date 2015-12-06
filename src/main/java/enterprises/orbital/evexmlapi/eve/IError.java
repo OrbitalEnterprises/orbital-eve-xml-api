@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.eve;
 
-public interface IError {
-	int getErrorCode();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	String getErrorText();
+@JsonSerialize(as = IError.class)
+public interface IError {
+  int getErrorCode();
+
+  String getErrorText();
 }

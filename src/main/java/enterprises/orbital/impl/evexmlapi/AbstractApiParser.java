@@ -20,7 +20,7 @@ import enterprises.orbital.impl.evexmlapi.utils.DateUtils;
  * @param <E>
  *          class of response type, e.g. ChatChannelsResponse
  * @param <F>
- *          class of interface return value, e.g. Collection<IChatChannel>
+ *          class of interface return value, e.g. Collection&lt;IChatChannel&gt;
  */
 public abstract class AbstractApiParser<E extends ApiResponse, F> {
   protected final ApiConnector connector;

@@ -2,6 +2,9 @@ package enterprises.orbital.evexmlapi.chr;
 
 import java.util.Collection;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = IChatChannel.class)
 public interface IChatChannel {
   public long getChannelID();
 

@@ -1,6 +1,8 @@
 package enterprises.orbital.evexmlapi.shared;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonSerialize(as = IContact.class)
 public interface IContact {
   public int getContactID();
 

@@ -1,5 +1,8 @@
 package enterprises.orbital.evexmlapi.shared;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = IBlueprint.class)
 public interface IBlueprint {
 
   public long getItemID();

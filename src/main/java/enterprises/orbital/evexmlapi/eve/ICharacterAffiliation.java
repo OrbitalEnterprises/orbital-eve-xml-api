@@ -1,5 +1,8 @@
 package enterprises.orbital.evexmlapi.eve;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = ICharacterAffiliation.class)
 public interface ICharacterAffiliation {
   public long getCharacterID();
 

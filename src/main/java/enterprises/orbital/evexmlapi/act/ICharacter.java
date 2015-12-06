@@ -1,5 +1,8 @@
 package enterprises.orbital.evexmlapi.act;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = ICharacter.class)
 public interface ICharacter {
   public String getName();
 

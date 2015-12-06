@@ -17,7 +17,7 @@ public interface IEveAPI extends IResponse {
    * 
    * @param keyID
    *          the keyID for authentication.
-   * @param vCoe
+   * @param vCode
    *          the vCode to use for authentication
    * @param characterID
    *          the character for which we're requesting info.

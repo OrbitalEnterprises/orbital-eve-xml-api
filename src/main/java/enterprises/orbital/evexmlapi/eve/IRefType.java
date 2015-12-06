@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.eve;
 
-public interface IRefType {
-	public int getRefTypeID();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public String getRefTypeName();
+@JsonSerialize(as = IRefType.class)
+public interface IRefType {
+  public int getRefTypeID();
+
+  public String getRefTypeName();
 }

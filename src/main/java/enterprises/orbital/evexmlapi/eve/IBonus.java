@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.eve;
 
-public interface IBonus {
-	public String getBonusType();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public String getBonusValue();
+@JsonSerialize(as = IBonus.class)
+public interface IBonus {
+  public String getBonusType();
+
+  public String getBonusValue();
 }

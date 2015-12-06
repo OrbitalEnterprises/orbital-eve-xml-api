@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.eve;
 
-public interface ICorporationKillStat extends IKillStat {
-	public long getCorporationID();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public String getCorporationName();
+@JsonSerialize(as = ICorporationKillStat.class)
+public interface ICorporationKillStat extends IKillStat {
+  public long getCorporationID();
+
+  public String getCorporationName();
 }

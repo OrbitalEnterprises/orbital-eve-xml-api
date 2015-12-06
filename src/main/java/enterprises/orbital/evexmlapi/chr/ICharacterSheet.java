@@ -6,6 +6,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = ICharacterSheet.class)
 public interface ICharacterSheet {
   public BigDecimal getBalance();
 

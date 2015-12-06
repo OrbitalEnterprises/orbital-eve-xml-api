@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.eve;
 
-public interface ICharacterLookup {
-	public long getCharacterID();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public String getName();
+@JsonSerialize(as = ICharacterLookup.class)
+public interface ICharacterLookup {
+  public long getCharacterID();
+
+  public String getName();
 }

@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Date;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = ICharacterInfo.class)
 public interface ICharacterInfo {
   public BigDecimal getAccountBalance();
 

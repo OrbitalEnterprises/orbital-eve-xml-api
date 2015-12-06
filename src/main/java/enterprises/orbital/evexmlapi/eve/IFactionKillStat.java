@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.eve;
 
-public interface IFactionKillStat extends IKillStat {
-	public int getFactionID();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public String getFactionName();
+@JsonSerialize(as = IFactionKillStat.class)
+public interface IFactionKillStat extends IKillStat {
+  public int getFactionID();
+
+  public String getFactionName();
 }

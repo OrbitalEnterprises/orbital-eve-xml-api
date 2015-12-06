@@ -2,6 +2,9 @@ package enterprises.orbital.evexmlapi.shared;
 
 import java.util.Collection;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = IAsset.class)
 public interface IAsset {
   public Collection<IAsset> getContainedAssets();
 

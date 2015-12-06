@@ -1,7 +1,10 @@
 package enterprises.orbital.evexmlapi.crp;
 
-public interface ICombatSetting {
-	public int getStanding();
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-	public boolean isEnabled();
+@JsonSerialize(as = ICombatSetting.class)
+public interface ICombatSetting {
+  public int getStanding();
+
+  public boolean isEnabled();
 }

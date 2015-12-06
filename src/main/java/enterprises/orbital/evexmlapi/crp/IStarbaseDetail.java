@@ -3,6 +3,9 @@ package enterprises.orbital.evexmlapi.crp;
 import java.util.Collection;
 import java.util.Date;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = IStarbaseDetail.class)
 public interface IStarbaseDetail {
   public int getState();
 

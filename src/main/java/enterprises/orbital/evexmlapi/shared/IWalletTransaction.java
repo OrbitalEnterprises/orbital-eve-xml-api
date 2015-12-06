@@ -3,6 +3,9 @@ package enterprises.orbital.evexmlapi.shared;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize(as = IWalletTransaction.class)
 public interface IWalletTransaction {
   public long getCharacterID();
 

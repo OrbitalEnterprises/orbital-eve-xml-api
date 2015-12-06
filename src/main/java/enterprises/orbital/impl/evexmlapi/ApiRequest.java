@@ -7,9 +7,9 @@ import java.util.Map.Entry;
 /**
  * Class encapsulating an API request which consists of:
  * <ul>
- * <li>An ApiEndpooint
+ * <li>An ApiEndpoint
  * <li>An optional ApiAuth containing credentials
- * <li>An optional Map<String, String> of query parameters
+ * <li>An optional Map&lt;String, String&gt; of query parameters
  * </ul>
  */
 public class ApiRequest implements Comparable<ApiRequest> {
