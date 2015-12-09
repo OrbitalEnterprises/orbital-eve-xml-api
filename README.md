@@ -4,16 +4,25 @@
 
 This module provides a library for interacting with the EVE XML API servers.
 The current version of this code is a cleaned up and reworked early fork of
-[EveApi](https://github.com/ZyorTaelon/eveapi), back when the code was on Google Code
-(the code is now hosted on GitHub).  A less cleaned up version of this code is also
-used in EveKit (TODO: update with new EveKit link).
+[EveApi](https://github.com/ZyorTaelon/eveapi).  A less cleaned up version of
+this code was also used in EveKit.
 
 ## Build
 
 ### Maven
 
-EVE XML API is built using [Maven](http://maven.apache.org).  This library is not
-yet in Maven Central, so you'll need to clone and build via "mvn install".
+We use [Maven](http://maven.apache.org) to build EVE XML API, and publish to [Maven Central](http://search.maven.org/).
+The easiest way to use EVE XML API is to add the following dependency to your pom.xml:
+
+```xml
+<dependency>
+    <groupId>enterprises.orbital</groupId>
+    <artifactId>eve-xml-api</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+You can find more details about the artifact [here](http://mvnrepository.com/artifact/enterprises.orbital/eve-xml-api).
 
 ### Non-Maven
 
@@ -104,5 +113,3 @@ IServerAPI secondServerAPIHandle = apiHandle.getServerAPIService();
 // firstServerAPIHandle and secondServerAPIHandle can be used concurrently.
 ...
 ```
-
-
