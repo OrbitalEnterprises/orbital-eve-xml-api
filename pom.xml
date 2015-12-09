@@ -7,7 +7,6 @@
   </parent>
   
   <artifactId>eve-xml-api</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>EVE XML API library</name>
   <description>Library to interact with EVE XML API servers</description>
   
@@ -62,4 +61,5 @@
     </plugins>
   </build>  
   
+  <version>1.0.0</version>
 </project>
