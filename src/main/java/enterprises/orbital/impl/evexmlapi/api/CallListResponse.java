@@ -25,8 +25,8 @@ public class CallListResponse extends ApiResponse implements ICallList {
 
   public void addCallOrGroup(ApiCallOrGroup obj) {
     if (obj.getAccessMask() > 0)
-      calls.add(obj);
+      calls.add(obj.asCall());
     else
-      callGroups.add(obj);
+      callGroups.add(obj.asCallGroup());
   }
 }

@@ -9,6 +9,7 @@
   <artifactId>eve-xml-api</artifactId>
   <name>EVE XML API library</name>
   <description>Library to interact with EVE XML API servers</description>
+  <version>1.0.0</version>
   
   <dependencies>
   	<dependency>
@@ -81,5 +82,4 @@
     </plugins>
   </build>  
   
-  <version>1.0.0</version>
 </project>

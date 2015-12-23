@@ -20,42 +20,66 @@ public class ContactListResponse extends ApiResponse implements IContactSet {
   @Override
   public List<IContact> getContacts() {
     List<IContact> result = new ArrayList<IContact>();
-    if (contactLists.containsKey("contactList")) result.addAll(contactLists.get("contactList"));
+    if (contactLists.containsKey("contactList")) {
+      for (ApiContact next : contactLists.get("contactList")) {
+        result.add(next.asContact());
+      }
+    }
     return result;
   }
 
   @Override
   public List<IContact> getCorporateContacts() {
     List<IContact> result = new ArrayList<IContact>();
-    if (contactLists.containsKey("corporateContactList")) result.addAll(contactLists.get("corporateContactList"));
+    if (contactLists.containsKey("corporateContactList")) {
+      for (ApiContact next : contactLists.get("corporateContactList")) {
+        result.add(next.asContact());
+      }
+    }
     return result;
   }
 
   @Override
   public List<IContact> getAllianceContacts() {
     List<IContact> result = new ArrayList<IContact>();
-    if (contactLists.containsKey("allianceContactList")) result.addAll(contactLists.get("allianceContactList"));
+    if (contactLists.containsKey("allianceContactList")) {
+      for (ApiContact next : contactLists.get("allianceContactList")) {
+        result.add(next.asContact());
+      }
+    }
     return result;
   }
 
   @Override
   public List<IContactLabel> getContactLabels() {
     List<IContactLabel> result = new ArrayList<IContactLabel>();
-    if (contactLists.containsKey("contactLabels")) result.addAll(contactLists.get("contactLabels"));
+    if (contactLists.containsKey("contactLabels")) {
+      for (ApiContact next : contactLists.get("contactLabels")) {
+        result.add(next.asContactLabel());
+      }
+    }
     return result;
   }
 
   @Override
   public List<IContactLabel> getCorporateContactLabels() {
     List<IContactLabel> result = new ArrayList<IContactLabel>();
-    if (contactLists.containsKey("corporateContactLabels")) result.addAll(contactLists.get("corporateContactLabels"));
+    if (contactLists.containsKey("corporateContactLabels")) {
+      for (ApiContact next : contactLists.get("corporateContactLabels")) {
+        result.add(next.asContactLabel());
+      }
+    }
     return result;
   }
 
   @Override
   public List<IContactLabel> getAllianceContactLabels() {
     List<IContactLabel> result = new ArrayList<IContactLabel>();
-    if (contactLists.containsKey("allianceContactLabels")) result.addAll(contactLists.get("allianceContactLabels"));
+    if (contactLists.containsKey("allianceContactLabels")) {
+      for (ApiContact next : contactLists.get("allianceContactLabels")) {
+        result.add(next.asContactLabel());
+      }
+    }
     return result;
   }
 

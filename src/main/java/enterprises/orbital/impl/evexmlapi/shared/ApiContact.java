@@ -3,7 +3,7 @@ package enterprises.orbital.impl.evexmlapi.shared;
 import enterprises.orbital.evexmlapi.shared.IContact;
 import enterprises.orbital.evexmlapi.shared.IContactLabel;
 
-public class ApiContact implements IContact, IContactLabel {
+public class ApiContact {
   private int     contactID;
   private String  contactName;
   private double  standing;
@@ -28,7 +28,6 @@ public class ApiContact implements IContact, IContactLabel {
     this.standing = standing;
   }
 
-  @Override
   public int getContactTypeID() {
     return contactTypeID;
   }
@@ -37,22 +36,18 @@ public class ApiContact implements IContact, IContactLabel {
     this.contactTypeID = contactTypeID;
   }
 
-  @Override
   public int getContactID() {
     return this.contactID;
   }
 
-  @Override
   public String getContactName() {
     return this.contactName;
   }
 
-  @Override
   public double getStanding() {
     return this.standing;
   }
 
-  @Override
   public boolean isInWatchlist() {
     return inWatchlist;
   }
@@ -61,7 +56,6 @@ public class ApiContact implements IContact, IContactLabel {
     this.inWatchlist = inWatchlist;
   }
 
-  @Override
   public long getLabelMask() {
     return labelMask;
   }
@@ -86,4 +80,55 @@ public class ApiContact implements IContact, IContactLabel {
     this.name = name;
   }
 
+  public IContact asContact() {
+    return new IContact() {
+
+      @Override
+      public int getContactID() {
+        return contactID;
+      }
+
+      @Override
+      public String getContactName() {
+        return contactName;
+      }
+
+      @Override
+      public double getStanding() {
+        return standing;
+      }
+
+      @Override
+      public int getContactTypeID() {
+        return contactTypeID;
+      }
+
+      @Override
+      public boolean isInWatchlist() {
+        return inWatchlist;
+      }
+
+      @Override
+      public long getLabelMask() {
+        return labelMask;
+      }
+
+    };
+  }
+
+  public IContactLabel asContactLabel() {
+    return new IContactLabel() {
+
+      @Override
+      public long getLabelID() {
+        return labelID;
+      }
+
+      @Override
+      public String getName() {
+        return name;
+      }
+
+    };
+  }
 }

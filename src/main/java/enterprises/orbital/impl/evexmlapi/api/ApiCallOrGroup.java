@@ -3,14 +3,13 @@ package enterprises.orbital.impl.evexmlapi.api;
 import enterprises.orbital.evexmlapi.api.ICall;
 import enterprises.orbital.evexmlapi.api.ICallGroup;
 
-public class ApiCallOrGroup implements ICallGroup, ICall {
+public class ApiCallOrGroup {
   private int    groupID;
   private String name;
   private String description;
   private long   accessMask;
   private String type;
 
-  @Override
   public int getGroupID() {
     return groupID;
   }
@@ -19,7 +18,6 @@ public class ApiCallOrGroup implements ICallGroup, ICall {
     this.groupID = groupID;
   }
 
-  @Override
   public String getName() {
     return name;
   }
@@ -28,7 +26,6 @@ public class ApiCallOrGroup implements ICallGroup, ICall {
     this.name = name;
   }
 
-  @Override
   public String getDescription() {
     return description;
   }
@@ -37,7 +34,6 @@ public class ApiCallOrGroup implements ICallGroup, ICall {
     this.description = description;
   }
 
-  @Override
   public long getAccessMask() {
     return accessMask;
   }
@@ -46,13 +42,64 @@ public class ApiCallOrGroup implements ICallGroup, ICall {
     this.accessMask = accessMask;
   }
 
-  @Override
   public String getType() {
     return type;
   }
 
   public void setType(String type) {
     this.type = type;
+  }
+
+  public ICall asCall() {
+    return new ICall() {
+
+      @Override
+      public long getAccessMask() {
+        return accessMask;
+      }
+
+      @Override
+      public String getType() {
+        return type;
+      }
+
+      @Override
+      public String getName() {
+        return name;
+      }
+
+      @Override
+      public int getGroupID() {
+        return groupID;
+      }
+
+      @Override
+      public String getDescription() {
+        return description;
+      }
+
+    };
+  }
+
+  public ICallGroup asCallGroup() {
+    return new ICallGroup() {
+
+      @Override
+      public int getGroupID() {
+        return groupID;
+      }
+
+      @Override
+      public String getName() {
+        return name;
+      }
+
+      @Override
+      public String getDescription() {
+        return description;
+      }
+
+    };
   }
 
 }
