@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/OrbitalEnterprises/eve-xml-api.svg?branch=master)](https://travis-ci.org/OrbitalEnterprises/eve-xml-api)
-[![codecov.io](https://codecov.io/github/OrbitalEnterprises/eve-xml-api/coverage.svg?branch=master)](https://codecov.io/github/OrbitalEnterprises/eve-xml-api?branch=master)
+[![Build Status](https://travis-ci.org/OrbitalEnterprises/orbital-eve-xml-api.svg?branch=master)](https://travis-ci.org/OrbitalEnterprises/orbital-eve-xml-api)
+[![codecov.io](https://codecov.io/github/OrbitalEnterprises/orbital-eve-xml-api/coverage.svg?branch=master)](https://codecov.io/github/OrbitalEnterprises/orbital-eve-xml-api?branch=master)
 
 # EVE XML API library
 
