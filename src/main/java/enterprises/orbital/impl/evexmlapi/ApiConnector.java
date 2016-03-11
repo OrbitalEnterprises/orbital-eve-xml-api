@@ -3,10 +3,10 @@ package enterprises.orbital.impl.evexmlapi;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -36,12 +36,18 @@ public class ApiConnector {
     this.readTimeout = readTimeout;
   }
 
-  public <E extends ApiResponse> E execute(ApiRequest request, Digester digester, Class<E> clazz) throws IOException {
+  public <E extends ApiResponse> E execute(
+                                           ApiRequest request,
+                                           Digester digester,
+                                           Class<E> clazz) throws IOException {
     return getApiResponse(digester, getInputStream(getURI(request), getParams(request)), clazz);
   }
 
   @SuppressWarnings("unchecked")
-  protected <E> E getApiResponse(Digester digester, InputStream inputStream, Class<E> clazz) throws IOException {
+  protected <E> E getApiResponse(
+                                 Digester digester,
+                                 InputStream inputStream,
+                                 Class<E> clazz) throws IOException {
     try {
       return (E) digester.parse(inputStream);
     } catch (SAXException e) {
@@ -50,7 +56,9 @@ public class ApiConnector {
     }
   }
 
-  protected InputStream getInputStream(URI requestUri, Map<String, String> params) throws IOException {
+  protected InputStream getInputStream(
+                                       URI requestUri,
+                                       Map<String, String> params) throws IOException {
     OutputStreamWriter wr = null;
     try {
       URIBuilder builder = new URIBuilder(requestUri);
@@ -58,11 +66,16 @@ public class ApiConnector {
         builder.addParameter(entry.getKey(), entry.getValue());
       }
       URL getter = builder.build().toURL();
-      URLConnection conn = getter.openConnection();
+      HttpURLConnection conn = (HttpURLConnection) getter.openConnection();
       if (agentField != null) conn.setRequestProperty("User-Agent", agentField);
       if (connectTimeout > -1) conn.setConnectTimeout(connectTimeout);
       if (readTimeout > -1) conn.setReadTimeout(readTimeout);
-      return conn.getInputStream();
+      // Some calls return 400 (Bad Request) with an error message. In those cases, we need
+      // the error stream instead of the input stream.
+      if (conn.getResponseCode() == HttpURLConnection.HTTP_BAD_REQUEST)
+        return conn.getErrorStream();
+      else
+        return conn.getInputStream();
     } catch (URISyntaxException e) {
       // re-throw as IOException
       throw new IOException(e);
@@ -76,7 +89,8 @@ public class ApiConnector {
 
   }
 
-  protected URI getURI(ApiRequest request) throws IOException {
+  protected URI getURI(
+                       ApiRequest request) throws IOException {
     URIBuilder builder = new URIBuilder(getBaseURI());
     builder.setPath(builder.getPath() + request.getEndpoint().getPath() + ".xml.aspx");
     try {
@@ -87,7 +101,8 @@ public class ApiConnector {
     }
   }
 
-  protected Map<String, String> getParams(ApiRequest request) {
+  protected Map<String, String> getParams(
+                                          ApiRequest request) {
     Map<String, String> result = new HashMap<String, String>();
     result.put("version", Integer.toString(request.getEndpoint().getVersion()));
     ApiAuth auth = request.getAuth();
