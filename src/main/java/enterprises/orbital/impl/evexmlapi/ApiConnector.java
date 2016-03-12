@@ -70,9 +70,9 @@ public class ApiConnector {
       if (agentField != null) conn.setRequestProperty("User-Agent", agentField);
       if (connectTimeout > -1) conn.setConnectTimeout(connectTimeout);
       if (readTimeout > -1) conn.setReadTimeout(readTimeout);
-      // Some calls return 400 (Bad Request) with an error message. In those cases, we need
+      // Some calls return 400 (Bad Request) or 403 (Forbidden) with an error message. In those cases, we need
       // the error stream instead of the input stream.
-      if (conn.getResponseCode() == HttpURLConnection.HTTP_BAD_REQUEST)
+      if (conn.getResponseCode() == HttpURLConnection.HTTP_BAD_REQUEST || conn.getResponseCode() == HttpURLConnection.HTTP_FORBIDDEN)
         return conn.getErrorStream();
       else
         return conn.getInputStream();
