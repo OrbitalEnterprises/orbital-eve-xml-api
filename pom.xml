@@ -9,12 +9,12 @@
   <artifactId>eve-xml-api</artifactId>
   <name>EVE XML API library</name>
   <description>Library to interact with EVE XML API servers</description>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <url>https://github.com/OrbitalEnterprises/orbital-eve-xml-api</url>
   <scm>
   	<url>https://github.com/OrbitalEnterprises/orbital-eve-xml-api</url>
   	<connection>scm:git:https://github.com/OrbitalEnterprises/orbital-eve-xml-api.git</connection>
-  	<tag>rel_1_0_1</tag>
+  	<tag>rel_1_0_2</tag>
   	<developerConnection>scm:git:git@github.com:OrbitalEnterprises/orbital-eve-xml-api.git</developerConnection>
   </scm>
   
