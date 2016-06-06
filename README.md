@@ -5,8 +5,7 @@
 
 This module provides a library for interacting with the EVE XML API servers.
 The current version of this code is a cleaned up and reworked early fork of
-[EveApi](https://github.com/ZyorTaelon/eveapi).  A less cleaned up version of
-this code was also used in EveKit.
+[EveApi](https://github.com/ZyorTaelon/eveapi).
 
 ## Build
 
@@ -19,7 +18,7 @@ The easiest way to use EVE XML API is to add the following dependency to your po
 <dependency>
     <groupId>enterprises.orbital</groupId>
     <artifactId>eve-xml-api</artifactId>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
 </dependency>
 ```
 
@@ -29,8 +28,8 @@ You can find more details about the artifact [here](http://mvnrepository.com/art
 
 EVE XML API has the following dependencies which you'll need to build and run properly:
 
-* [Orbital license v1.0.0](https://github.com/OrbitalEnterprises/license)
-* [Orbital base v1.0.0](https://github.com/OrbitalEnterprises/base)
+* [Orbital license v1.1.0](https://github.com/OrbitalEnterprises/license)
+* [Orbital base v2.0.0](https://github.com/OrbitalEnterprises/base)
 * [Apache commons-digester 2.1](https://commons.apache.org/proper/commons-digester/)
 * [Apache httpclient 4.5.1](http://hc.apache.org/httpcomponents-client-4.5.x/index.html)
 
