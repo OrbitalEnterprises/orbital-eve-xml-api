@@ -14,6 +14,7 @@ import enterprises.orbital.evexmlapi.chr.IMailList;
 import enterprises.orbital.evexmlapi.chr.IMailMessage;
 import enterprises.orbital.evexmlapi.chr.INotification;
 import enterprises.orbital.evexmlapi.chr.INotificationText;
+import enterprises.orbital.evexmlapi.chr.IPartialCharacterSheet;
 import enterprises.orbital.evexmlapi.chr.IPlanetaryColony;
 import enterprises.orbital.evexmlapi.chr.IPlanetaryLink;
 import enterprises.orbital.evexmlapi.chr.IPlanetaryPin;
@@ -21,6 +22,7 @@ import enterprises.orbital.evexmlapi.chr.IPlanetaryRoute;
 import enterprises.orbital.evexmlapi.chr.IResearchAgent;
 import enterprises.orbital.evexmlapi.chr.ISkillInQueue;
 import enterprises.orbital.evexmlapi.chr.ISkillInTraining;
+import enterprises.orbital.evexmlapi.chr.ISkillInfo;
 import enterprises.orbital.evexmlapi.chr.IUpcomingCalendarEvent;
 import enterprises.orbital.evexmlapi.shared.IAccountBalance;
 import enterprises.orbital.evexmlapi.shared.IAsset;
@@ -70,7 +72,9 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
   }
 
   @Override
-  public Collection<ICalendarEventAttendee> requestCalendarEventAttendees(int... eventID) throws IOException {
+  public Collection<ICalendarEventAttendee> requestCalendarEventAttendees(
+                                                                          int... eventID)
+    throws IOException {
     return new CalendarEventAttendeeParser(connector, eventID).retrieveResponse(this);
   }
 
@@ -82,6 +86,11 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
   @Override
   public Collection<IChatChannel> requestChatChannels() throws IOException {
     return new ChatChannelsParser(connector).retrieveResponse(this);
+  }
+
+  @Override
+  public IPartialCharacterSheet requestClones() throws IOException {
+    return new PartialCharacterSheetParser(connector).retrieveResponse(this);
   }
 
   @Override
@@ -100,7 +109,9 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
   }
 
   @Override
-  public Collection<IContractItem> requestContractItems(long contractID) throws IOException {
+  public Collection<IContractItem> requestContractItems(
+                                                        long contractID)
+    throws IOException {
     return new ContractItemsParser(connector, contractID).retrieveResponse(this);
   }
 
@@ -130,12 +141,16 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
   }
 
   @Override
-  public Collection<IKill> requestKillMails(long beforeKillId) throws IOException {
+  public Collection<IKill> requestKillMails(
+                                            long beforeKillId)
+    throws IOException {
     return new KillMailsParser(connector, beforeKillId).retrieveResponse(this);
   }
 
   @Override
-  public Collection<IMailBody> requestMailBodies(long... messageID) throws IOException {
+  public Collection<IMailBody> requestMailBodies(
+                                                 long... messageID)
+    throws IOException {
     return new MailBodiesParser(connector, messageID).retrieveResponse(this);
   }
 
@@ -150,7 +165,9 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
   }
 
   @Override
-  public IMarketOrder requestMarketOrder(long orderID) throws IOException {
+  public IMarketOrder requestMarketOrder(
+                                         long orderID)
+    throws IOException {
     Collection<IMarketOrder> result = new MarketOrdersParser(connector, orderID).retrieveResponse(this);
     if (result == null) return null;
     return result.isEmpty() ? null : result.iterator().next();
@@ -172,7 +189,9 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
   }
 
   @Override
-  public Collection<INotificationText> requestNotificationTexts(long... notificationID) throws IOException {
+  public Collection<INotificationText> requestNotificationTexts(
+                                                                long... notificationID)
+    throws IOException {
     return new NotificationTextsParser(connector, notificationID).retrieveResponse(this);
   }
 
@@ -182,17 +201,23 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
   }
 
   @Override
-  public Collection<IPlanetaryLink> requestPlanetaryLinks(long planetID) throws IOException {
+  public Collection<IPlanetaryLink> requestPlanetaryLinks(
+                                                          long planetID)
+    throws IOException {
     return new PlanetaryLinkParser(connector, planetID).retrieveResponse(this);
   }
 
   @Override
-  public Collection<IPlanetaryPin> requestPlanetaryPins(long planetID) throws IOException {
+  public Collection<IPlanetaryPin> requestPlanetaryPins(
+                                                        long planetID)
+    throws IOException {
     return new PlanetaryPinParser(connector, planetID).retrieveResponse(this);
   }
 
   @Override
-  public Collection<IPlanetaryRoute> requestPlanetaryRoutes(long planetID) throws IOException {
+  public Collection<IPlanetaryRoute> requestPlanetaryRoutes(
+                                                            long planetID)
+    throws IOException {
     return new PlanetaryRouteParser(connector, planetID).retrieveResponse(this);
   }
 
@@ -212,6 +237,11 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
   }
 
   @Override
+  public ISkillInfo requestSkills() throws IOException {
+    return new SkillInfoParser(connector).retrieveResponse(this);
+  }
+
+  @Override
   public IStandingSet requestStandings() throws IOException {
     return new StandingsParser(connector).retrieveResponse(this);
   }
@@ -227,7 +257,9 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
   }
 
   @Override
-  public Collection<IWalletJournalEntry> requestWalletJournalEntries(long beforeRefID) throws IOException {
+  public Collection<IWalletJournalEntry> requestWalletJournalEntries(
+                                                                     long beforeRefID)
+    throws IOException {
     return new WalletJournalParser(connector, beforeRefID).retrieveResponse(this);
   }
 
@@ -237,12 +269,16 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
   }
 
   @Override
-  public Collection<IWalletTransaction> requestWalletTransactions(long beforeTransID) throws IOException {
+  public Collection<IWalletTransaction> requestWalletTransactions(
+                                                                  long beforeTransID)
+    throws IOException {
     return new WalletTransactionsParser(connector, beforeTransID).retrieveResponse(this);
   }
 
   @Override
-  public Collection<ILocation> requestLocations(long... itemID) throws IOException {
+  public Collection<ILocation> requestLocations(
+                                                long... itemID)
+    throws IOException {
     return new LocationsParser(connector, itemID).retrieveResponse(this);
   }
 }

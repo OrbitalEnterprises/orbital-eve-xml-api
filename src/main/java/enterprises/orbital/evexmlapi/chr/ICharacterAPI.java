@@ -26,7 +26,9 @@ public interface ICharacterAPI extends IResponse {
 
   public Collection<IAsset> requestAssets() throws IOException;
 
-  public Collection<ICalendarEventAttendee> requestCalendarEventAttendees(int... eventID) throws IOException;
+  public Collection<ICalendarEventAttendee> requestCalendarEventAttendees(
+                                                                          int... eventID)
+    throws IOException;
 
   public ICharacterSheet requestCharacterSheet() throws IOException;
 
@@ -36,6 +38,8 @@ public interface ICharacterAPI extends IResponse {
 
   public Collection<IChatChannel> requestChatChannels() throws IOException;
 
+  public IPartialCharacterSheet requestClones() throws IOException;
+
   public IContactSet requestContacts() throws IOException;
 
   public Collection<IContactNotification> requestContactNotifications() throws IOException;
@@ -44,7 +48,9 @@ public interface ICharacterAPI extends IResponse {
 
   public Collection<IContractBid> requestContractBids() throws IOException;
 
-  public Collection<IContractItem> requestContractItems(long contractID) throws IOException;
+  public Collection<IContractItem> requestContractItems(
+                                                        long contractID)
+    throws IOException;
 
   public IFacWarStats requestFacWarStats() throws IOException;
 
@@ -54,11 +60,17 @@ public interface ICharacterAPI extends IResponse {
 
   public Collection<IKill> requestKillMails() throws IOException;
 
-  public Collection<IKill> requestKillMails(long beforeKillID) throws IOException;
+  public Collection<IKill> requestKillMails(
+                                            long beforeKillID)
+    throws IOException;
 
-  public Collection<ILocation> requestLocations(long... itemID) throws IOException;
+  public Collection<ILocation> requestLocations(
+                                                long... itemID)
+    throws IOException;
 
-  public Collection<IMailBody> requestMailBodies(long... messageID) throws IOException;
+  public Collection<IMailBody> requestMailBodies(
+                                                 long... messageID)
+    throws IOException;
 
   public Collection<IMailList> requestMailingLists() throws IOException;
 
@@ -66,21 +78,31 @@ public interface ICharacterAPI extends IResponse {
 
   public Collection<IMarketOrder> requestMarketOrders() throws IOException;
 
-  public IMarketOrder requestMarketOrder(long orderID) throws IOException;
+  public IMarketOrder requestMarketOrder(
+                                         long orderID)
+    throws IOException;
 
   public Collection<ICharacterMedal> requestMedals() throws IOException;
 
   public Collection<INotification> requestNotifications() throws IOException;
 
-  public Collection<INotificationText> requestNotificationTexts(long... notificationID) throws IOException;
+  public Collection<INotificationText> requestNotificationTexts(
+                                                                long... notificationID)
+    throws IOException;
 
   public Collection<IPlanetaryColony> requestPlanetaryColonies() throws IOException;
 
-  public Collection<IPlanetaryLink> requestPlanetaryLinks(long planetID) throws IOException;
+  public Collection<IPlanetaryLink> requestPlanetaryLinks(
+                                                          long planetID)
+    throws IOException;
 
-  public Collection<IPlanetaryPin> requestPlanetaryPins(long planetID) throws IOException;
+  public Collection<IPlanetaryPin> requestPlanetaryPins(
+                                                        long planetID)
+    throws IOException;
 
-  public Collection<IPlanetaryRoute> requestPlanetaryRoutes(long planetID) throws IOException;
+  public Collection<IPlanetaryRoute> requestPlanetaryRoutes(
+                                                            long planetID)
+    throws IOException;
 
   public Collection<IResearchAgent> requestResearchAgents() throws IOException;
 
@@ -88,15 +110,21 @@ public interface ICharacterAPI extends IResponse {
 
   public Collection<ISkillInQueue> requestSkillQueue() throws IOException;
 
+  public ISkillInfo requestSkills() throws IOException;
+
   public IStandingSet requestStandings() throws IOException;
 
   public Collection<IUpcomingCalendarEvent> requestUpcomingCalendarEvents() throws IOException;
 
   public Collection<IWalletJournalEntry> requestWalletJournalEntries() throws IOException;
 
-  public Collection<IWalletJournalEntry> requestWalletJournalEntries(long beforeRefID) throws IOException;
+  public Collection<IWalletJournalEntry> requestWalletJournalEntries(
+                                                                     long beforeRefID)
+    throws IOException;
 
   public Collection<IWalletTransaction> requestWalletTransactions() throws IOException;
 
-  public Collection<IWalletTransaction> requestWalletTransactions(long beforeTransID) throws IOException;
+  public Collection<IWalletTransaction> requestWalletTransactions(
+                                                                  long beforeTransID)
+    throws IOException;
 }

@@ -15,7 +15,9 @@ import enterprises.orbital.impl.evexmlapi.unittest.test.ResponseConverter;
 
 public class CharCharacterSheetConverter extends ResponseConverter {
 
-  public static String convert(ICharacterAPI request, ICharacterSheet response) {
+  public static String convert(
+                               ICharacterAPI request,
+                               ICharacterSheet response) {
     StringBuilder builder = new StringBuilder();
 
     convertOpener(request, builder);
@@ -26,7 +28,9 @@ public class CharCharacterSheetConverter extends ResponseConverter {
     builder.append("<homeStationID>").append(response.getHomeStationID()).append("</homeStationID>\n");
     builder.append("<DoB>").append(toEveDateFormat(response.getDoB())).append("</DoB>\n");
     builder.append("<race>").append(response.getRace()).append("</race>\n");
+    builder.append("<bloodLineID>").append(response.getBloodlineID()).append("</bloodLineID>\n");
     builder.append("<bloodLine>").append(response.getBloodline()).append("</bloodLine>\n");
+    builder.append("<ancestryID>").append(response.getAncestryID()).append("</ancestryID>\n");
     builder.append("<ancestry>").append(response.getAncestry()).append("</ancestry>\n");
     builder.append("<gender>").append(response.getGender()).append("</gender>\n");
     builder.append("<corporationName>").append(response.getCorporationName()).append("</corporationName>\n");
@@ -86,11 +90,6 @@ public class CharCharacterSheetConverter extends ResponseConverter {
     builder.append("<jumpLastUpdate>").append(toEveDateFormat(response.getJumpLastUpdate())).append("</jumpLastUpdate>\n");
 
     builder.append("<balance>").append(String.format("%.2f", response.getBalance())).append("</balance>\n");
-
-    builder.append("<attributeEnhancers>\n");
-    builder
-        .append("<deprecated explanation=\"This section of the character sheet has been deprecated. Please use the new implants section to get a characters current implants. Final removal of this section is scheduled for December 1st 2014. Thanks to kais58 and LuciaDenniard for pointing out how terrible I am at spelling. I hate you both.\" />\n");
-    builder.append("</attributeEnhancers>\n");
 
     builder.append("<rowset name=\"implants\" key=\"typeID\" columns=\"typeID,typeName\"");
     if (response.getImplants().size() == 0) {

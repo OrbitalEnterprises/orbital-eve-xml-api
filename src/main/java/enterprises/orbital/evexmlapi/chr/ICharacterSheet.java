@@ -2,49 +2,22 @@ package enterprises.orbital.evexmlapi.chr;
 
 import java.math.BigDecimal;
 import java.util.Collection;
-import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = ICharacterSheet.class)
-public interface ICharacterSheet {
-  public BigDecimal getBalance();
-
-  public String getBloodline();
-
+@JsonSerialize(
+    as = ICharacterSheet.class)
+public interface ICharacterSheet extends IPartialCharacterSheet {
   public long getCharacterID();
-
-  public int getCharisma();
-
-  public long getCorporationID();
-
-  public String getCorporationName();
-
-  public String getGender();
-
-  public int getIntelligence();
-
-  public int getMemory();
 
   public String getName();
 
-  public int getPerception();
+  public long getHomeStationID();
 
-  public String getRace();
+  public String getCorporationName();
 
-  public Set<ISkill> getSkills();
-
-  public int getWillpower();
-
-  public Date getDoB();
-
-  public String getAncestry();
-
-  public String getCloneName();
-
-  public int getCloneSkillPoints();
+  public long getCorporationID();
 
   public String getAllianceName();
 
@@ -54,35 +27,19 @@ public interface ICharacterSheet {
 
   public long getFactionID();
 
-  public Collection<ICharacterRole> getRoles();
+  public int getCloneTypeID();
 
-  public Collection<ICharacterTitle> getTitles();
+  public String getCloneName();
 
-  public long getHomeStationID();
-
-  public Date getCloneJumpDate();
-
-  public Date getLastRespecDate();
-
-  public Date getLastTimedRespec();
-
-  public int getFreeRespecs();
+  public int getCloneSkillPoints();
 
   public int getFreeSkillPoints();
 
-  public int getCloneTypeID();
+  public BigDecimal getBalance();
 
-  public Date getRemoteStationDate();
+  public Set<ISkill> getSkills();
 
-  public Date getJumpActivation();
+  public Collection<ICharacterRole> getRoles();
 
-  public Date getJumpFatigue();
-
-  public Date getJumpLastUpdate();
-
-  public List<IImplant> getImplants();
-
-  public List<IJumpClone> getJumpClones();
-
-  public List<IJumpCloneImplant> getJumpCloneImplants();
+  public Collection<ICharacterTitle> getTitles();
 }

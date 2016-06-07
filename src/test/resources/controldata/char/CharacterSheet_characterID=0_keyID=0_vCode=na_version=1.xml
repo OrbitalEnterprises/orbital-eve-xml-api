@@ -7,7 +7,9 @@
     <homeStationID>60004510</homeStationID>
     <DoB>2010-05-16 03:38:00</DoB>
     <race>Caldari</race>
+    <bloodLineID>1</bloodLineID>
     <bloodLine>Deteis</bloodLine>
+    <ancestryID>12</ancestryID>
     <ancestry>Tube Child</ancestry>
     <gender>Male</gender>
     <corporationName>Dark Planet Ventures</corporationName>
@@ -49,9 +51,6 @@
     <jumpFatigue>0001-01-01 00:00:00</jumpFatigue>
     <jumpLastUpdate>0001-01-01 00:00:00</jumpLastUpdate>
     <balance>161301664.44</balance>
-    <attributeEnhancers>
-      <deprecated explanation="This section of the character sheet has been deprecated. Please use the new implants section to get a characters current implants. Final removal of this section is scheduled for December 1st 2014. Thanks to kais58 and LuciaDenniard for pointing out how terrible I am at spelling. I hate you both." />
-    </attributeEnhancers>
     <rowset name="implants" key="typeID" columns="typeID,typeName">
       <row typeID="10212" typeName="Neural Boost - Standard" />
       <row typeID="10216" typeName="Ocular Filter - Standard" />

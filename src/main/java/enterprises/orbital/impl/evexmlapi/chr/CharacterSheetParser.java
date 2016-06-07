@@ -23,7 +23,9 @@ public class CharacterSheetParser extends AbstractApiParser<CharacterSheetRespon
     digester.addBeanPropertySetter("eveapi/result/homeStationID");
     digester.addBeanPropertySetter("eveapi/result/DoB", "dateOfBirth");
     digester.addBeanPropertySetter("eveapi/result/race");
+    digester.addBeanPropertySetter("eveapi/result/bloodLineID");
     digester.addBeanPropertySetter("eveapi/result/bloodLine");
+    digester.addBeanPropertySetter("eveapi/result/ancestryID");
     digester.addBeanPropertySetter("eveapi/result/ancestry");
     digester.addBeanPropertySetter("eveapi/result/gender");
     digester.addBeanPropertySetter("eveapi/result/corporationName");
@@ -63,7 +65,9 @@ public class CharacterSheetParser extends AbstractApiParser<CharacterSheetRespon
   }
 
   @Override
-  public ICharacterSheet retrieveResponse(AbstractAPIRequestAdapter adapter) throws IOException {
+  public ICharacterSheet retrieveResponse(
+                                          AbstractAPIRequestAdapter adapter)
+    throws IOException {
     CharacterSheetResponse response = getResponse(adapter.getAuth());
     adapter.setFromLastResponse(response);
     if (adapter.isError()) return null;
