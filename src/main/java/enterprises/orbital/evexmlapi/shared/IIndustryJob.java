@@ -17,7 +17,7 @@ public interface IIndustryJob {
 
   public long getFacilityID();
 
-  public long getSolarSystemID();
+  public int getSolarSystemID();
 
   public String getSolarSystemName();
 

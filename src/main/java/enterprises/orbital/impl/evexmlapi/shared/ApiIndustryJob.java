@@ -11,7 +11,7 @@ public class ApiIndustryJob implements IIndustryJob {
   private long       installerID;
   private String     installerName;
   private long       facilityID;
-  private long       solarSystemID;
+  private int        solarSystemID;
   private String     solarSystemName;
   private long       stationID;
   private int        activityID;
@@ -77,12 +77,12 @@ public class ApiIndustryJob implements IIndustryJob {
   }
 
   @Override
-  public long getSolarSystemID() {
+  public int getSolarSystemID() {
     return solarSystemID;
   }
 
   public void setSolarSystemID(
-                               long solarSystemID) {
+                               int solarSystemID) {
     this.solarSystemID = solarSystemID;
   }
 
