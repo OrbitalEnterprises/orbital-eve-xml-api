@@ -8,15 +8,16 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 /**
  * A response to a request for EVE Account Status.
  */
-@JsonSerialize(as = IAccountStatus.class)
+@JsonSerialize(
+    as = IAccountStatus.class)
 public interface IAccountStatus {
   public Date getPaidUntil();
 
   public Date getCreateDate();
 
-  public int getLogonCount();
+  public long getLogonCount();
 
-  public int getLogonMinutes();
+  public long getLogonMinutes();
 
   public List<IMultiCharacterTraining> getMultiCharacterTraining();
 

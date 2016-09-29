@@ -8,7 +8,9 @@ import enterprises.orbital.impl.evexmlapi.unittest.test.ResponseConverter;
 
 public class CorpContractsConverter extends ResponseConverter {
 
-  public static String convert(ICorporationAPI request, Collection<IContract> response) {
+  public static String convert(
+                               ICorporationAPI request,
+                               Collection<IContract> response) {
     StringBuilder builder = new StringBuilder();
 
     convertOpener(request, builder);
@@ -40,7 +42,10 @@ public class CorpContractsConverter extends ResponseConverter {
         builder.append("\" reward=\"").append(String.format("%.2f", next.getReward()));
         builder.append("\" collateral=\"").append(String.format("%.2f", next.getCollateral()));
         builder.append("\" buyout=\"").append(String.format("%.2f", next.getBuyout()));
-        builder.append("\" volume=\"").append(next.getVolume());
+        if (Math.round(next.getVolume()) == next.getVolume())
+          builder.append("\" volume=\"").append((long) next.getVolume());
+        else
+          builder.append("\" volume=\"").append(next.getVolume());
         builder.append("\" />\n");
       }
       builder.append("</rowset>\n");

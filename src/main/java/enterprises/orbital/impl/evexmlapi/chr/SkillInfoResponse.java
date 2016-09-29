@@ -10,16 +10,16 @@ import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class SkillInfoResponse extends ApiResponse implements ISkillInfo {
   private static final Logger          log    = Logger.getLogger(SkillInfoResponse.class.getName());
-  private int                          freeSkillPoints;
+  private long                         freeSkillPoints;
   private final Set<ApiCharacterSkill> skills = new HashSet<ApiCharacterSkill>();
 
   public void setFreeSkillPoints(
-                                 int freeSkillPoints) {
+                                 long freeSkillPoints) {
     this.freeSkillPoints = freeSkillPoints;
   }
 
   @Override
-  public int getFreeSkillPoints() {
+  public long getFreeSkillPoints() {
     return freeSkillPoints;
   }
 

@@ -6,7 +6,7 @@ public class ApiContractItem implements IContractItem {
   private long    recordID;
   private int     typeID;
   private long    quantity;
-  private int     rawQuantity;
+  private long    rawQuantity;
   private boolean singleton;
   private boolean included;
 
@@ -15,7 +15,8 @@ public class ApiContractItem implements IContractItem {
     return recordID;
   }
 
-  public void setRecordID(long recordID) {
+  public void setRecordID(
+                          long recordID) {
     this.recordID = recordID;
   }
 
@@ -24,7 +25,8 @@ public class ApiContractItem implements IContractItem {
     return typeID;
   }
 
-  public void setTypeID(int typeID) {
+  public void setTypeID(
+                        int typeID) {
     this.typeID = typeID;
   }
 
@@ -33,16 +35,18 @@ public class ApiContractItem implements IContractItem {
     return quantity;
   }
 
-  public void setQuantity(long quantity) {
+  public void setQuantity(
+                          long quantity) {
     this.quantity = quantity;
   }
 
   @Override
-  public int getRawQuantity() {
+  public long getRawQuantity() {
     return rawQuantity;
   }
 
-  public void setRawQuantity(int rawQuantity) {
+  public void setRawQuantity(
+                             long rawQuantity) {
     this.rawQuantity = rawQuantity;
   }
 
@@ -51,7 +55,8 @@ public class ApiContractItem implements IContractItem {
     return singleton;
   }
 
-  public void setSingleton(boolean singleton) {
+  public void setSingleton(
+                           boolean singleton) {
     this.singleton = singleton;
   }
 
@@ -60,7 +65,8 @@ public class ApiContractItem implements IContractItem {
     return included;
   }
 
-  public void setIncluded(boolean included) {
+  public void setIncluded(
+                          boolean included) {
     this.included = included;
   }
 

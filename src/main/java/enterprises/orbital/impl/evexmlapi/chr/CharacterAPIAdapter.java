@@ -73,7 +73,7 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
 
   @Override
   public Collection<ICalendarEventAttendee> requestCalendarEventAttendees(
-                                                                          int... eventID)
+                                                                          long... eventID)
     throws IOException {
     return new CalendarEventAttendeeParser(connector, eventID).retrieveResponse(this);
   }

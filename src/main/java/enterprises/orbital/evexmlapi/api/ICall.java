@@ -2,7 +2,8 @@ package enterprises.orbital.evexmlapi.api;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = ICall.class)
+@JsonSerialize(
+    as = ICall.class)
 public interface ICall {
   public long getAccessMask();
 
@@ -10,7 +11,7 @@ public interface ICall {
 
   public String getName();
 
-  public int getGroupID();
+  public long getGroupID();
 
   public String getDescription();
 }

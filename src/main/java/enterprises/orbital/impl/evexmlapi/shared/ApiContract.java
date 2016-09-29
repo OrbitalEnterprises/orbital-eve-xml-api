@@ -11,8 +11,8 @@ public class ApiContract implements IContract {
   private long       issuerCorpID;
   private long       assigneeID;
   private long       acceptorID;
-  private int        startStationID;
-  private int        endStationID;
+  private long       startStationID;
+  private long       endStationID;
   private String     type;
   private String     status;
   private String     title;
@@ -27,14 +27,15 @@ public class ApiContract implements IContract {
   private BigDecimal reward;
   private BigDecimal collateral;
   private BigDecimal buyout;
-  private long       volume;
+  private double     volume;
 
   @Override
   public long getContractID() {
     return contractID;
   }
 
-  public void setContractID(long contractID) {
+  public void setContractID(
+                            long contractID) {
     this.contractID = contractID;
   }
 
@@ -43,7 +44,8 @@ public class ApiContract implements IContract {
     return issuerID;
   }
 
-  public void setIssuerID(long issuerID) {
+  public void setIssuerID(
+                          long issuerID) {
     this.issuerID = issuerID;
   }
 
@@ -52,7 +54,8 @@ public class ApiContract implements IContract {
     return issuerCorpID;
   }
 
-  public void setIssuerCorpID(long issuerCorpID) {
+  public void setIssuerCorpID(
+                              long issuerCorpID) {
     this.issuerCorpID = issuerCorpID;
   }
 
@@ -61,7 +64,8 @@ public class ApiContract implements IContract {
     return assigneeID;
   }
 
-  public void setAssigneeID(long assigneeID) {
+  public void setAssigneeID(
+                            long assigneeID) {
     this.assigneeID = assigneeID;
   }
 
@@ -70,25 +74,28 @@ public class ApiContract implements IContract {
     return acceptorID;
   }
 
-  public void setAcceptorID(long acceptorID) {
+  public void setAcceptorID(
+                            long acceptorID) {
     this.acceptorID = acceptorID;
   }
 
   @Override
-  public int getStartStationID() {
+  public long getStartStationID() {
     return startStationID;
   }
 
-  public void setStartStationID(int startStationID) {
+  public void setStartStationID(
+                                long startStationID) {
     this.startStationID = startStationID;
   }
 
   @Override
-  public int getEndStationID() {
+  public long getEndStationID() {
     return endStationID;
   }
 
-  public void setEndStationID(int endStationID) {
+  public void setEndStationID(
+                              long endStationID) {
     this.endStationID = endStationID;
   }
 
@@ -97,7 +104,8 @@ public class ApiContract implements IContract {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(
+                      String type) {
     this.type = type;
   }
 
@@ -106,7 +114,8 @@ public class ApiContract implements IContract {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(
+                        String status) {
     this.status = status;
   }
 
@@ -115,7 +124,8 @@ public class ApiContract implements IContract {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(
+                       String title) {
     this.title = title;
   }
 
@@ -124,7 +134,8 @@ public class ApiContract implements IContract {
     return forCorp;
   }
 
-  public void setForCorp(boolean forCorp) {
+  public void setForCorp(
+                         boolean forCorp) {
     this.forCorp = forCorp;
   }
 
@@ -133,7 +144,8 @@ public class ApiContract implements IContract {
     return availability;
   }
 
-  public void setAvailability(String availability) {
+  public void setAvailability(
+                              String availability) {
     this.availability = availability;
   }
 
@@ -142,7 +154,8 @@ public class ApiContract implements IContract {
     return dateIssued;
   }
 
-  public void setDateIssued(Date dateIssued) {
+  public void setDateIssued(
+                            Date dateIssued) {
     this.dateIssued = dateIssued;
   }
 
@@ -151,7 +164,8 @@ public class ApiContract implements IContract {
     return dateExpired;
   }
 
-  public void setDateExpired(Date dateExpired) {
+  public void setDateExpired(
+                             Date dateExpired) {
     this.dateExpired = dateExpired;
   }
 
@@ -160,7 +174,8 @@ public class ApiContract implements IContract {
     return dateAccepted;
   }
 
-  public void setDateAccepted(Date dateAccepted) {
+  public void setDateAccepted(
+                              Date dateAccepted) {
     this.dateAccepted = dateAccepted;
   }
 
@@ -169,7 +184,8 @@ public class ApiContract implements IContract {
     return numDays;
   }
 
-  public void setNumDays(int numDays) {
+  public void setNumDays(
+                         int numDays) {
     this.numDays = numDays;
   }
 
@@ -178,7 +194,8 @@ public class ApiContract implements IContract {
     return dateCompleted;
   }
 
-  public void setDateCompleted(Date dateCompleted) {
+  public void setDateCompleted(
+                               Date dateCompleted) {
     this.dateCompleted = dateCompleted;
   }
 
@@ -187,7 +204,8 @@ public class ApiContract implements IContract {
     return price;
   }
 
-  public void setPrice(BigDecimal price) {
+  public void setPrice(
+                       BigDecimal price) {
     this.price = price;
   }
 
@@ -196,7 +214,8 @@ public class ApiContract implements IContract {
     return reward;
   }
 
-  public void setReward(BigDecimal reward) {
+  public void setReward(
+                        BigDecimal reward) {
     this.reward = reward;
   }
 
@@ -205,7 +224,8 @@ public class ApiContract implements IContract {
     return collateral;
   }
 
-  public void setCollateral(BigDecimal collateral) {
+  public void setCollateral(
+                            BigDecimal collateral) {
     this.collateral = collateral;
   }
 
@@ -214,16 +234,18 @@ public class ApiContract implements IContract {
     return buyout;
   }
 
-  public void setBuyout(BigDecimal buyout) {
+  public void setBuyout(
+                        BigDecimal buyout) {
     this.buyout = buyout;
   }
 
   @Override
-  public long getVolume() {
+  public double getVolume() {
     return volume;
   }
 
-  public void setVolume(long volume) {
+  public void setVolume(
+                        double volume) {
     this.volume = volume;
   }
 

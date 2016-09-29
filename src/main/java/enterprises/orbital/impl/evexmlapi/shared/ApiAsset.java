@@ -10,17 +10,18 @@ public class ApiAsset implements IAsset {
   private long                       itemID;
   private long                       locationID;
   private int                        typeID;
-  private int                        quantity;
+  private long                       quantity;
   private int                        flag;
   private boolean                    singleton;
-  private int                        rawQuantity;
+  private long                       rawQuantity;
 
   @Override
-  public int getRawQuantity() {
+  public long getRawQuantity() {
     return rawQuantity;
   }
 
-  public void setRawQuantity(int rawQuantity) {
+  public void setRawQuantity(
+                             long rawQuantity) {
     this.rawQuantity = rawQuantity;
   }
 
@@ -31,7 +32,8 @@ public class ApiAsset implements IAsset {
     return result;
   }
 
-  public void addAsset(ApiAsset asset) {
+  public void addAsset(
+                       ApiAsset asset) {
     assets.add(asset);
   }
 
@@ -40,7 +42,8 @@ public class ApiAsset implements IAsset {
     return itemID;
   }
 
-  public void setItemID(long itemID) {
+  public void setItemID(
+                        long itemID) {
     this.itemID = itemID;
   }
 
@@ -49,7 +52,8 @@ public class ApiAsset implements IAsset {
     return locationID;
   }
 
-  public void setLocationID(long locationID) {
+  public void setLocationID(
+                            long locationID) {
     this.locationID = locationID;
   }
 
@@ -58,16 +62,18 @@ public class ApiAsset implements IAsset {
     return typeID;
   }
 
-  public void setTypeID(int typeID) {
+  public void setTypeID(
+                        int typeID) {
     this.typeID = typeID;
   }
 
   @Override
-  public int getQuantity() {
+  public long getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(int quantity) {
+  public void setQuantity(
+                          long quantity) {
     this.quantity = quantity;
   }
 
@@ -76,7 +82,8 @@ public class ApiAsset implements IAsset {
     return flag;
   }
 
-  public void setFlag(int flag) {
+  public void setFlag(
+                      int flag) {
     this.flag = flag;
   }
 
@@ -85,7 +92,8 @@ public class ApiAsset implements IAsset {
     return singleton;
   }
 
-  public void setSingleton(boolean singleton) {
+  public void setSingleton(
+                           boolean singleton) {
     this.singleton = singleton;
   }
 

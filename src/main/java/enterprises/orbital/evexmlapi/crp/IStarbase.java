@@ -4,11 +4,12 @@ import java.util.Date;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IStarbase.class)
+@JsonSerialize(
+    as = IStarbase.class)
 public interface IStarbase {
   public long getItemID();
 
-  public int getLocationID();
+  public long getLocationID();
 
   public int getMoonID();
 

@@ -15,9 +15,9 @@ import enterprises.orbital.impl.evexmlapi.ApiConnector;
 import enterprises.orbital.impl.evexmlapi.ApiEndpoint;
 
 public class CalendarEventAttendeeParser extends AbstractApiParser<CalendarEventAttendeeResponse, Collection<ICalendarEventAttendee>> {
-  private int[] events;
+  private long[] events;
 
-  public CalendarEventAttendeeParser(ApiConnector connector, int... events) {
+  public CalendarEventAttendeeParser(ApiConnector connector, long... events) {
     super(connector, CalendarEventAttendeeResponse.class, ApiEndpoint.CHR_CALENDAR_EVENT_ATTENDEE_V2);
     this.events = events;
   }
@@ -34,7 +34,9 @@ public class CalendarEventAttendeeParser extends AbstractApiParser<CalendarEvent
     return digester;
   }
 
-  private CalendarEventAttendeeResponse getResponseWithEvents(ApiAuth auth) throws IOException {
+  private CalendarEventAttendeeResponse getResponseWithEvents(
+                                                              ApiAuth auth)
+    throws IOException {
     if (events.length > 0) {
       String eventString = Arrays.toString(events).replace("[", "").replace("]", "").replace(" ", "");
       return getResponse(auth, "eventIDs", eventString);
@@ -43,7 +45,9 @@ public class CalendarEventAttendeeParser extends AbstractApiParser<CalendarEvent
   }
 
   @Override
-  public Collection<ICalendarEventAttendee> retrieveResponse(AbstractAPIRequestAdapter adapter) throws IOException {
+  public Collection<ICalendarEventAttendee> retrieveResponse(
+                                                             AbstractAPIRequestAdapter adapter)
+    throws IOException {
     CalendarEventAttendeeResponse response = getResponseWithEvents(adapter.getAuth());
     adapter.setFromLastResponse(response);
     if (adapter.isError()) return null;

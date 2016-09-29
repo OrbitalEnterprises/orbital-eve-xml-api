@@ -2,7 +2,8 @@ package enterprises.orbital.evexmlapi.shared;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IContractItem.class)
+@JsonSerialize(
+    as = IContractItem.class)
 public interface IContractItem {
 
   public long getRecordID();
@@ -11,7 +12,7 @@ public interface IContractItem {
 
   public long getQuantity();
 
-  public int getRawQuantity();
+  public long getRawQuantity();
 
   public boolean isSingleton();
 

@@ -5,7 +5,8 @@ import java.util.Date;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IContract.class)
+@JsonSerialize(
+    as = IContract.class)
 public interface IContract {
 
   public long getContractID();
@@ -18,9 +19,9 @@ public interface IContract {
 
   public long getAcceptorID();
 
-  public int getStartStationID();
+  public long getStartStationID();
 
-  public int getEndStationID();
+  public long getEndStationID();
 
   public String getType();
 
@@ -50,6 +51,6 @@ public interface IContract {
 
   public BigDecimal getBuyout();
 
-  public long getVolume();
+  public double getVolume();
 
 }

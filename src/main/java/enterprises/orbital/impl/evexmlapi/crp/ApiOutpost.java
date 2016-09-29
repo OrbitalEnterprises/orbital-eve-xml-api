@@ -6,7 +6,7 @@ public class ApiOutpost implements IOutpost {
   private long   stationID;
   private long   ownerID;
   private String stationName;
-  private long   solarSystemID;
+  private int    solarSystemID;
   private double dockingCostPerShipVolume;
   private double officeRentalCost;
   private int    stationTypeID;
@@ -22,7 +22,8 @@ public class ApiOutpost implements IOutpost {
     return stationID;
   }
 
-  public void setStationID(long stationID) {
+  public void setStationID(
+                           long stationID) {
     this.stationID = stationID;
   }
 
@@ -31,7 +32,8 @@ public class ApiOutpost implements IOutpost {
     return ownerID;
   }
 
-  public void setOwnerID(long ownerID) {
+  public void setOwnerID(
+                         long ownerID) {
     this.ownerID = ownerID;
   }
 
@@ -40,16 +42,18 @@ public class ApiOutpost implements IOutpost {
     return stationName;
   }
 
-  public void setStationName(String stationName) {
+  public void setStationName(
+                             String stationName) {
     this.stationName = stationName;
   }
 
   @Override
-  public long getSolarSystemID() {
+  public int getSolarSystemID() {
     return solarSystemID;
   }
 
-  public void setSolarSystemID(long solarSystemID) {
+  public void setSolarSystemID(
+                               int solarSystemID) {
     this.solarSystemID = solarSystemID;
   }
 
@@ -58,7 +62,8 @@ public class ApiOutpost implements IOutpost {
     return dockingCostPerShipVolume;
   }
 
-  public void setDockingCostPerShipVolume(double dockingCostPerShipVolume) {
+  public void setDockingCostPerShipVolume(
+                                          double dockingCostPerShipVolume) {
     this.dockingCostPerShipVolume = dockingCostPerShipVolume;
   }
 
@@ -67,7 +72,8 @@ public class ApiOutpost implements IOutpost {
     return officeRentalCost;
   }
 
-  public void setOfficeRentalCost(double officeRentalCost) {
+  public void setOfficeRentalCost(
+                                  double officeRentalCost) {
     this.officeRentalCost = officeRentalCost;
   }
 
@@ -76,7 +82,8 @@ public class ApiOutpost implements IOutpost {
     return stationTypeID;
   }
 
-  public void setStationTypeID(int stationTypeID) {
+  public void setStationTypeID(
+                               int stationTypeID) {
     this.stationTypeID = stationTypeID;
   }
 
@@ -85,7 +92,8 @@ public class ApiOutpost implements IOutpost {
     return reprocessingEfficiency;
   }
 
-  public void setReprocessingEfficiency(double reprocessingEfficiency) {
+  public void setReprocessingEfficiency(
+                                        double reprocessingEfficiency) {
     this.reprocessingEfficiency = reprocessingEfficiency;
   }
 
@@ -94,7 +102,8 @@ public class ApiOutpost implements IOutpost {
     return reprocessingStationTake;
   }
 
-  public void setReprocessingStationTake(double reprocessingStationTake) {
+  public void setReprocessingStationTake(
+                                         double reprocessingStationTake) {
     this.reprocessingStationTake = reprocessingStationTake;
   }
 
@@ -103,7 +112,8 @@ public class ApiOutpost implements IOutpost {
     return standingOwnerID;
   }
 
-  public void setStandingOwnerID(long standingOwnerID) {
+  public void setStandingOwnerID(
+                                 long standingOwnerID) {
     this.standingOwnerID = standingOwnerID;
   }
 
@@ -112,7 +122,8 @@ public class ApiOutpost implements IOutpost {
     return x;
   }
 
-  public void setX(long x) {
+  public void setX(
+                   long x) {
     this.x = x;
   }
 
@@ -121,7 +132,8 @@ public class ApiOutpost implements IOutpost {
     return y;
   }
 
-  public void setY(long y) {
+  public void setY(
+                   long y) {
     this.y = y;
   }
 
@@ -130,7 +142,8 @@ public class ApiOutpost implements IOutpost {
     return z;
   }
 
-  public void setZ(long z) {
+  public void setZ(
+                   long z) {
     this.z = z;
   }
 

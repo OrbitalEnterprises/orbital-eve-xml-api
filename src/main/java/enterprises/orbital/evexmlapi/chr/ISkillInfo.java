@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize(
     as = ISkillInfo.class)
 public interface ISkillInfo {
-  public int getFreeSkillPoints();
+  public long getFreeSkillPoints();
 
   public Set<ISkill> getSkills();
 

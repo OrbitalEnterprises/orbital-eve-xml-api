@@ -2,7 +2,8 @@ package enterprises.orbital.evexmlapi.crp;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IOutpost.class)
+@JsonSerialize(
+    as = IOutpost.class)
 public interface IOutpost {
   public long getStationID();
 
@@ -10,7 +11,7 @@ public interface IOutpost {
 
   public String getStationName();
 
-  public long getSolarSystemID();
+  public int getSolarSystemID();
 
   public double getDockingCostPerShipVolume();
 

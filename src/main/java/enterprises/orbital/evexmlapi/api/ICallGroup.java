@@ -2,9 +2,10 @@ package enterprises.orbital.evexmlapi.api;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = ICallGroup.class)
+@JsonSerialize(
+    as = ICallGroup.class)
 public interface ICallGroup {
-  public int getGroupID();
+  public long getGroupID();
 
   public String getName();
 

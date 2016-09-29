@@ -3,7 +3,7 @@ package enterprises.orbital.impl.evexmlapi.chr;
 import enterprises.orbital.evexmlapi.chr.ICalendarEventAttendee;
 
 public class CalendarEventAttendee implements ICalendarEventAttendee {
-  private int    eventID;
+  private long   eventID;
   private long   characterID;
   private String characterName;
   private String response;
@@ -14,15 +14,17 @@ public class CalendarEventAttendee implements ICalendarEventAttendee {
   }
 
   @Override
-  public int getEventID() {
+  public long getEventID() {
     return eventID;
   }
 
-  public void setEventID(int eventID) {
+  public void setEventID(
+                         long eventID) {
     this.eventID = eventID;
   }
 
-  public void setCharacterID(long characterID) {
+  public void setCharacterID(
+                             long characterID) {
     this.characterID = characterID;
   }
 
@@ -31,7 +33,8 @@ public class CalendarEventAttendee implements ICalendarEventAttendee {
     return characterName;
   }
 
-  public void setCharacterName(String characterName) {
+  public void setCharacterName(
+                               String characterName) {
     this.characterName = characterName;
   }
 
@@ -40,7 +43,8 @@ public class CalendarEventAttendee implements ICalendarEventAttendee {
     return response;
   }
 
-  public void setResponse(String response) {
+  public void setResponse(
+                          String response) {
     this.response = response;
   }
 }

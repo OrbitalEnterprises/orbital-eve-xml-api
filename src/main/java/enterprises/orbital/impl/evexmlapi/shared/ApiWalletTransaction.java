@@ -10,7 +10,7 @@ public class ApiWalletTransaction implements IWalletTransaction {
   private long       transactionID;
   private long       quantity;
   private String     typeName;
-  private long       typeID;
+  private int        typeID;
   private BigDecimal price;
   private long       clientID;
   private String     clientName;
@@ -21,13 +21,15 @@ public class ApiWalletTransaction implements IWalletTransaction {
   private String     transactionType;
   private String     transactionFor;
   private long       journalTransactionID;
+  private int        clientTypeID;
 
   @Override
   public long getJournalTransactionID() {
     return journalTransactionID;
   }
 
-  public void setJournalTransactionID(long journalTransactionID) {
+  public void setJournalTransactionID(
+                                      long journalTransactionID) {
     this.journalTransactionID = journalTransactionID;
   }
 
@@ -36,7 +38,8 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return transactionDateTime;
   }
 
-  public void setTransactionDateTime(Date transactionDateTime) {
+  public void setTransactionDateTime(
+                                     Date transactionDateTime) {
     this.transactionDateTime = transactionDateTime;
   }
 
@@ -45,7 +48,8 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return transactionID;
   }
 
-  public void setTransactionID(long transactionID) {
+  public void setTransactionID(
+                               long transactionID) {
     this.transactionID = transactionID;
   }
 
@@ -54,7 +58,8 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return quantity;
   }
 
-  public void setQuantity(long quantity) {
+  public void setQuantity(
+                          long quantity) {
     this.quantity = quantity;
   }
 
@@ -63,16 +68,18 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return typeName;
   }
 
-  public void setTypeName(String typeName) {
+  public void setTypeName(
+                          String typeName) {
     this.typeName = typeName;
   }
 
   @Override
-  public long getTypeID() {
+  public int getTypeID() {
     return typeID;
   }
 
-  public void setTypeID(long typeID) {
+  public void setTypeID(
+                        int typeID) {
     this.typeID = typeID;
   }
 
@@ -81,7 +88,8 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return price;
   }
 
-  public void setPrice(BigDecimal price) {
+  public void setPrice(
+                       BigDecimal price) {
     this.price = price;
   }
 
@@ -90,7 +98,8 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return clientID;
   }
 
-  public void setClientID(long clientID) {
+  public void setClientID(
+                          long clientID) {
     this.clientID = clientID;
   }
 
@@ -99,7 +108,8 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return clientName;
   }
 
-  public void setClientName(String clientName) {
+  public void setClientName(
+                            String clientName) {
     this.clientName = clientName;
   }
 
@@ -108,7 +118,8 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return characterID;
   }
 
-  public void setCharacterID(long characterID) {
+  public void setCharacterID(
+                             long characterID) {
     this.characterID = characterID;
   }
 
@@ -117,7 +128,8 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return characterName;
   }
 
-  public void setCharacterName(String characterName) {
+  public void setCharacterName(
+                               String characterName) {
     this.characterName = characterName;
   }
 
@@ -126,7 +138,8 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return stationID;
   }
 
-  public void setStationID(long stationID) {
+  public void setStationID(
+                           long stationID) {
     this.stationID = stationID;
   }
 
@@ -135,7 +148,8 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return stationName;
   }
 
-  public void setStationName(String stationName) {
+  public void setStationName(
+                             String stationName) {
     this.stationName = stationName;
   }
 
@@ -144,7 +158,8 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return transactionType;
   }
 
-  public void setTransactionType(String transactionType) {
+  public void setTransactionType(
+                                 String transactionType) {
     this.transactionType = transactionType;
   }
 
@@ -153,8 +168,19 @@ public class ApiWalletTransaction implements IWalletTransaction {
     return transactionFor;
   }
 
-  public void setTransactionFor(String transactionFor) {
+  public void setTransactionFor(
+                                String transactionFor) {
     this.transactionFor = transactionFor;
+  }
+
+  @Override
+  public int getClientTypeID() {
+    return clientTypeID;
+  }
+
+  public void setClientTypeID(
+                              int clientTypeID) {
+    this.clientTypeID = clientTypeID;
   }
 
 }

@@ -7,7 +7,7 @@ import enterprises.orbital.evexmlapi.crp.IStarbase;
 public class ApiStarbase implements IStarbase {
   private long itemID;
   private int  typeID;
-  private int  locationID;
+  private long locationID;
   private int  moonID;
   private int  state;
   private Date stateTimestamp;
@@ -19,7 +19,8 @@ public class ApiStarbase implements IStarbase {
     return standingOwnerID;
   }
 
-  public void setStandingOwnerID(long standingOwnerID) {
+  public void setStandingOwnerID(
+                                 long standingOwnerID) {
     this.standingOwnerID = standingOwnerID;
   }
 
@@ -28,7 +29,8 @@ public class ApiStarbase implements IStarbase {
     return itemID;
   }
 
-  public void setItemID(long itemID) {
+  public void setItemID(
+                        long itemID) {
     this.itemID = itemID;
   }
 
@@ -37,16 +39,18 @@ public class ApiStarbase implements IStarbase {
     return typeID;
   }
 
-  public void setTypeID(int typeID) {
+  public void setTypeID(
+                        int typeID) {
     this.typeID = typeID;
   }
 
   @Override
-  public int getLocationID() {
+  public long getLocationID() {
     return locationID;
   }
 
-  public void setLocationID(int locationID) {
+  public void setLocationID(
+                            long locationID) {
     this.locationID = locationID;
   }
 
@@ -55,7 +59,8 @@ public class ApiStarbase implements IStarbase {
     return moonID;
   }
 
-  public void setMoonID(int moonID) {
+  public void setMoonID(
+                        int moonID) {
     this.moonID = moonID;
   }
 
@@ -64,7 +69,8 @@ public class ApiStarbase implements IStarbase {
     return state;
   }
 
-  public void setState(int state) {
+  public void setState(
+                       int state) {
     this.state = state;
   }
 
@@ -77,7 +83,8 @@ public class ApiStarbase implements IStarbase {
     return stateTimestamp;
   }
 
-  public void setStateTimestamp(Date stateTimestamp) {
+  public void setStateTimestamp(
+                                Date stateTimestamp) {
     this.stateTimestamp = stateTimestamp;
   }
 
@@ -86,7 +93,8 @@ public class ApiStarbase implements IStarbase {
     return onlineTimestamp;
   }
 
-  public void setOnlineTimestamp(Date onlineTimestamp) {
+  public void setOnlineTimestamp(
+                                 Date onlineTimestamp) {
     this.onlineTimestamp = onlineTimestamp;
   }
 

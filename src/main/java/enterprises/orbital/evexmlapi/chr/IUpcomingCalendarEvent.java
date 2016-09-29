@@ -4,13 +4,14 @@ import java.util.Date;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IUpcomingCalendarEvent.class)
+@JsonSerialize(
+    as = IUpcomingCalendarEvent.class)
 public interface IUpcomingCalendarEvent {
   public int getDuration();
 
   public Date getEventDate();
 
-  public int getEventID();
+  public long getEventID();
 
   public String getEventText();
 

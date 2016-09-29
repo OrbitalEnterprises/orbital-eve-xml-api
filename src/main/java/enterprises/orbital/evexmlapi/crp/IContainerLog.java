@@ -4,7 +4,8 @@ import java.util.Date;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IContainerLog.class)
+@JsonSerialize(
+    as = IContainerLog.class)
 public interface IContainerLog {
   public String getAction();
 
@@ -16,9 +17,9 @@ public interface IContainerLog {
 
   public long getItemID();
 
-  public long getItemTypeID();
+  public int getItemTypeID();
 
-  public int getLocationID();
+  public long getLocationID();
 
   public Date getLogTime();
 
@@ -28,7 +29,7 @@ public interface IContainerLog {
 
   public String getPasswordType();
 
-  public int getQuantity();
+  public long getQuantity();
 
-  public long getTypeID();
+  public int getTypeID();
 }

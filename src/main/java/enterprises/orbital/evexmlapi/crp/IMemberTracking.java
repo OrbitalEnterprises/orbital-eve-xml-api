@@ -4,11 +4,12 @@ import java.util.Date;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IMemberTracking.class)
+@JsonSerialize(
+    as = IMemberTracking.class)
 public interface IMemberTracking {
   public String getBase();
 
-  public int getBaseID();
+  public long getBaseID();
 
   public long getCharacterID();
 
@@ -16,7 +17,7 @@ public interface IMemberTracking {
 
   public String getLocation();
 
-  public int getLocationID();
+  public long getLocationID();
 
   public Date getLogoffDateTime();
 

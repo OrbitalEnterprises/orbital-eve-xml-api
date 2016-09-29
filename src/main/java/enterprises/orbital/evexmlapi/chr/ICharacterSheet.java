@@ -31,9 +31,9 @@ public interface ICharacterSheet extends IPartialCharacterSheet {
 
   public String getCloneName();
 
-  public int getCloneSkillPoints();
+  public long getCloneSkillPoints();
 
-  public int getFreeSkillPoints();
+  public long getFreeSkillPoints();
 
   public BigDecimal getBalance();
 

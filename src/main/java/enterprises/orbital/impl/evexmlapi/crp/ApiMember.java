@@ -8,12 +8,12 @@ public class ApiMember implements IMemberTracking {
   private long   characterID;
   private String name;
   private Date   startDateTime;
-  private int    baseID;
+  private long   baseID;
   private String base;
   private String title;
   private Date   logonDateTime;
   private Date   logoffDateTime;
-  private int    locationID;
+  private long   locationID;
   private String location;
   private int    shipTypeID;
   private String shipType;
@@ -25,7 +25,8 @@ public class ApiMember implements IMemberTracking {
     return characterID;
   }
 
-  public void setCharacterID(long characterID) {
+  public void setCharacterID(
+                             long characterID) {
     this.characterID = characterID;
   }
 
@@ -34,7 +35,8 @@ public class ApiMember implements IMemberTracking {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(
+                      String name) {
     this.name = name;
   }
 
@@ -43,16 +45,18 @@ public class ApiMember implements IMemberTracking {
     return startDateTime;
   }
 
-  public void setStartDateTime(Date startDateTime) {
+  public void setStartDateTime(
+                               Date startDateTime) {
     this.startDateTime = startDateTime;
   }
 
   @Override
-  public int getBaseID() {
+  public long getBaseID() {
     return baseID;
   }
 
-  public void setBaseID(int baseID) {
+  public void setBaseID(
+                        long baseID) {
     this.baseID = baseID;
   }
 
@@ -61,7 +65,8 @@ public class ApiMember implements IMemberTracking {
     return base;
   }
 
-  public void setBase(String base) {
+  public void setBase(
+                      String base) {
     this.base = base;
   }
 
@@ -70,7 +75,8 @@ public class ApiMember implements IMemberTracking {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(
+                       String title) {
     this.title = title;
   }
 
@@ -79,7 +85,8 @@ public class ApiMember implements IMemberTracking {
     return logonDateTime;
   }
 
-  public void setLogonDateTime(Date logonDateTime) {
+  public void setLogonDateTime(
+                               Date logonDateTime) {
     this.logonDateTime = logonDateTime;
   }
 
@@ -88,16 +95,18 @@ public class ApiMember implements IMemberTracking {
     return logoffDateTime;
   }
 
-  public void setLogoffDateTime(Date logoffDateTime) {
+  public void setLogoffDateTime(
+                                Date logoffDateTime) {
     this.logoffDateTime = logoffDateTime;
   }
 
   @Override
-  public int getLocationID() {
+  public long getLocationID() {
     return locationID;
   }
 
-  public void setLocationID(int locationID) {
+  public void setLocationID(
+                            long locationID) {
     this.locationID = locationID;
   }
 
@@ -106,7 +115,8 @@ public class ApiMember implements IMemberTracking {
     return location;
   }
 
-  public void setLocation(String location) {
+  public void setLocation(
+                          String location) {
     this.location = location;
   }
 
@@ -115,7 +125,8 @@ public class ApiMember implements IMemberTracking {
     return shipTypeID;
   }
 
-  public void setShipTypeID(int shipTypeID) {
+  public void setShipTypeID(
+                            int shipTypeID) {
     this.shipTypeID = shipTypeID;
   }
 
@@ -124,7 +135,8 @@ public class ApiMember implements IMemberTracking {
     return shipType;
   }
 
-  public void setShipType(String shipType) {
+  public void setShipType(
+                          String shipType) {
     this.shipType = shipType;
   }
 
@@ -133,7 +145,8 @@ public class ApiMember implements IMemberTracking {
     return roles;
   }
 
-  public void setRoles(long roles) {
+  public void setRoles(
+                       long roles) {
     this.roles = roles;
   }
 
@@ -142,7 +155,8 @@ public class ApiMember implements IMemberTracking {
     return grantableRoles;
   }
 
-  public void setGrantableRoles(long grantableRoles) {
+  public void setGrantableRoles(
+                                long grantableRoles) {
     this.grantableRoles = grantableRoles;
   }
 }

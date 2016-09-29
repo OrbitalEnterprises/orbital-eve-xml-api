@@ -4,17 +4,18 @@ import enterprises.orbital.evexmlapi.api.ICall;
 import enterprises.orbital.evexmlapi.api.ICallGroup;
 
 public class ApiCallOrGroup {
-  private int    groupID;
+  private long   groupID;
   private String name;
   private String description;
   private long   accessMask;
   private String type;
 
-  public int getGroupID() {
+  public long getGroupID() {
     return groupID;
   }
 
-  public void setGroupID(int groupID) {
+  public void setGroupID(
+                         long groupID) {
     this.groupID = groupID;
   }
 
@@ -22,7 +23,8 @@ public class ApiCallOrGroup {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(
+                      String name) {
     this.name = name;
   }
 
@@ -30,7 +32,8 @@ public class ApiCallOrGroup {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(
+                             String description) {
     this.description = description;
   }
 
@@ -38,7 +41,8 @@ public class ApiCallOrGroup {
     return accessMask;
   }
 
-  public void setAccessMask(long accessMask) {
+  public void setAccessMask(
+                            long accessMask) {
     this.accessMask = accessMask;
   }
 
@@ -46,7 +50,8 @@ public class ApiCallOrGroup {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(
+                      String type) {
     this.type = type;
   }
 
@@ -69,7 +74,7 @@ public class ApiCallOrGroup {
       }
 
       @Override
-      public int getGroupID() {
+      public long getGroupID() {
         return groupID;
       }
 
@@ -85,7 +90,7 @@ public class ApiCallOrGroup {
     return new ICallGroup() {
 
       @Override
-      public int getGroupID() {
+      public long getGroupID() {
         return groupID;
       }
 

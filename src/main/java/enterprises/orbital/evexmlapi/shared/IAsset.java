@@ -4,7 +4,8 @@ import java.util.Collection;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IAsset.class)
+@JsonSerialize(
+    as = IAsset.class)
 public interface IAsset {
   public Collection<IAsset> getContainedAssets();
 
@@ -14,7 +15,7 @@ public interface IAsset {
 
   public long getLocationID();
 
-  public int getQuantity();
+  public long getQuantity();
 
   public boolean isSingleton();
 
@@ -26,5 +27,5 @@ public interface IAsset {
    * 
    * @return singleton meta data if isSingleton is true, otherwise 0.
    */
-  public int getRawQuantity();
+  public long getRawQuantity();
 }

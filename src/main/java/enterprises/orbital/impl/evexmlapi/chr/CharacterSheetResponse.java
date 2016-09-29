@@ -26,8 +26,8 @@ public class CharacterSheetResponse extends PartialCharacterSheetResponse implem
   private long                          factionID;
   private int                           cloneTypeID;
   private String                        cloneName;
-  private int                           cloneSkillPoints;
-  private int                           freeSkillPoints;
+  private long                          cloneSkillPoints;
+  private long                          freeSkillPoints;
   private final Set<ApiCharacterSkill>  skills = new HashSet<ApiCharacterSkill>();
   private final List<ApiCharacterRole>  roles  = new ArrayList<ApiCharacterRole>();
   private final List<ApiCharacterTitle> titles = new ArrayList<ApiCharacterTitle>();
@@ -119,7 +119,7 @@ public class CharacterSheetResponse extends PartialCharacterSheetResponse implem
   }
 
   public void setFreeSkillPoints(
-                                 int freeSkillPoints) {
+                                 long freeSkillPoints) {
     this.freeSkillPoints = freeSkillPoints;
   }
 
@@ -144,7 +144,7 @@ public class CharacterSheetResponse extends PartialCharacterSheetResponse implem
   }
 
   @Override
-  public int getFreeSkillPoints() {
+  public long getFreeSkillPoints() {
     return freeSkillPoints;
   }
 
@@ -164,7 +164,7 @@ public class CharacterSheetResponse extends PartialCharacterSheetResponse implem
   }
 
   public void setCloneSkillPoints(
-                                  int cloneSkillPoints) {
+                                  long cloneSkillPoints) {
     this.cloneSkillPoints = cloneSkillPoints;
   }
 
@@ -174,7 +174,7 @@ public class CharacterSheetResponse extends PartialCharacterSheetResponse implem
   }
 
   @Override
-  public int getCloneSkillPoints() {
+  public long getCloneSkillPoints() {
     return cloneSkillPoints;
   }
 

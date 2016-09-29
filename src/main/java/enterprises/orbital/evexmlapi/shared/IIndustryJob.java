@@ -5,7 +5,8 @@ import java.util.Date;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IIndustryJob.class)
+@JsonSerialize(
+    as = IIndustryJob.class)
 public interface IIndustryJob {
 
   public long getJobID();
@@ -22,11 +23,11 @@ public interface IIndustryJob {
 
   public long getStationID();
 
-  public long getActivityID();
+  public int getActivityID();
 
   public long getBlueprintID();
 
-  public long getBlueprintTypeID();
+  public int getBlueprintTypeID();
 
   public String getBlueprintTypeName();
 
@@ -44,13 +45,13 @@ public interface IIndustryJob {
 
   public double getProbability();
 
-  public long getProductTypeID();
+  public int getProductTypeID();
 
   public String getProductTypeName();
 
   public int getStatus();
 
-  public long getTimeInSeconds();
+  public int getTimeInSeconds();
 
   public Date getStartDate();
 

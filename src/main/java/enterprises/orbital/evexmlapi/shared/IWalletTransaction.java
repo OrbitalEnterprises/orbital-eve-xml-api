@@ -5,7 +5,8 @@ import java.util.Date;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IWalletTransaction.class)
+@JsonSerialize(
+    as = IWalletTransaction.class)
 public interface IWalletTransaction {
   public long getCharacterID();
 
@@ -31,9 +32,11 @@ public interface IWalletTransaction {
 
   public String getTransactionType();
 
-  public long getTypeID();
+  public int getTypeID();
 
   public String getTypeName();
 
   public long getJournalTransactionID();
+
+  public int getClientTypeID();
 }

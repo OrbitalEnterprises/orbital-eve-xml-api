@@ -14,9 +14,9 @@ public class ApiIndustryJob implements IIndustryJob {
   private long       solarSystemID;
   private String     solarSystemName;
   private long       stationID;
-  private long       activityID;
+  private int        activityID;
   private long       blueprintID;
-  private long       blueprintTypeID;
+  private int        blueprintTypeID;
   private String     blueprintTypeName;
   private long       blueprintLocationID;
   private long       outputLocationID;
@@ -25,10 +25,10 @@ public class ApiIndustryJob implements IIndustryJob {
   private long       teamID;
   private int        licensedRuns;
   private double     probability;
-  private long       productTypeID;
+  private int        productTypeID;
   private String     productTypeName;
   private int        status;
-  private long       timeInSeconds;
+  private int        timeInSeconds;
   private Date       startDate;
   private Date       endDate;
   private Date       pauseDate;
@@ -41,7 +41,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return jobID;
   }
 
-  public void setJobID(long jobID) {
+  public void setJobID(
+                       long jobID) {
     this.jobID = jobID;
   }
 
@@ -50,7 +51,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return installerID;
   }
 
-  public void setInstallerID(long installerID) {
+  public void setInstallerID(
+                             long installerID) {
     this.installerID = installerID;
   }
 
@@ -59,7 +61,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return installerName;
   }
 
-  public void setInstallerName(String installerName) {
+  public void setInstallerName(
+                               String installerName) {
     this.installerName = installerName;
   }
 
@@ -68,7 +71,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return facilityID;
   }
 
-  public void setFacilityID(long facilityID) {
+  public void setFacilityID(
+                            long facilityID) {
     this.facilityID = facilityID;
   }
 
@@ -77,7 +81,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return solarSystemID;
   }
 
-  public void setSolarSystemID(long solarSystemID) {
+  public void setSolarSystemID(
+                               long solarSystemID) {
     this.solarSystemID = solarSystemID;
   }
 
@@ -86,7 +91,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return solarSystemName;
   }
 
-  public void setSolarSystemName(String solarSystemName) {
+  public void setSolarSystemName(
+                                 String solarSystemName) {
     this.solarSystemName = solarSystemName;
   }
 
@@ -95,16 +101,18 @@ public class ApiIndustryJob implements IIndustryJob {
     return stationID;
   }
 
-  public void setStationID(long stationID) {
+  public void setStationID(
+                           long stationID) {
     this.stationID = stationID;
   }
 
   @Override
-  public long getActivityID() {
+  public int getActivityID() {
     return activityID;
   }
 
-  public void setActivityID(long activityID) {
+  public void setActivityID(
+                            int activityID) {
     this.activityID = activityID;
   }
 
@@ -113,16 +121,18 @@ public class ApiIndustryJob implements IIndustryJob {
     return blueprintID;
   }
 
-  public void setBlueprintID(long blueprintID) {
+  public void setBlueprintID(
+                             long blueprintID) {
     this.blueprintID = blueprintID;
   }
 
   @Override
-  public long getBlueprintTypeID() {
+  public int getBlueprintTypeID() {
     return blueprintTypeID;
   }
 
-  public void setBlueprintTypeID(long blueprintTypeID) {
+  public void setBlueprintTypeID(
+                                 int blueprintTypeID) {
     this.blueprintTypeID = blueprintTypeID;
   }
 
@@ -131,7 +141,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return blueprintTypeName;
   }
 
-  public void setBlueprintTypeName(String blueprintTypeName) {
+  public void setBlueprintTypeName(
+                                   String blueprintTypeName) {
     this.blueprintTypeName = blueprintTypeName;
   }
 
@@ -140,7 +151,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return blueprintLocationID;
   }
 
-  public void setBlueprintLocationID(long blueprintLocationID) {
+  public void setBlueprintLocationID(
+                                     long blueprintLocationID) {
     this.blueprintLocationID = blueprintLocationID;
   }
 
@@ -149,7 +161,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return outputLocationID;
   }
 
-  public void setOutputLocationID(long outputLocationID) {
+  public void setOutputLocationID(
+                                  long outputLocationID) {
     this.outputLocationID = outputLocationID;
   }
 
@@ -158,7 +171,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return runs;
   }
 
-  public void setRuns(int runs) {
+  public void setRuns(
+                      int runs) {
     this.runs = runs;
   }
 
@@ -167,7 +181,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return cost;
   }
 
-  public void setCost(BigDecimal cost) {
+  public void setCost(
+                      BigDecimal cost) {
     this.cost = cost.setScale(2, RoundingMode.HALF_UP);
   }
 
@@ -176,7 +191,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return teamID;
   }
 
-  public void setTeamID(long teamID) {
+  public void setTeamID(
+                        long teamID) {
     this.teamID = teamID;
   }
 
@@ -185,7 +201,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return licensedRuns;
   }
 
-  public void setLicensedRuns(int licensedRuns) {
+  public void setLicensedRuns(
+                              int licensedRuns) {
     this.licensedRuns = licensedRuns;
   }
 
@@ -194,16 +211,18 @@ public class ApiIndustryJob implements IIndustryJob {
     return probability;
   }
 
-  public void setProbability(double probability) {
+  public void setProbability(
+                             double probability) {
     this.probability = probability;
   }
 
   @Override
-  public long getProductTypeID() {
+  public int getProductTypeID() {
     return productTypeID;
   }
 
-  public void setProductTypeID(long productTypeID) {
+  public void setProductTypeID(
+                               int productTypeID) {
     this.productTypeID = productTypeID;
   }
 
@@ -212,7 +231,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return productTypeName;
   }
 
-  public void setProductTypeName(String productTypeName) {
+  public void setProductTypeName(
+                                 String productTypeName) {
     this.productTypeName = productTypeName;
   }
 
@@ -221,16 +241,18 @@ public class ApiIndustryJob implements IIndustryJob {
     return status;
   }
 
-  public void setStatus(int status) {
+  public void setStatus(
+                        int status) {
     this.status = status;
   }
 
   @Override
-  public long getTimeInSeconds() {
+  public int getTimeInSeconds() {
     return timeInSeconds;
   }
 
-  public void setTimeInSeconds(long timeInSeconds) {
+  public void setTimeInSeconds(
+                               int timeInSeconds) {
     this.timeInSeconds = timeInSeconds;
   }
 
@@ -239,7 +261,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return startDate;
   }
 
-  public void setStartDate(Date startDate) {
+  public void setStartDate(
+                           Date startDate) {
     this.startDate = startDate;
   }
 
@@ -248,7 +271,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return endDate;
   }
 
-  public void setEndDate(Date endDate) {
+  public void setEndDate(
+                         Date endDate) {
     this.endDate = endDate;
   }
 
@@ -257,7 +281,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return pauseDate;
   }
 
-  public void setPauseDate(Date pauseDate) {
+  public void setPauseDate(
+                           Date pauseDate) {
     this.pauseDate = pauseDate;
   }
 
@@ -266,7 +291,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return completedDate;
   }
 
-  public void setCompletedDate(Date completedDate) {
+  public void setCompletedDate(
+                               Date completedDate) {
     this.completedDate = completedDate;
   }
 
@@ -275,7 +301,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return completedCharacterID;
   }
 
-  public void setCompletedCharacterID(long completedCharacterID) {
+  public void setCompletedCharacterID(
+                                      long completedCharacterID) {
     this.completedCharacterID = completedCharacterID;
   }
 
@@ -284,7 +311,8 @@ public class ApiIndustryJob implements IIndustryJob {
     return successfulRuns;
   }
 
-  public void setSuccessfulRuns(int successfulRuns) {
+  public void setSuccessfulRuns(
+                                int successfulRuns) {
     this.successfulRuns = successfulRuns;
   }
 
