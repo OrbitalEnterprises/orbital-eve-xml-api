@@ -53,7 +53,14 @@ public class CorporationAPIAdapter extends AbstractAPIRequestAdapter implements 
 
   @Override
   public Collection<IAsset> requestAssets() throws IOException {
-    return new AssetListParser(connector).retrieveResponse(this);
+    return requestAssets(false);
+  }
+
+  @Override
+  public Collection<IAsset> requestAssets(
+                                          boolean flat)
+    throws IOException {
+    return new AssetListParser(connector, flat).retrieveResponse(this);
   }
 
   @Override
@@ -82,7 +89,9 @@ public class CorporationAPIAdapter extends AbstractAPIRequestAdapter implements 
   }
 
   @Override
-  public Collection<IContractItem> requestContractItems(long contractID) throws IOException {
+  public Collection<IContractItem> requestContractItems(
+                                                        long contractID)
+    throws IOException {
     return new ContractItemsParser(connector, contractID).retrieveResponse(this);
   }
 
@@ -97,7 +106,9 @@ public class CorporationAPIAdapter extends AbstractAPIRequestAdapter implements 
   }
 
   @Override
-  public ICorporationSheet requestCorporationSheet(long corpID) throws IOException {
+  public ICorporationSheet requestCorporationSheet(
+                                                   long corpID)
+    throws IOException {
     return new CorporationSheetParser(connector, corpID).retrieveResponse(this);
   }
 
@@ -132,12 +143,16 @@ public class CorporationAPIAdapter extends AbstractAPIRequestAdapter implements 
   }
 
   @Override
-  public Collection<IKill> requestKillMails(long beforeKillID) throws IOException {
+  public Collection<IKill> requestKillMails(
+                                            long beforeKillID)
+    throws IOException {
     return new KillMailsParser(connector, beforeKillID).retrieveResponse(this);
   }
 
   @Override
-  public IMarketOrder requestMarketOrder(long orderID) throws IOException {
+  public IMarketOrder requestMarketOrder(
+                                         long orderID)
+    throws IOException {
     Collection<IMarketOrder> result = new MarketOrdersParser(connector, orderID).retrieveResponse(this);
     if (result == null) return null;
     return result.isEmpty() ? null : result.iterator().next();
@@ -179,7 +194,9 @@ public class CorporationAPIAdapter extends AbstractAPIRequestAdapter implements 
   }
 
   @Override
-  public Collection<IOutpostServiceDetail> requestOutpostServiceDetail(long itemID) throws IOException {
+  public Collection<IOutpostServiceDetail> requestOutpostServiceDetail(
+                                                                       long itemID)
+    throws IOException {
     return new OutpostServiceDetailParser(connector, itemID).retrieveResponse(this);
   }
 
@@ -194,7 +211,9 @@ public class CorporationAPIAdapter extends AbstractAPIRequestAdapter implements 
   }
 
   @Override
-  public IStarbaseDetail requestStarbaseDetail(long pos) throws IOException {
+  public IStarbaseDetail requestStarbaseDetail(
+                                               long pos)
+    throws IOException {
     return new StarbaseDetailParser(connector, pos).retrieveResponse(this);
   }
 
@@ -209,27 +228,39 @@ public class CorporationAPIAdapter extends AbstractAPIRequestAdapter implements 
   }
 
   @Override
-  public Collection<IWalletJournalEntry> requestWalletJournalEntries(int account) throws IOException {
+  public Collection<IWalletJournalEntry> requestWalletJournalEntries(
+                                                                     int account)
+    throws IOException {
     return new WalletJournalParser(connector, account, null).retrieveResponse(this);
   }
 
   @Override
-  public Collection<IWalletJournalEntry> requestWalletJournalEntries(int account, long beforeTransID) throws IOException {
+  public Collection<IWalletJournalEntry> requestWalletJournalEntries(
+                                                                     int account,
+                                                                     long beforeTransID)
+    throws IOException {
     return new WalletJournalParser(connector, account, new Long(beforeTransID)).retrieveResponse(this);
   }
 
   @Override
-  public Collection<IWalletTransaction> requestWalletTransactions(int account) throws IOException {
+  public Collection<IWalletTransaction> requestWalletTransactions(
+                                                                  int account)
+    throws IOException {
     return new WalletTransactionsParser(connector, account, null).retrieveResponse(this);
   }
 
   @Override
-  public Collection<IWalletTransaction> requestWalletTransactions(int account, long beforeTransID) throws IOException {
+  public Collection<IWalletTransaction> requestWalletTransactions(
+                                                                  int account,
+                                                                  long beforeTransID)
+    throws IOException {
     return new WalletTransactionsParser(connector, account, new Long(beforeTransID)).retrieveResponse(this);
   }
 
   @Override
-  public Collection<ILocation> requestLocations(long... itemID) throws IOException {
+  public Collection<ILocation> requestLocations(
+                                                long... itemID)
+    throws IOException {
     return new LocationsParser(connector, itemID).retrieveResponse(this);
   }
 

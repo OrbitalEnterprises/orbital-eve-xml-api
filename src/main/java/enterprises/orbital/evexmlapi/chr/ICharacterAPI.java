@@ -26,6 +26,10 @@ public interface ICharacterAPI extends IResponse {
 
   public Collection<IAsset> requestAssets() throws IOException;
 
+  public Collection<IAsset> requestAssets(
+                                          boolean flat)
+    throws IOException;
+
   public Collection<ICalendarEventAttendee> requestCalendarEventAttendees(
                                                                           long... eventID)
     throws IOException;

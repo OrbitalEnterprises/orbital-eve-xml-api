@@ -58,7 +58,14 @@ public class CharacterAPIAdapter extends AbstractAPIRequestAdapter implements IC
 
   @Override
   public Collection<IAsset> requestAssets() throws IOException {
-    return new AssetListParser(connector).retrieveResponse(this);
+    return requestAssets(false);
+  }
+
+  @Override
+  public Collection<IAsset> requestAssets(
+                                          boolean flat)
+    throws IOException {
+    return new AssetListParser(connector, flat).retrieveResponse(this);
   }
 
   @Override

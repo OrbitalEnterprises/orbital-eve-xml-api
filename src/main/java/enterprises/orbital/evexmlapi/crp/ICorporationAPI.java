@@ -26,6 +26,10 @@ public interface ICorporationAPI extends IResponse {
 
   public Collection<IAsset> requestAssets() throws IOException;
 
+  public Collection<IAsset> requestAssets(
+                                          boolean flat)
+    throws IOException;
+
   public Collection<IBlueprint> requestBlueprints() throws IOException;
 
   public Collection<IBookmarkFolder> requestBookmarks() throws IOException;
@@ -36,13 +40,17 @@ public interface ICorporationAPI extends IResponse {
 
   public Collection<IContractBid> requestContractBids() throws IOException;
 
-  public Collection<IContractItem> requestContractItems(long contractID) throws IOException;
+  public Collection<IContractItem> requestContractItems(
+                                                        long contractID)
+    throws IOException;
 
   public Collection<IContract> requestContracts() throws IOException;
 
   public ICorporationSheet requestCorporationSheet() throws IOException;
 
-  public ICorporationSheet requestCorporationSheet(long corpID) throws IOException;
+  public ICorporationSheet requestCorporationSheet(
+                                                   long corpID)
+    throws IOException;
 
   public Collection<ICustomsOffice> requestCustomsOffices() throws IOException;
 
@@ -56,11 +64,17 @@ public interface ICorporationAPI extends IResponse {
 
   public Collection<IKill> requestKillMails() throws IOException;
 
-  public Collection<IKill> requestKillMails(long beforeKillID) throws IOException;
+  public Collection<IKill> requestKillMails(
+                                            long beforeKillID)
+    throws IOException;
 
-  public Collection<ILocation> requestLocations(long... itemID) throws IOException;
+  public Collection<ILocation> requestLocations(
+                                                long... itemID)
+    throws IOException;
 
-  public IMarketOrder requestMarketOrder(long orderID) throws IOException;
+  public IMarketOrder requestMarketOrder(
+                                         long orderID)
+    throws IOException;
 
   public Collection<IMarketOrder> requestMarketOrders() throws IOException;
 
@@ -76,23 +90,37 @@ public interface ICorporationAPI extends IResponse {
 
   public Collection<IOutpost> requestOutpostList() throws IOException;
 
-  public Collection<IOutpostServiceDetail> requestOutpostServiceDetail(long itemID) throws IOException;
+  public Collection<IOutpostServiceDetail> requestOutpostServiceDetail(
+                                                                       long itemID)
+    throws IOException;
 
   public Collection<IShareholder> requestShareholders() throws IOException;
 
   public IStandingSet requestStandings() throws IOException;
 
-  public IStarbaseDetail requestStarbaseDetail(long pos) throws IOException;
+  public IStarbaseDetail requestStarbaseDetail(
+                                               long pos)
+    throws IOException;
 
   public Collection<IStarbase> requestStarbaseList() throws IOException;
 
   public Collection<ITitle> requestTitles() throws IOException;
 
-  public Collection<IWalletJournalEntry> requestWalletJournalEntries(int account) throws IOException;
+  public Collection<IWalletJournalEntry> requestWalletJournalEntries(
+                                                                     int account)
+    throws IOException;
 
-  public Collection<IWalletJournalEntry> requestWalletJournalEntries(int account, long beforeTransID) throws IOException;
+  public Collection<IWalletJournalEntry> requestWalletJournalEntries(
+                                                                     int account,
+                                                                     long beforeTransID)
+    throws IOException;
 
-  public Collection<IWalletTransaction> requestWalletTransactions(int account) throws IOException;
+  public Collection<IWalletTransaction> requestWalletTransactions(
+                                                                  int account)
+    throws IOException;
 
-  public Collection<IWalletTransaction> requestWalletTransactions(int account, long beforeTransID) throws IOException;
+  public Collection<IWalletTransaction> requestWalletTransactions(
+                                                                  int account,
+                                                                  long beforeTransID)
+    throws IOException;
 }

@@ -8,7 +8,9 @@ import enterprises.orbital.impl.evexmlapi.unittest.test.ResponseConverter;
 
 public class CharAssetListConverter extends ResponseConverter {
 
-  public static String convert(ICharacterAPI req, Collection<IAsset> assets) {
+  public static String convert(
+                               ICharacterAPI req,
+                               Collection<IAsset> assets) {
     StringBuilder builder = new StringBuilder();
 
     convertOpener(req, builder);
@@ -28,7 +30,9 @@ public class CharAssetListConverter extends ResponseConverter {
     return builder.toString();
   }
 
-  protected static void assetDescentWriter(IAsset parent, StringBuilder builder) {
+  protected static void assetDescentWriter(
+                                           IAsset parent,
+                                           StringBuilder builder) {
     builder.append("<row itemID=\"").append(parent.getItemID());
     if (parent.getLocationID() != 0) builder.append("\" locationID=\"").append(parent.getLocationID());
     builder.append("\" typeID=\"").append(parent.getTypeID());
