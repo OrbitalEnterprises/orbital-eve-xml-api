@@ -184,8 +184,10 @@ public class CorporationAPIAdapter extends AbstractAPIRequestAdapter implements 
   }
 
   @Override
-  public Collection<IMemberTracking> requestMemberTracking() throws IOException {
-    return new MemberTrackingParser(connector).retrieveResponse(this);
+  public Collection<IMemberTracking> requestMemberTracking(
+                                                           boolean extended)
+    throws IOException {
+    return new MemberTrackingParser(connector, extended).retrieveResponse(this);
   }
 
   @Override

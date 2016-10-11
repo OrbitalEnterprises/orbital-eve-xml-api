@@ -86,7 +86,9 @@ public interface ICorporationAPI extends IResponse {
 
   public Collection<IMemberSecurityLog> requestMemberSecurityLog() throws IOException;
 
-  public Collection<IMemberTracking> requestMemberTracking() throws IOException;
+  public Collection<IMemberTracking> requestMemberTracking(
+                                                           boolean extended)
+    throws IOException;
 
   public Collection<IOutpost> requestOutpostList() throws IOException;
 

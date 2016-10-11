@@ -19,7 +19,7 @@ public class TestMemberTracking extends ApiTestSetup {
   public void testGetMemberTracking() throws IOException, ParseException, SAXException {
     // Retrieve response
     ICorporationAPI request = requestor.getCorporationAPIService(0, "na", 0L);
-    Collection<IMemberTracking> response = request.requestMemberTracking();
+    Collection<IMemberTracking> response = request.requestMemberTracking(true);
 
     // Compute XML for comparison
     String testData = CorpMemberTrackingConverter.convert(request, response);
