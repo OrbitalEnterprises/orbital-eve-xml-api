@@ -6,7 +6,8 @@ import java.util.Date;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = ICharacterInfo.class)
+@JsonSerialize(
+    as = ICharacterInfo.class)
 public interface ICharacterInfo {
   public BigDecimal getAccountBalance();
 
@@ -18,7 +19,7 @@ public interface ICharacterInfo {
 
   public String getBloodline();
 
-  public int getCharacterID();
+  public long getCharacterID();
 
   public String getCharacterName();
 

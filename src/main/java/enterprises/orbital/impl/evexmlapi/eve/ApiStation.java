@@ -7,7 +7,7 @@ public class ApiStation implements IConquerableStation {
   private String stationName;
   private int    stationTypeID;
   private long   solarSystemID;
-  private int    corporationID;
+  private long   corporationID;
   private String corporationName;
   private long   x;
   private long   y;
@@ -18,7 +18,8 @@ public class ApiStation implements IConquerableStation {
     return stationID;
   }
 
-  public void setStationID(long stationID) {
+  public void setStationID(
+                           long stationID) {
     this.stationID = stationID;
   }
 
@@ -27,7 +28,8 @@ public class ApiStation implements IConquerableStation {
     return stationName;
   }
 
-  public void setStationName(String stationName) {
+  public void setStationName(
+                             String stationName) {
     this.stationName = stationName;
   }
 
@@ -36,7 +38,8 @@ public class ApiStation implements IConquerableStation {
     return stationTypeID;
   }
 
-  public void setStationTypeID(int stationTypeID) {
+  public void setStationTypeID(
+                               int stationTypeID) {
     this.stationTypeID = stationTypeID;
   }
 
@@ -45,16 +48,18 @@ public class ApiStation implements IConquerableStation {
     return solarSystemID;
   }
 
-  public void setSolarSystemID(long solarSystemID) {
+  public void setSolarSystemID(
+                               long solarSystemID) {
     this.solarSystemID = solarSystemID;
   }
 
   @Override
-  public int getCorporationID() {
+  public long getCorporationID() {
     return corporationID;
   }
 
-  public void setCorporationID(int corporationID) {
+  public void setCorporationID(
+                               long corporationID) {
     this.corporationID = corporationID;
   }
 
@@ -63,7 +68,8 @@ public class ApiStation implements IConquerableStation {
     return corporationName;
   }
 
-  public void setCorporationName(String corporationName) {
+  public void setCorporationName(
+                                 String corporationName) {
     this.corporationName = corporationName;
   }
 
@@ -72,7 +78,8 @@ public class ApiStation implements IConquerableStation {
     return x;
   }
 
-  public void setX(long x) {
+  public void setX(
+                   long x) {
     this.x = x;
   }
 
@@ -81,7 +88,8 @@ public class ApiStation implements IConquerableStation {
     return y;
   }
 
-  public void setY(long y) {
+  public void setY(
+                   long y) {
     this.y = y;
   }
 
@@ -90,7 +98,8 @@ public class ApiStation implements IConquerableStation {
     return z;
   }
 
-  public void setZ(long z) {
+  public void setZ(
+                   long z) {
     this.z = z;
   }
 

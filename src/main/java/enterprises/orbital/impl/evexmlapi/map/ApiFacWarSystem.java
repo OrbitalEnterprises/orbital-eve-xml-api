@@ -5,18 +5,19 @@ import enterprises.orbital.evexmlapi.map.IFacWarSystem;
 public class ApiFacWarSystem implements IFacWarSystem {
   private int     solarSystemID;
   private String  solarSystemName;
-  private int     occupyingFactionID;
+  private long    occupyingFactionID;
   private String  occupyingFactionName;
-  private int     owningFactionID;
+  private long    owningFactionID;
   private String  owningFactionName;
   private boolean contested;
 
   @Override
-  public int getOwningFactionID() {
+  public long getOwningFactionID() {
     return owningFactionID;
   }
 
-  public void setOwningFactionID(int owningFactionID) {
+  public void setOwningFactionID(
+                                 long owningFactionID) {
     this.owningFactionID = owningFactionID;
   }
 
@@ -25,7 +26,8 @@ public class ApiFacWarSystem implements IFacWarSystem {
     return owningFactionName;
   }
 
-  public void setOwningFactionName(String owningFactionName) {
+  public void setOwningFactionName(
+                                   String owningFactionName) {
     this.owningFactionName = owningFactionName;
   }
 
@@ -34,7 +36,8 @@ public class ApiFacWarSystem implements IFacWarSystem {
     return solarSystemID;
   }
 
-  public void setSolarSystemID(int solarSystemID) {
+  public void setSolarSystemID(
+                               int solarSystemID) {
     this.solarSystemID = solarSystemID;
   }
 
@@ -43,16 +46,18 @@ public class ApiFacWarSystem implements IFacWarSystem {
     return solarSystemName;
   }
 
-  public void setSolarSystemName(String solarSystemName) {
+  public void setSolarSystemName(
+                                 String solarSystemName) {
     this.solarSystemName = solarSystemName;
   }
 
   @Override
-  public int getOccupyingFactionID() {
+  public long getOccupyingFactionID() {
     return occupyingFactionID;
   }
 
-  public void setOccupyingFactionID(int occupyingFactionID) {
+  public void setOccupyingFactionID(
+                                    long occupyingFactionID) {
     this.occupyingFactionID = occupyingFactionID;
   }
 
@@ -61,7 +66,8 @@ public class ApiFacWarSystem implements IFacWarSystem {
     return occupyingFactionName;
   }
 
-  public void setOccupyingFactionName(String occupyingFactionName) {
+  public void setOccupyingFactionName(
+                                      String occupyingFactionName) {
     this.occupyingFactionName = occupyingFactionName;
   }
 
@@ -70,7 +76,8 @@ public class ApiFacWarSystem implements IFacWarSystem {
     return contested;
   }
 
-  public void setContested(boolean contested) {
+  public void setContested(
+                           boolean contested) {
     this.contested = contested;
   }
 }

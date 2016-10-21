@@ -2,13 +2,14 @@ package enterprises.orbital.evexmlapi.map;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IFacWarSystem.class)
+@JsonSerialize(
+    as = IFacWarSystem.class)
 public interface IFacWarSystem {
-  public int getOccupyingFactionID();
+  public long getOccupyingFactionID();
 
   public String getOccupyingFactionName();
 
-  public int getOwningFactionID();
+  public long getOwningFactionID();
 
   public String getOwningFactionName();
 

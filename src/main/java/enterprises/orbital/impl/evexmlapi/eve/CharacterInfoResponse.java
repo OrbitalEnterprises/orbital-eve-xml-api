@@ -10,7 +10,7 @@ import enterprises.orbital.evexmlapi.eve.IEmploymentHistory;
 import enterprises.orbital.impl.evexmlapi.ApiResponse;
 
 public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo {
-  private int                            characterID;
+  private long                           characterID;
   private String                         characterName;
   private String                         race;
   private String                         bloodline;
@@ -29,7 +29,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
   private double                         securityStatus;
   private final List<IEmploymentHistory> employmentHistory = new ArrayList<IEmploymentHistory>();
 
-  public void addEmploymentHistory(ApiEmploymentHistory h) {
+  public void addEmploymentHistory(
+                                   ApiEmploymentHistory h) {
     employmentHistory.add(h);
   }
 
@@ -39,11 +40,12 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
   }
 
   @Override
-  public int getCharacterID() {
+  public long getCharacterID() {
     return characterID;
   }
 
-  public void setCharacterID(int characterID) {
+  public void setCharacterID(
+                             long characterID) {
     this.characterID = characterID;
   }
 
@@ -52,7 +54,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return characterName;
   }
 
-  public void setCharacterName(String characterName) {
+  public void setCharacterName(
+                               String characterName) {
     this.characterName = characterName;
   }
 
@@ -61,7 +64,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return race;
   }
 
-  public void setRace(String race) {
+  public void setRace(
+                      String race) {
     this.race = race;
   }
 
@@ -70,7 +74,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return bloodline;
   }
 
-  public void setBloodline(String bloodline) {
+  public void setBloodline(
+                           String bloodline) {
     this.bloodline = bloodline;
   }
 
@@ -79,7 +84,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return accountBalance;
   }
 
-  public void setAccountBalance(BigDecimal accountBalance) {
+  public void setAccountBalance(
+                                BigDecimal accountBalance) {
     this.accountBalance = accountBalance;
   }
 
@@ -88,7 +94,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return skillPoints;
   }
 
-  public void setSkillPoints(int skillPoints) {
+  public void setSkillPoints(
+                             int skillPoints) {
     this.skillPoints = skillPoints;
   }
 
@@ -97,7 +104,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return shipName;
   }
 
-  public void setShipName(String shipName) {
+  public void setShipName(
+                          String shipName) {
     this.shipName = shipName;
   }
 
@@ -106,7 +114,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return shipTypeID;
   }
 
-  public void setShipTypeID(int shipTypeID) {
+  public void setShipTypeID(
+                            int shipTypeID) {
     this.shipTypeID = shipTypeID;
   }
 
@@ -115,7 +124,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return shipTypeName;
   }
 
-  public void setShipTypeName(String shipTypeName) {
+  public void setShipTypeName(
+                              String shipTypeName) {
     this.shipTypeName = shipTypeName;
   }
 
@@ -124,7 +134,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return corporationID;
   }
 
-  public void setCorporationID(long corporationID) {
+  public void setCorporationID(
+                               long corporationID) {
     this.corporationID = corporationID;
   }
 
@@ -133,7 +144,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return corporation;
   }
 
-  public void setCorporation(String corporation) {
+  public void setCorporation(
+                             String corporation) {
     this.corporation = corporation;
   }
 
@@ -142,7 +154,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return corporationDate;
   }
 
-  public void setCorporationDate(Date corporationDate) {
+  public void setCorporationDate(
+                                 Date corporationDate) {
     this.corporationDate = corporationDate;
   }
 
@@ -151,7 +164,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return allianceID;
   }
 
-  public void setAllianceID(Long allianceID) {
+  public void setAllianceID(
+                            Long allianceID) {
     this.allianceID = allianceID;
   }
 
@@ -160,7 +174,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return alliance;
   }
 
-  public void setAlliance(String alliance) {
+  public void setAlliance(
+                          String alliance) {
     this.alliance = alliance;
   }
 
@@ -169,7 +184,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return allianceDate;
   }
 
-  public void setAllianceDate(Date allianceDate) {
+  public void setAllianceDate(
+                              Date allianceDate) {
     this.allianceDate = allianceDate;
   }
 
@@ -178,7 +194,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return lastKnownLocation;
   }
 
-  public void setLastKnownLocation(String lastKnownLocation) {
+  public void setLastKnownLocation(
+                                   String lastKnownLocation) {
     this.lastKnownLocation = lastKnownLocation;
   }
 
@@ -187,7 +204,8 @@ public class CharacterInfoResponse extends ApiResponse implements ICharacterInfo
     return securityStatus;
   }
 
-  public void setSecurityStatus(double securityStatus) {
+  public void setSecurityStatus(
+                                double securityStatus) {
     this.securityStatus = securityStatus;
   }
 }

@@ -4,9 +4,9 @@ import enterprises.orbital.evexmlapi.map.ISystemSovereignty;
 
 public class ApiSystemSovereignty implements ISystemSovereignty {
   private int    solarSystemID;
-  private int    allianceID;
-  private int    corporationID;
-  private int    factionID;
+  private long   allianceID;
+  private long   corporationID;
+  private long   factionID;
   private String solarSystemName;
 
   @Override
@@ -14,34 +14,38 @@ public class ApiSystemSovereignty implements ISystemSovereignty {
     return solarSystemID;
   }
 
-  public void setSolarSystemID(int solarSystemID) {
+  public void setSolarSystemID(
+                               int solarSystemID) {
     this.solarSystemID = solarSystemID;
   }
 
   @Override
-  public int getAllianceID() {
+  public long getAllianceID() {
     return allianceID;
   }
 
-  public void setAllianceID(int allianceID) {
+  public void setAllianceID(
+                            long allianceID) {
     this.allianceID = allianceID;
   }
 
   @Override
-  public int getCorporationID() {
+  public long getCorporationID() {
     return corporationID;
   }
 
-  public void setCorporationID(int corporationID) {
+  public void setCorporationID(
+                               long corporationID) {
     this.corporationID = corporationID;
   }
 
   @Override
-  public int getFactionID() {
+  public long getFactionID() {
     return factionID;
   }
 
-  public void setFactionID(int factionID) {
+  public void setFactionID(
+                           long factionID) {
     this.factionID = factionID;
   }
 
@@ -50,7 +54,8 @@ public class ApiSystemSovereignty implements ISystemSovereignty {
     return solarSystemName;
   }
 
-  public void setSolarSystemName(String solarSystemName) {
+  public void setSolarSystemName(
+                                 String solarSystemName) {
     this.solarSystemName = solarSystemName;
   }
 }

@@ -2,13 +2,14 @@ package enterprises.orbital.evexmlapi.map;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = ISystemSovereignty.class)
+@JsonSerialize(
+    as = ISystemSovereignty.class)
 public interface ISystemSovereignty {
-  public int getAllianceID();
+  public long getAllianceID();
 
-  public int getCorporationID();
+  public long getCorporationID();
 
-  public int getFactionID();
+  public long getFactionID();
 
   public int getSolarSystemID();
 

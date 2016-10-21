@@ -2,9 +2,10 @@ package enterprises.orbital.evexmlapi.eve;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IFactionStats.class)
+@JsonSerialize(
+    as = IFactionStats.class)
 public interface IFactionStats {
-  public int getFactionID();
+  public long getFactionID();
 
   public String getFactionName();
 

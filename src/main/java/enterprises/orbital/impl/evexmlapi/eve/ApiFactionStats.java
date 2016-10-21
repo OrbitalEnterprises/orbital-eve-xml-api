@@ -3,7 +3,7 @@ package enterprises.orbital.impl.evexmlapi.eve;
 import enterprises.orbital.evexmlapi.eve.IFactionStats;
 
 public class ApiFactionStats implements IFactionStats {
-  private int    factionID;
+  private long   factionID;
   private String factionName;
   private int    pilots;
   private int    systemsControlled;
@@ -15,11 +15,12 @@ public class ApiFactionStats implements IFactionStats {
   private int    victoryPointsTotal;
 
   @Override
-  public int getFactionID() {
+  public long getFactionID() {
     return factionID;
   }
 
-  public void setFactionID(int factionID) {
+  public void setFactionID(
+                           long factionID) {
     this.factionID = factionID;
   }
 
@@ -28,7 +29,8 @@ public class ApiFactionStats implements IFactionStats {
     return factionName;
   }
 
-  public void setFactionName(String factionName) {
+  public void setFactionName(
+                             String factionName) {
     this.factionName = factionName;
   }
 
@@ -37,7 +39,8 @@ public class ApiFactionStats implements IFactionStats {
     return pilots;
   }
 
-  public void setPilots(int pilots) {
+  public void setPilots(
+                        int pilots) {
     this.pilots = pilots;
   }
 
@@ -46,7 +49,8 @@ public class ApiFactionStats implements IFactionStats {
     return systemsControlled;
   }
 
-  public void setSystemsControlled(int systemsControlled) {
+  public void setSystemsControlled(
+                                   int systemsControlled) {
     this.systemsControlled = systemsControlled;
   }
 
@@ -55,7 +59,8 @@ public class ApiFactionStats implements IFactionStats {
     return killsYesterday;
   }
 
-  public void setKillsYesterday(int killsYesterday) {
+  public void setKillsYesterday(
+                                int killsYesterday) {
     this.killsYesterday = killsYesterday;
   }
 
@@ -64,7 +69,8 @@ public class ApiFactionStats implements IFactionStats {
     return killsLastWeek;
   }
 
-  public void setKillsLastWeek(int killsLastWeek) {
+  public void setKillsLastWeek(
+                               int killsLastWeek) {
     this.killsLastWeek = killsLastWeek;
   }
 
@@ -73,7 +79,8 @@ public class ApiFactionStats implements IFactionStats {
     return killsTotal;
   }
 
-  public void setKillsTotal(int killsTotal) {
+  public void setKillsTotal(
+                            int killsTotal) {
     this.killsTotal = killsTotal;
   }
 
@@ -82,7 +89,8 @@ public class ApiFactionStats implements IFactionStats {
     return victoryPointsYesterday;
   }
 
-  public void setVictoryPointsYesterday(int victoryPointsYesterday) {
+  public void setVictoryPointsYesterday(
+                                        int victoryPointsYesterday) {
     this.victoryPointsYesterday = victoryPointsYesterday;
   }
 
@@ -91,7 +99,8 @@ public class ApiFactionStats implements IFactionStats {
     return victoryPointsLastWeek;
   }
 
-  public void setVictoryPointsLastWeek(int victoryPointsLastWeek) {
+  public void setVictoryPointsLastWeek(
+                                       int victoryPointsLastWeek) {
     this.victoryPointsLastWeek = victoryPointsLastWeek;
   }
 
@@ -100,7 +109,8 @@ public class ApiFactionStats implements IFactionStats {
     return victoryPointsTotal;
   }
 
-  public void setVictoryPointsTotal(int victoryPointsTotal) {
+  public void setVictoryPointsTotal(
+                                    int victoryPointsTotal) {
     this.victoryPointsTotal = victoryPointsTotal;
   }
 }

@@ -3,17 +3,18 @@ package enterprises.orbital.impl.evexmlapi.eve;
 import enterprises.orbital.evexmlapi.eve.IFactionWar;
 
 public class ApiFactionWar implements IFactionWar {
-  private int    factionID;
+  private long   factionID;
   private String factionName;
-  private int    againstID;
+  private long   againstID;
   private String againstName;
 
   @Override
-  public int getFactionID() {
+  public long getFactionID() {
     return factionID;
   }
 
-  public void setFactionID(int factionID) {
+  public void setFactionID(
+                           long factionID) {
     this.factionID = factionID;
   }
 
@@ -22,16 +23,18 @@ public class ApiFactionWar implements IFactionWar {
     return factionName;
   }
 
-  public void setFactionName(String factionName) {
+  public void setFactionName(
+                             String factionName) {
     this.factionName = factionName;
   }
 
   @Override
-  public int getAgainstID() {
+  public long getAgainstID() {
     return againstID;
   }
 
-  public void setAgainstID(int againstID) {
+  public void setAgainstID(
+                           long againstID) {
     this.againstID = againstID;
   }
 
@@ -40,7 +43,8 @@ public class ApiFactionWar implements IFactionWar {
     return againstName;
   }
 
-  public void setAgainstName(String againstName) {
+  public void setAgainstName(
+                             String againstName) {
     this.againstName = againstName;
   }
 }

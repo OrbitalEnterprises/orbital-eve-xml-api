@@ -1,23 +1,25 @@
 package enterprises.orbital.impl.evexmlapi.eve;
 
 public abstract class CharacterStat implements FacWarStat {
-	private int characterID;
-	private String characterName;
+  private long   characterID;
+  private String characterName;
 
-	public int getCharacterID() {
-		return characterID;
-	}
+  public long getCharacterID() {
+    return characterID;
+  }
 
-	public void setCharacterID(int characterID) {
-		this.characterID = characterID;
-	}
+  public void setCharacterID(
+                             long characterID) {
+    this.characterID = characterID;
+  }
 
-	public String getCharacterName() {
-		return characterName;
-	}
+  public String getCharacterName() {
+    return characterName;
+  }
 
-	public void setCharacterName(String characterName) {
-		this.characterName = characterName;
-	}
+  public void setCharacterName(
+                               String characterName) {
+    this.characterName = characterName;
+  }
 
 }
