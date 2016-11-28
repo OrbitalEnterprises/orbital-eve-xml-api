@@ -20,13 +20,16 @@ public class ApiJournalEntry implements IWalletJournalEntry {
   private String     reason;
   private long       taxReceiverID;
   private BigDecimal taxAmount;
+  private int        owner1TypeID;
+  private int        owner2TypeID;
 
   @Override
   public Date getDate() {
     return date;
   }
 
-  public void setDate(Date date) {
+  public void setDate(
+                      Date date) {
     this.date = date;
   }
 
@@ -35,11 +38,13 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return refID;
   }
 
-  public void setRefID(long refID) {
+  public void setRefID(
+                       long refID) {
     this.refID = refID;
   }
 
-  public void setRefTypeID(int refTypeID) {
+  public void setRefTypeID(
+                           int refTypeID) {
     this.refTypeID = refTypeID;
   }
 
@@ -53,7 +58,8 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return ownerName1;
   }
 
-  public void setOwnerName1(String ownerName1) {
+  public void setOwnerName1(
+                            String ownerName1) {
     this.ownerName1 = ownerName1;
   }
 
@@ -62,7 +68,8 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return ownerID1;
   }
 
-  public void setOwnerID1(long ownerID1) {
+  public void setOwnerID1(
+                          long ownerID1) {
     this.ownerID1 = ownerID1;
   }
 
@@ -71,7 +78,8 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return ownerName2;
   }
 
-  public void setOwnerName2(String ownerName2) {
+  public void setOwnerName2(
+                            String ownerName2) {
     this.ownerName2 = ownerName2;
   }
 
@@ -80,7 +88,8 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return ownerID2;
   }
 
-  public void setOwnerID2(long ownerID2) {
+  public void setOwnerID2(
+                          long ownerID2) {
     this.ownerID2 = ownerID2;
   }
 
@@ -89,7 +98,8 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return argName1;
   }
 
-  public void setArgName1(String argName1) {
+  public void setArgName1(
+                          String argName1) {
     this.argName1 = argName1;
   }
 
@@ -98,7 +108,8 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return argID1;
   }
 
-  public void setArgID1(long argID1) {
+  public void setArgID1(
+                        long argID1) {
     this.argID1 = argID1;
   }
 
@@ -107,7 +118,8 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return amount;
   }
 
-  public void setAmount(BigDecimal amount) {
+  public void setAmount(
+                        BigDecimal amount) {
     this.amount = amount;
   }
 
@@ -116,7 +128,8 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return balance;
   }
 
-  public void setBalance(BigDecimal balance) {
+  public void setBalance(
+                         BigDecimal balance) {
     this.balance = balance;
   }
 
@@ -125,7 +138,8 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return reason;
   }
 
-  public void setReason(String reason) {
+  public void setReason(
+                        String reason) {
     this.reason = reason;
   }
 
@@ -134,7 +148,8 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return taxReceiverID;
   }
 
-  public void setTaxReceiverID(long taxReceiverID) {
+  public void setTaxReceiverID(
+                               long taxReceiverID) {
     this.taxReceiverID = taxReceiverID;
   }
 
@@ -143,8 +158,29 @@ public class ApiJournalEntry implements IWalletJournalEntry {
     return taxAmount;
   }
 
-  public void setTaxAmount(BigDecimal taxAmount) {
+  public void setTaxAmount(
+                           BigDecimal taxAmount) {
     this.taxAmount = taxAmount;
+  }
+
+  @Override
+  public int getOwner1TypeID() {
+    return owner1TypeID;
+  }
+
+  public void setOwner1TypeID(
+                              int owner1TypeID) {
+    this.owner1TypeID = owner1TypeID;
+  }
+
+  @Override
+  public int getOwner2TypeID() {
+    return owner2TypeID;
+  }
+
+  public void setOwner2TypeID(
+                              int owner2TypeID) {
+    this.owner2TypeID = owner2TypeID;
   }
 
 }

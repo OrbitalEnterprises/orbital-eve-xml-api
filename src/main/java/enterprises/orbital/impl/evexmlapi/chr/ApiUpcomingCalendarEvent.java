@@ -14,6 +14,7 @@ public class ApiUpcomingCalendarEvent implements IUpcomingCalendarEvent {
   private boolean important;
   private String  response;
   private String  eventText;
+  private int     ownerTypeID;
 
   @Override
   public long getEventID() {
@@ -104,4 +105,15 @@ public class ApiUpcomingCalendarEvent implements IUpcomingCalendarEvent {
                            String eventText) {
     this.eventText = eventText;
   }
+
+  @Override
+  public int getOwnerTypeID() {
+    return ownerTypeID;
+  }
+
+  public void setOwnerTypeID(
+                             int ownerTypeID) {
+    this.ownerTypeID = ownerTypeID;
+  }
+
 }

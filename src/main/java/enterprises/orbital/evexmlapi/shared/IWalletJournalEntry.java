@@ -5,7 +5,8 @@ import java.util.Date;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(as = IWalletJournalEntry.class)
+@JsonSerialize(
+    as = IWalletJournalEntry.class)
 public interface IWalletJournalEntry {
   public BigDecimal getAmount();
 
@@ -34,4 +35,9 @@ public interface IWalletJournalEntry {
   public BigDecimal getTaxAmount();
 
   public long getTaxReceiverID();
+
+  public int getOwner1TypeID();
+
+  public int getOwner2TypeID();
+
 }

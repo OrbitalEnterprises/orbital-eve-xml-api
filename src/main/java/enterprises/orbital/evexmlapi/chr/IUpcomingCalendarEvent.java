@@ -24,4 +24,6 @@ public interface IUpcomingCalendarEvent {
   public String getResponse();
 
   public boolean isImportant();
+
+  public int getOwnerTypeID();
 }

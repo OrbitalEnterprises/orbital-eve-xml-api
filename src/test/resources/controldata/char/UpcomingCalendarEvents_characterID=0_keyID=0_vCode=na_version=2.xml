@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <eveapi version="2">
-  <currentTime>2012-12-19 12:59:30</currentTime>
+  <currentTime>2016-11-28 01:04:23</currentTime>
   <result>
-    <rowset name="upcomingEvents" key="eventID" columns="eventID,ownerID,ownerName,eventDate,eventTitle,duration,importance,response,eventText">
-      <row eventID="245276" ownerID="98007623" ownerName="Dark Planet Ventures" eventDate="2013-01-03 20:09:10" eventTitle="Control tower Kinko's in Vorsk goes offl" duration="60" importance="0" response="Declined" eventText="&lt;b&gt;Caldari Control Tower Small&lt;/b&gt; will run out of fuel and go offline.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Name&lt;/b&gt;: Kinko's&lt;br /&gt;&lt;b&gt;Location&lt;/b&gt;: Metropolis / Jonar / Vorsk&lt;br /&gt;&lt;b&gt;Moon&lt;/b&gt;: Vorsk VI - Moon 3&lt;br /&gt;&lt;b&gt;Fuel bay capacity&lt;/b&gt;: 35000 m&lt;sup&gt;3&lt;/sup&gt;&lt;br /&gt;&lt;br /&gt;Resources in fuel bay when control tower runs out:&lt;br /&gt;- &lt;b&gt;Caldari Fuel Block&lt;/b&gt;: 1535 units&lt;br /&gt;- &lt;b&gt;Minmatar Republic Starbase Charter&lt;/b&gt;: 0 units" />
+    <rowset name="upcomingEvents" key="eventID" columns="eventID,ownerID,ownerName,eventDate,eventTitle,duration,importance,response,eventText,ownerTypeID">
+      <row eventID="1458759" ownerID="98007623" ownerName="Dark Planet Ventures" eventDate="2016-12-01 12:00:00" eventTitle="test event" duration="60" importance="0" response="Accepted" eventText="" ownerTypeID="2" />
     </rowset>
   </result>
-  <cachedUntil>2012-12-19 13:55:44</cachedUntil>
+  <cachedUntil>2016-11-28 01:43:39</cachedUntil>
 </eveapi>

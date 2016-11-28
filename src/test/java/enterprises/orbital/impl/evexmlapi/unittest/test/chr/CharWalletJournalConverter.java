@@ -8,14 +8,16 @@ import enterprises.orbital.impl.evexmlapi.unittest.test.ResponseConverter;
 
 public class CharWalletJournalConverter extends ResponseConverter {
 
-  public static String convert(ICharacterAPI request, Collection<IWalletJournalEntry> response) {
+  public static String convert(
+                               ICharacterAPI request,
+                               Collection<IWalletJournalEntry> response) {
     StringBuilder builder = new StringBuilder();
 
     convertOpener(request, builder);
     builder.append("<result>\n");
 
     builder
-        .append("<rowset name=\"transactions\" key=\"refID\" columns=\"date,refID,refTypeID,ownerName1,ownerID1,ownerName2,ownerID2,argName1,argID1,amount,balance,reason,taxReceiverID,taxAmount\"");
+        .append("<rowset name=\"transactions\" key=\"refID\" columns=\"date,refID,refTypeID,ownerName1,ownerID1,ownerName2,ownerID2,argName1,argID1,amount,balance,reason,taxReceiverID,taxAmount,owner1TypeID,owner2TypeID\"");
 
     if (response.size() == 0)
       builder.append(" />\n");
@@ -42,6 +44,8 @@ public class CharWalletJournalConverter extends ResponseConverter {
           builder.append("\" taxReceiverID=\"").append(next.getTaxReceiverID());
           builder.append("\" taxAmount=\"").append(String.format("%.2f", next.getTaxAmount()));
         }
+        builder.append("\" owner1TypeID=\"").append(next.getOwner1TypeID());
+        builder.append("\" owner2TypeID=\"").append(next.getOwner2TypeID());
         builder.append("\" />\n");
       }
 
